@@ -28,6 +28,7 @@ const optimization = () => {
 module.exports = {
 	entry: {
 		main: ['@babel/polyfill', path.resolve(__dirname, 'src', 'pages', 'index', 'index.js')],
+		colors: ['@babel/polyfill', path.resolve(__dirname, 'src', 'pages', 'colors', 'index.js')],
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -49,6 +50,17 @@ module.exports = {
     open: true
 	},
 	plugins: [
+		new CleanWebpackPlugin(),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					context: path.resolve(__dirname, 'src/assets/'),
+					from: '*',
+					to: path.resolve(__dirname, 'dist'),
+					noErrorOnMissing: true,
+				},
+			]
+		}),
 		new HtmlWebpackPlugin({
 			template: './src/pages/index/index.pug',
 			chunks: ['main'],
@@ -56,14 +68,13 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
-		new CleanWebpackPlugin(),
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: path.resolve(__dirname, 'src/assets'),
-					to: path.resolve(__dirname, 'dist')
-				}
-			]
+		new HtmlWebpackPlugin({
+			template: './src/pages/colors/index.pug',
+			filename: 'colors.html',
+			chunks: ['colors'],
+			minify: {
+				collapseWhitespace: !isDev
+			}
 		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
@@ -77,7 +88,14 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|svg)$/,
-				use: ['file-loader']
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: "[name].[ext]",
+							useRelativePath: true,
+						}			
+					}]
 			},
 			{
 				test: /\.(ttf|woff)$/,
