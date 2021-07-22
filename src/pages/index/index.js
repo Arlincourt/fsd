@@ -1,3 +1,3 @@
+import '@/theme/layouts/layout.scss'
 import './index.scss'
-import '@components/input/index.js'
 

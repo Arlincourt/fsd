@@ -1,13 +1,53 @@
 @import '@/theme/fonts.css';
+@import '@/theme/variables.scss';
 
-body {
-	font-family: Montserrat, sans-serif;
-	background-color: red;
-	font-weight: 400;
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-h1 {
-	font-family: Montserrat;
-	background-color: red;
-	font-weight: 400;
+.logo__wrapper {
+	padding-top: 30px;
+	padding-left: 30px;
+}
+
+.colors {
+	max-width: 1160px;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	&__body {
+		padding-top: 63px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__example {
+		display: flex;
+		margin-bottom: 55px;
+		max-width: 436px;
+	}
+
+	&__tag {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+		text-align: right;
+		color: $dark25;
+		margin-right: 30px;
+
+		&_md {
+			font-size: 19px;
+			line-height: 23px;
+		}
+		&_sm {
+			font-size: 14px;
+			line-height: 24px;
+		}
+		&_xl {
+			font-size: 12px;
+			line-height: 15px;
+		}
+	}
 }

@@ -1,2 +1,8 @@
 import './index.scss'
+import '@/theme/layouts/layout.scss'
 import '@components/logo/index.js'
+import '@components/color-item/index.js'
+import '@components/title-1/index.js'
+import '@components/title-2/index.js'
+import '@components/title-3/index.js'
+import '@components/p/index.js'

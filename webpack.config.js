@@ -88,18 +88,20 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|svg)$/,
+				exclude: /src\/theme/,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
 							name: "[name].[ext]",
-							useRelativePath: true,
-						}			
+							useRelativePath: true,	
+						},
 				}]
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource"
+				test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+				exclude: [/src\/components/, /src\/pages/, /src\/assets/,],
+        type: "asset/resource",
 			},
 			{
 				test: /\.s[ac]ss$/,
