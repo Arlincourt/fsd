@@ -1,1 +1,5 @@
-console.log('sfasfsa')
+function importAll(resolve) {
+  resolve.keys().forEach(resolve);
+}
+
+importAll(require.context('../src/', true, /\.js$|\.scss$|\.css$|\.svg$|\.png$|\.jpg$/));

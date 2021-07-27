@@ -5,3 +5,9 @@ $dark25: rgba($dark100, 0.25);
 $dark5: rgba($dark100, 0.05);
 $purple: #bc9cff;
 $green: #6fcf97;
+
+$linear-gradient: linear-gradient(
+  180deg,
+  rgba(188, 156, 255, 1) 0%,
+  rgba(139, 164, 249, 1) 100%
+);

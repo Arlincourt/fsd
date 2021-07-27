@@ -27,8 +27,7 @@ const optimization = () => {
 
 module.exports = {
 	entry: {
-		main: ['@babel/polyfill', path.resolve(__dirname, 'src', 'pages', 'index', 'index.js')],
-		colors: ['@babel/polyfill', path.resolve(__dirname, 'src', 'pages', 'colors', 'index.js')],
+		main: ['@babel/polyfill', './src/index.js'],
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -62,8 +61,7 @@ module.exports = {
 			]
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/index/index.pug',
-			chunks: ['main'],
+			template: './src/pages/headers/index.pug',
 			minify: {
 				collapseWhitespace: !isDev
 			}
@@ -71,7 +69,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/pages/colors/index.pug',
 			filename: 'colors.html',
-			chunks: ['colors'],
 			minify: {
 				collapseWhitespace: !isDev
 			}

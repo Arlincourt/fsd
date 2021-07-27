@@ -1,0 +1,43 @@
+include ../../components/logo/index.pug
+include ../../components/button/index.pug
+include ../../components/menu/index.pug
+
+mixin header(props)
+	- const {isAuth} = props
+	header.header 
+		.header__wrapper 
+			.header__body 
+				+logo("./Logo.svg", "Logo Toxin")
+				button.header__burger
+					span.header__line 
+					span.header__line 
+					span.header__line 
+				+menu([
+					{
+						link: '#',
+						text: 'LINK'
+					},
+					{
+						link: '#',
+						current: true,
+						text: 'LINK2'
+					},
+					{
+						link: [
+							{
+								link: '#',
+								text: 'menu item1'
+							}
+						],
+						current: true,
+						text: 'LINK3'
+					},
+				])
+				if isAuth 
+					.header__actions 
+						+button({text: 'войти', mode: ['bordered']})
+						+button({text: 'зарегистрироваться', mode: ['with_arrow', 'big']})
+				else 
+					.header__info 
+
+				

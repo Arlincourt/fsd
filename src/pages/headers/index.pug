@@ -1,0 +1,21 @@
+extends ../../theme/layouts/layout.pug
+include ../../components/logo/index.pug
+include ../../components/header/index.pug
+
+block title 
+	| Headers&Footers
+
+block content 
+
+	.wrapper 
+		.content 
+			.container 
+				.headers
+					.logo__wrapper
+						+logo("./Logo-2.svg", "Logo") 
+					.headers__example
+						+header({isAuth: true})
+					.headers__example
+						+header({isAuth: true})
+					
+		footer.footer

@@ -1,0 +1,21 @@
+@import '@/theme/variables.scss';
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.logo__wrapper {
+	padding-top: 30px;
+	padding-left: 30px;
+	margin-bottom: 62px;
+}
+
+.headers {
+	background-color: #E5E5E5;
+	padding-bottom: 140px;
+
+	&__example {
+		margin-bottom: 40px;
+	}
+}
