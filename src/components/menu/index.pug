@@ -5,8 +5,8 @@ mixin menu(links)
         each link in links
           li.menu__item
             if Array.isArray(link.link)
-              a.menu__link= link.text
-              .menu__expander
+              .menu__expander.js-menu-expander
+                a.menu__link= link.text
               ul.menu__submenu.js-submenu
                 each subitem in link.link
                   li.menu__sub-item

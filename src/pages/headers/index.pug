@@ -6,6 +6,48 @@ block title
 	| Headers&Footers
 
 block content 
+	- 
+		let menu = [
+			{
+				text: "О нас",
+				link: "/fake-address",
+				current: true,
+			},
+			{
+				text: "Услуги",
+				link: [
+					{
+						text: "Услуга 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Услуга 2",
+						link: "/fake-address"
+					},
+				]
+			}, 
+			{
+				text: "Вакансии",
+				link: "/fake-address",
+			},
+			{
+				text: "Новости",
+				link: "/fake-address",
+			},
+			{
+				text: "Соглашения",
+				link: [
+					{
+						text: "Соглашение 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Соглашение 2",
+						link: "/fake-address"
+					},
+				]
+			},
+		]
 
 	.wrapper 
 		.content 
@@ -14,8 +56,8 @@ block content
 					.logo__wrapper
 						+logo("./Logo-2.svg", "Logo") 
 					.headers__example
-						+header({isAuth: true})
+						+header({user: false, menu: menu})
 					.headers__example
-						+header({isAuth: true})
+						+header({user: 'Юлий Цезарь', menu: menu})
 					
 		footer.footer

@@ -3,41 +3,32 @@ include ../../components/button/index.pug
 include ../../components/menu/index.pug
 
 mixin header(props)
-	- const {isAuth} = props
-	header.header 
+	- const {user} = props
+	- const {menu} = props
+		
+	header.header.js-header
 		.header__wrapper 
 			.header__body 
-				+logo("./Logo.svg", "Logo Toxin")
-				button.header__burger
-					span.header__line 
-					span.header__line 
-					span.header__line 
-				+menu([
-					{
-						link: '#',
-						text: 'LINK'
-					},
-					{
-						link: '#',
-						current: true,
-						text: 'LINK2'
-					},
-					{
-						link: [
-							{
-								link: '#',
-								text: 'menu item1'
-							}
-						],
-						current: true,
-						text: 'LINK3'
-					},
-				])
-				if isAuth 
-					.header__actions 
-						+button({text: 'войти', mode: ['bordered']})
-						+button({text: 'зарегистрироваться', mode: ['with_arrow', 'big']})
-				else 
-					.header__info 
+				.header__logo
+					+logo("./Logo.svg", "Logo Toxin")
+				button.header__burger.js-header-burger
+					.header__line-wrapper
+						span.header__line 
+						span.header__line 
+						span.header__line 
+				.header__main
+					.header__menu.js-header-menu
+						+menu(menu)
+					.header__user
+						if user 
+							.header__info 
+								| #{user}
+						else 
+							.header__actions 
+								+button({text: 'войти', mode: ['bordered', 'with_mr-20']})
+								+button({text: 'зарегистрироваться'})
+					a.header__icon(href="/fake-address")
+						img.header__avatar(src="./user.svg")
+							
 
 				
