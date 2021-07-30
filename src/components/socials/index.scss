@@ -1,0 +1,19 @@
+@import '@/theme/variables.scss';
+
+.socials {
+	
+	&__link {
+		text-decoration: none;
+		font-size: 1.7rem;
+		margin-right: 20px;
+		background-image: $linear-gradient;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent; 
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

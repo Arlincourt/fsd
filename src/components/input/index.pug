@@ -1,0 +1,22 @@
+mixin input(params)
+  -
+    let defaultClass = 'form-control__input'
+    let mode = params.mode || undefined
+    let masked = params.masked || undefined
+    let button = params.button || undefined
+    let classes = []
+    if(masked !== undefined) 
+      classes.push('js-input-masked')
+    if(mode !== undefined){
+      mode = mode.map((item)=> `${defaultClass}_${item}`)
+      classes = mode
+    }
+    classes.unshift('form-control__input')
+
+  if(button!== undefined) 
+    .form-control
+      input(type=params.type, placeholder=params.placeholder, class=classes)
+      button.form-control__button.icon-arrow_forward
+  else 
+    .form-control
+      input(type=params.type, placeholder=params.placeholder, class=classes)

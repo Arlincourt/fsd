@@ -1,8 +1,8 @@
 mixin button(params)
   - 
     const defaultclass = 'btn'
-    const link= params.link|| undefined
-    const text = params.text|| 'Click me'
+    const link = params.link || undefined
+    const text = params.text
     let mode = params.mode
     if(mode !== undefined){
       mode = mode.map((item)=> `${defaultclass}_${item}`)

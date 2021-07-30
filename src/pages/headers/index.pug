@@ -1,13 +1,15 @@
 extends ../../theme/layouts/layout.pug
 include ../../components/logo/index.pug
 include ../../components/header/index.pug
+include ../../components/footer-small/index.pug
+include ../../components/footer/index.pug
 
 block title 
 	| Headers&Footers
 
 block content 
 	- 
-		let menu = [
+		const menu = [
 			{
 				text: "О нас",
 				link: "/fake-address",
@@ -49,6 +51,42 @@ block content
 			},
 		]
 
+		const navigation = [
+			{
+				title: 'Навигация',
+				links: [
+					{url: '/fake-address', text: 'О нас'},
+					{url: '/fake-address', text: 'Новости'},
+					{url: '/fake-address', text: 'Служба поддержки'},
+					{url: '/fake-address', text: 'Услуги'},
+				]
+			},
+			{
+				title: 'О нас',
+				links: [
+					{url: '/fake-address', text: 'О сервисе'},
+					{url: '/fake-address', text: 'Наша команда'},
+					{url: '/fake-address', text: 'Вакансии'},
+					{url: '/fake-address', text: 'Инвесторы'},
+				]
+			},
+			{
+				title: 'Служба поддержки',
+				links: [
+					{url: '/fake-address', text: 'Соглашения'},
+					{url: '/fake-address', text: 'Сообщества'},
+					{url: '/fake-address', text: 'Связь с нами'},
+				]
+			},
+		]
+		const text = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»' 
+		const copy = 'Copyright © 2018 Toxin отель. Все права защищены.' 
+		const subscribtion = {
+			title: "Подписка",
+			text: "Получайте специальные предложения и новости сервиса",
+			placeholder: "Email"
+		}
+
 	.wrapper 
 		.content 
 			.container 
@@ -59,5 +97,8 @@ block content
 						+header({user: false, menu: menu})
 					.headers__example
 						+header({user: 'Юлий Цезарь', menu: menu})
-					
-		footer.footer
+					.headers__example
+						+footer(text, navigation, copy, subscribtion)
+					.headers__example
+						+footer-small('Copyright © 2018 Toxin отель. Все права защищены.')
+						

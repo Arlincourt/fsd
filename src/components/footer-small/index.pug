@@ -1,0 +1,11 @@
+include ../../components/logo/index.pug
+include ../../components/socials/index.pug
+
+mixin footer-small(text)
+	footer.footer-small 
+		.footer-small__body 
+			.footer-small__logo
+				+logo("./Logo.svg", "Logo Toxin")
+			.footer-small__text= text
+			+socials()
+		
