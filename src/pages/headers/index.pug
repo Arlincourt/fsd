@@ -91,14 +91,15 @@ block content
 		.content 
 			.container 
 				.headers
-					.logo__wrapper
-						+logo("./Logo-2.svg", "Logo") 
-					.headers__example
-						+header({user: false, menu: menu})
-					.headers__example
-						+header({user: 'Юлий Цезарь', menu: menu})
-					.headers__example
-						+footer(text, navigation, copy, subscribtion)
-					.headers__example
-						+footer-small('Copyright © 2018 Toxin отель. Все права защищены.')
+					.headers__body
+						.headers__logo
+							+logo("./Logo-2.svg", "Logo") 
+						.headers__example
+							+header({user: false, menu: menu})
+						.headers__example
+							+header({user: 'Юлий Цезарь', menu: menu})
+						.headers__example
+							+footer(text, navigation, copy, subscribtion)
+						.headers__example
+							+footer-small('Copyright © 2018 Toxin отель. Все права защищены.')
 						

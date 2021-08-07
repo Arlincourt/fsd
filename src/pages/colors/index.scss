@@ -1,24 +1,19 @@
 @import '@/theme/variables.scss';
 
-.container {
-	max-width: 1440px;
-	margin: 0 auto;
-}
-
-.logo__wrapper {
-	padding-top: 30px;
-	padding-left: 30px;
-}
-
 .colors {
-	max-width: 1160px;
-	padding: 0 15px;
-	margin: 0 auto;
+
+	&__logo {
+		padding-top: 30px;
+		padding-left: 30px;
+		margin-bottom: 63px;
+	}
 
 	&__body {
-		padding-top: 63px;
 		display: flex;
 		justify-content: space-between;
+		max-width: 1190px;
+		padding: 0 15px;
+		margin: 0 auto;
 	}
 
 	&__example {

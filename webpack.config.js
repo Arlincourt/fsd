@@ -73,6 +73,13 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/cards/index.pug',
+			filename: 'cards.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),

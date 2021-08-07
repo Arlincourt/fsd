@@ -1,0 +1,10 @@
+include ../../components/dropdown/index.pug
+include ../../components/title-3/index.pug
+
+mixin quantity-dropdown(props)
+	-
+		const label = props.label || ''
+		const title = props.title || ''
+	.quantity-dropdown
+		.quantity-dropdown__body.js-quantity-dropdown__body 
+			+dropdown({label: label, title: title})

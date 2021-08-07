@@ -1,0 +1,12 @@
+@import '@theme/variables.scss';
+
+.range-dates {
+
+	&__dropdowns {
+		display: flex;
+	}
+
+	&__dropdown_with_mr {
+		margin-right: 20px;
+	}
+}

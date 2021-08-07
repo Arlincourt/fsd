@@ -1,11 +1,12 @@
 @import '@/theme/variables.scss';
 
+$arrow-rl: 15px + 24px + 14px;
 
 
 .btn {
   display: inline-block;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   background: $linear-gradient;
   background-position: center;
   text-align: center;
@@ -35,6 +36,7 @@
   &_big {
     display: block;
     min-width: 100%;
+    padding: 15px 18px;
   }
 
   &_with_mr-20 {
@@ -42,7 +44,6 @@
   }
 
   &_with_arrow {
-    $arrow-rl: 15px + 24px + 14px;
     position: relative;
     padding-right: $arrow-rl;
     padding-left: $arrow-rl;
@@ -55,7 +56,7 @@
       font-family: "icons";
       font-weight: normal;
       font-style: normal;
-      font-size: 24px;
+      font-size: 1.3rem;
       line-height: 1;
       letter-spacing: normal;
       text-transform: none;

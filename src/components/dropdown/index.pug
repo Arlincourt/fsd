@@ -1,0 +1,15 @@
+include ../../components/title-3/index.pug
+
+mixin dropdown(params)
+	-	const label = params.label || 'Выберите'
+	-	const title = params.title || undefined
+
+	.dropdown.js-dropdown 
+		.dropdown__body
+			if(title !== undefined)
+				.dropdown__title
+					+title-3(title)
+			.dropdown__content.js-dropdown-content
+				label.dropdown__label
+					input(placeholder=label readonly tabindex="-1" class="dropdown__input js-dropdown-input")
+						

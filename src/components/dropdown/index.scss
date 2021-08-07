@@ -1,0 +1,51 @@
+@import '@theme/variables.scss';
+
+.dropdown {
+
+	&__body {
+		box-sizing: border-box;
+		padding-right: 33px;
+	}
+
+	&__content {
+		cursor: pointer;
+	}
+	
+	&__label {
+		position: relative;
+		height: 44px;
+		cursor: pointer;
+		
+		&::after {
+			content: "\e902";
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $dark50;
+			font-family: 'icons';
+			cursor: pointer;
+			z-index: 7;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+	}
+	
+	&__input {
+		padding: 11.5px 15px;
+		pointer-events: none;
+		width: 100%;
+		z-index: 6;
+		position: relative;
+		font-size: 1rem;
+		line-height: 1.7rem;
+		color: $dark75;
+
+		&::placeholder {
+			line-height: 1.28rem;
+			color: $dark75;
+		}
+	}
+}
