@@ -1,0 +1,11 @@
+include ../../components/dropdown/index.pug
+
+mixin datepicker()
+	.datepicker-item.js-datepicker-item
+		.datepicker-item__body
+			.datepicker-item__calendar.js-datepicker-calendar 
+			.datepicker-item__dropdowns 
+				.datepicker-item__dropdown_with_mr
+					+dropdown({label: 'ДД.ММ.ГГГГ', title: 'прибытие'})
+				+dropdown({label: 'ДД.ММ.ГГГГ', title: 'выезд'})
+				

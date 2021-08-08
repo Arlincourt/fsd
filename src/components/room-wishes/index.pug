@@ -1,7 +1,7 @@
 include ../../components/title-1/index.pug
 include ../../components/button/index.pug
 include ../../components/quantity-dropdown/index.pug
-include ../../components/range-dates/index.pug
+include ../../components/datepicker/index.pug
 
 mixin room-wishes()
 	.room-wishes 
@@ -12,7 +12,7 @@ mixin room-wishes()
 				form.room-wishes__form(action="/fake-address")
 					.room-wishes__settings 
 						.room-wishes__dates 
-							+range-dates()
+							+datepicker()
 						.room-wishes__guests
 							+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
 					.room-wishes__button 

@@ -69,20 +69,4 @@
 		display: flex;
 		justify-content: space-between;
 	}
-
-	&__button {
-		font-weight: bold;
-		font-size: 0.85rem;
-		line-height: 1.07rem;
-		text-transform: uppercase;
-		border: none;
-		background-color: transparent;
-		cursor: pointer;
-		color: $purple;
-
-		&_disabled {
-			cursor: auto;
-			opacity: 0;
-		}
-	}
 }

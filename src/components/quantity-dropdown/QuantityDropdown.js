@@ -30,8 +30,8 @@ class QuantityDropdown {
 	initButtons() {
 		if(this._buttons) {
 			const buttons = $('<div class="quantity-dropdown__buttons"></div>')
-			this.$apply = $('<button class="quantity-dropdown__button" type="button">Применить</button>') 
-			this.$clean = $('<button class="quantity-dropdown__button" type="button">Очистить</button>') 
+			this.$apply = $('<button class="btn_transparent" type="button">Применить</button>') 
+			this.$clean = $('<button class="btn_transparent" type="button">Очистить</button>') 
 
 			buttons.append(this.$clean)
 			buttons.append(this.$apply)
