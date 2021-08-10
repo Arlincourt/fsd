@@ -42,6 +42,9 @@ $arrow-rl: 15px + 24px + 14px;
   &_with_mr-20 {
     margin-right: 20px;
   }
+  &_with_big_padding {
+    padding: 14px 26px;
+  }
 
   &_with_arrow {
     position: relative;

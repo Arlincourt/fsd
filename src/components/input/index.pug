@@ -4,6 +4,7 @@ mixin input(params)
     let mode = params.mode || undefined
     let masked = params.masked || undefined
     let button = params.button || undefined
+    const type = params.type || 'text'
     let classes = []
     if(masked !== undefined) 
       classes.push('js-input-masked')
@@ -19,4 +20,4 @@ mixin input(params)
       button.form-control__button.icon-arrow_forward
   else 
     .form-control
-      input(type=params.type, placeholder=params.placeholder, class=classes)
+      input(type=type, placeholder=params.placeholder, class=classes)

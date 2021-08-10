@@ -25,6 +25,7 @@ class QuantityDropdown {
 		this.initButtonsEvents()
 		this.initEvents()
 		this.setInputValue()
+		this.hideCalendar()
 	}
 
 	initButtons() {
@@ -46,7 +47,7 @@ class QuantityDropdown {
 			if(this.$list.hasClass('quantity-dropdown__list_hidden')) {
 				this.$list.removeClass('quantity-dropdown__list_hidden')
 			} else {
-				this.$list.addClass('quantity-dropdown__list_hidden')
+				this.hideCalendar()
 			}
 		})
 	}
@@ -80,7 +81,7 @@ class QuantityDropdown {
 	initButtonsEvents() {
 		if(this.$apply) {
 			this.$apply.on('click', () => {
-				this.$list.addClass('quantity-dropdown__list_hidden')
+				this.hideCalendar()
 			})
 		}
 		if(this.$clean) {
@@ -88,6 +89,10 @@ class QuantityDropdown {
 				this.resetState()
 			})
 		}
+	}
+	
+	hideCalendar() {
+		this.$list.addClass('quantity-dropdown__list_hidden')
 	}
 
 	initOptionsEvents() {
