@@ -77,9 +77,13 @@ $arrow-rl: 15px + 24px + 14px;
 		cursor: pointer;
 		color: $purple;
 
-		&_disabled {
+		&_hidden {
 			cursor: auto;
 			opacity: 0;
 		}
+
+    &_disabled {
+      color: $dark50;
+    }
   }
 }

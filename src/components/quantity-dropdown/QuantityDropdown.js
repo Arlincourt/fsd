@@ -112,7 +112,7 @@ class QuantityDropdown {
 				if(this._options[idx].value === 1) {
 					parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled')
 				}
-				this.$clean.removeClass('quantity-dropdown__button_disabled')
+				this.$clean.removeClass('btn_transparent_hidden')
 				this.setInputValue()
 			}
 		})
@@ -130,7 +130,7 @@ class QuantityDropdown {
 			}
 		})
 		if(isAllZero) {
-			this.$clean.addClass('quantity-dropdown__button_disabled')
+			this.$clean.addClass('btn_transparent_hidden')
 			this.$input.val('')
 		} else {
 			this.setInputValue()
@@ -196,7 +196,7 @@ class QuantityDropdown {
 			}
 		})
 		this.$element.find('.quantity-dropdown__value .title-3').text('0')
-		this.$clean.addClass('quantity-dropdown__button_disabled')
+		this.$clean.addClass('btn_transparent_hidden')
 	}
 }
 

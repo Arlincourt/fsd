@@ -5,6 +5,8 @@ class Calendar {
 		this.$element = $(element)
 		this.$calendar = ''
 		this.$inputs = this.$element.find('.js-dropdown-input')
+		this.dates = []
+		const that = this
 		this.options = {
 				range: true,
 				multipleDates: true,
@@ -13,6 +15,9 @@ class Calendar {
 				navTitles: {
 					days: 'MM yyyy',
       	},
+				onSelect(formattedDate, date, inst) {
+					that.onSelect(formattedDate, date)
+				}
 		}
 
 		this.init()
@@ -21,6 +26,11 @@ class Calendar {
 	init() {
 		this.initCalendar()
 		this.initInputsEvents()
+	}
+
+	onSelect(formattedDate, date) {
+		this.$inputs.val('')
+		this.dates = this.separateInputValue(formattedDate)
 	}
 
 	initCalendar() {
@@ -44,7 +54,12 @@ class Calendar {
 
 	initButtonsEvents() {
 		this.$applyBtn.on('click', () => {
-			
+		if(this.dates.length === 2) {
+			this.$inputs.each((idx, input) => {
+				input.value = this.dates[idx]
+			})
+			this.$calendar.hide()
+		}
 		})
 		this.$clearBtn.on('click', () => {
 			this.$calendar.clear()
@@ -52,8 +67,8 @@ class Calendar {
 		})
 	}
 
-	separateInputValue() {
-		
+	separateInputValue(value) {
+		return value.split(',')
 	}
 
 	initInputsEvents() {
