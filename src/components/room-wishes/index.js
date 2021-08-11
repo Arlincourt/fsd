@@ -6,9 +6,9 @@ $(() => {
 	new QuantityDropdown(dropdown, {
 		buttons: true,
 		options: [
-			{name: 'спальни', value: 0, endings: ['спальня', 'спальни', 'спален']},
-			{name: 'кровати', value: 2, endings: ['кровать', 'кровати', 'кроватей']},
-			{name: 'ванные комнаты', value: 4, endings: ['ванная комната', 'ванных комнат', 'ванных комнат']},
+			{name: 'взрослых', value: 0},
+			{name: 'детей', value: 0},
 		], 
+		endings: ['гость', 'гостя', 'гостей']
 	})
 })

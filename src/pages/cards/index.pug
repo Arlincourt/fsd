@@ -2,6 +2,8 @@ extends ../../theme/layouts/layout.pug
 include ../../components/logo/index.pug
 include ../../components/room-wishes/index.pug
 include ../../components/register-card/index.pug
+include ../../components/room-info/index.pug
+include ../../components/calendar/index.pug
 
 block title 
 	| Cards
@@ -22,5 +24,12 @@ block content
 									+room-wishes()
 								.cards__item
 									+register-card()
+							.cards__column
+								.cards__item
+									+room-info
+							.cards__column
+								.cards__item
+									+calendar()
+								
 
 					
