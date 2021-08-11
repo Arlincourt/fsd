@@ -17,6 +17,7 @@
 		border-radius: 10px;
 		border: 1px solid $dark25;
 		position: relative;
+		margin-right: 10px;
 		
 		&::after {
 			content: "";
@@ -42,9 +43,5 @@
 			right: 4px;
 			left: auto;
 		}
-	}
-
-	&__text {
-		margin-left: 10px;
 	}
 }

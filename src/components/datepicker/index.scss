@@ -7,10 +7,19 @@
 
 	&__dropdowns {
 		display: flex;
+    
+    @media (max-width: 370px) {
+			flex-wrap: wrap;
+    }
 	}
 
 	&__dropdown_with_mr {
 		margin-right: 20px;
+
+    @media (max-width: 370px) {
+			margin-bottom: 20px;
+      margin-right: 0;
+    }
 	}
 
   &__icon_reverse {
@@ -23,6 +32,14 @@
   font-size: 1.15rem;
   padding: 10px 20px 16px; 
   width: 280px;
+
+  @media (max-width: 370px) {
+    width: 260px;
+    margin-left: -35px;
+  }
+  @media (max-width: 320px) {
+    margin-left: -40px;
+  }
 
   &--content {
     padding: 0;

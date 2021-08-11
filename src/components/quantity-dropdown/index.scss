@@ -20,6 +20,10 @@
 		&_hidden {
 			display: none;
 		}
+
+		@media (max-width: 412px) {
+			width: calc(100%) - 1px;
+    }
 	}
 
 	&__items {
