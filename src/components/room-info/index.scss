@@ -8,5 +8,23 @@
 		border-radius: 4px;
 		border: 1px solid rgba(0, 0, 0, 0.12);
 		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+		max-width: 380px;
+		box-sizing: border-box;
+	}
+
+	&__top {
+		margin-bottom: 23px;
+	}
+
+	&__dates {
+		margin-bottom: 20px;
+	}
+
+	&__guests {
+		margin-bottom: 20px;
+	}
+
+	&__expences {
+		margin-bottom: 20px;
 	}
 }

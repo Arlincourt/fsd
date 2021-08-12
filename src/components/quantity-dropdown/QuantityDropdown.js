@@ -2,9 +2,9 @@ import * as $ from 'jquery'
 
 class QuantityDropdown {
 	constructor(element, options) {
-		this.$element = element
-		this.$dropdown = $(this.$element).find('.js-dropdown')
-		this.$input = $(this.$element).find('.js-dropdown-input')
+		this.$element = $(element)
+		this.$dropdown = this.$element.find('.js-dropdown')
+		this.$input = this.$element.find('.js-dropdown-input')
 		this._value = ''
 		this._buttons = options.buttons
 		this._options = options.options
@@ -96,7 +96,7 @@ class QuantityDropdown {
 	}
 
 	initOptionsEvents() {
-		$('.quantity-dropdown__items').on('click', (evt) => {
+		this.$element.find('.quantity-dropdown__items').on('click', (evt) => {
 			evt.stopPropagation()
 			if(evt.target.tagName.toLocaleLowerCase() === 'button' && evt.target.textContent === '-') {
 				const parent = evt.target.parentElement

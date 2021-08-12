@@ -14,7 +14,7 @@
 		top: 60px;
 		width: 100%;
 		background-color: #fff;
-		max-width: 319px;
+		max-width: 317px;
 		border-radius: 2px;
 		
 		&_hidden {
@@ -22,8 +22,8 @@
 		}
 
 		@media (max-width: 412px) {
-			width: calc(100%) - 1px;
-    }
+			width: calc(100% - 1px);
+		}
 	}
 
 	&__items {

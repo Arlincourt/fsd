@@ -1,6 +1,26 @@
-
+include ../../components/rent-info/index.pug
+include ../../components/datepicker/index.pug
+include ../../components/quantity-dropdown/index.pug
+include ../../components/expences/index.pug
+include ../../components/button/index.pug
 
 mixin room-info()
 	.room-info
 		.room-info__body 
-			
+			.room-info__top 
+				+rent-info({luxury: true, price: '9 990', number: '888'})
+			form.room-info__form(action="/fake-address")
+				.room-info__dates 
+					+datepicker()
+				.room-info__guests 
+					+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
+				.room-info__expences
+					+expences({items: [
+						{name: '9 990₽ х 4 суток', price: '39 960₽'}, 
+						{name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', icon: true}, 
+						{name: 'Сбор за дополнительные услуги', price: '300₽', icon: true},
+						],
+						total: '38 081₽'
+					})
+				.room-info__button
+					+button({text: 'забронировать', mode: ['with_arrow', 'big']})

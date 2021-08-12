@@ -1,0 +1,38 @@
+@import '@/theme/variables.scss';
+
+
+.rent-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	flex-wrap: wrap;
+
+
+	&__number {
+		display: flex;
+		align-items: baseline;
+	}
+
+	&__title {
+		margin-left: 4px;
+		margin-right: 8px;
+	}
+
+	&__luxury {
+		color: $purple;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	&__price {
+		color: $dark50;
+		font-size: 0.875rem;
+		line-height: 1.28rem;
+	}
+
+	&__text {
+		font-weight: bold;
+		font-size: 1rem;
+	}
+}

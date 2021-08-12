@@ -1,0 +1,18 @@
+include ../../components/title-3/index.pug
+
+mixin rent-info(params)
+	-
+		const luxury = params.luxury || undefined 
+		const number = params.number 
+		const price = params.price
+
+	.rent-info 
+		.rent-info__number
+			+title-3('№') 
+			h2.rent-info__title= number
+			if luxury 
+				p.rent-info__luxury люкс
+		p.rent-info__price
+			span.rent-info__text= price 
+				| &#8381; 
+			|в сутки

@@ -26,9 +26,9 @@
 			background-color: $dark25;
 			border-radius: 50%;
 			position: absolute;
-			left: 4px;
 			top: 50%;
-			transform: translateY(-50%);
+			transform: translateY(-50%) translateX(4px);
+			transition-duration: .2s;
 		}
 	}
 
@@ -40,8 +40,7 @@
 		}
 		&:checked + .checkbox__marker::after {
 			background-image: $purple-gradient;
-			right: 4px;
-			left: auto;
+			transform: translateY(-50%) translateX(24px);
 		}
 	}
 }

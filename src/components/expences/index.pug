@@ -1,0 +1,20 @@
+
+
+mixin expences(params)
+	-
+		const items = params.items 
+		const total = params.total 
+
+	.expences 
+		each item in items 
+			.expences__item 
+				.expences__name 
+					span.expences__text #{item.name}
+				p.expences__price
+					| #{item.price}
+					if item.icon 
+						span.expences__icon 
+		.expences__footer
+			h2.expences__title Итого 
+			.expences__line 
+			h2.expences__title= total
