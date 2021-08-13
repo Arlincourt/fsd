@@ -1,0 +1,34 @@
+include ../../components/rent-info/index.pug
+include ../../components/rating/index.pug
+
+mixin room-card(params)
+	-
+		const images = params.images || []
+		const buttons = params.buttons || undefined
+		const comments = params.comments || 0
+	.room-card 
+		.room-card__body 
+			.room-card__gallery 
+				if buttons
+					.room-card__button-wrapper
+						button.room-card__button.icon-expand_more
+					.room-card__button-wrapper.room-card__button-wrapper_reversed
+						button.room-card__button.room-card__button_reversed.icon-expand_more
+				.room-card__points 
+					button.room-card__point.room-card__point_filled(data-id="0") 
+					button.room-card__point(data-id="1")
+					button.room-card__point(data-id="2") 
+					button.room-card__point(data-id="3") 
+				.room-card__gallery-line 
+					each img in images
+						img(class="room-card__img" alt=img.alt src=img.src)
+			.room-card__info 
+				.room-card__rent-info
+					+rent-info({luxury: true, price: '9 990', number: '888', small: true})
+				.room-card__underline
+				.room-card__rating 
+					+rating(4)
+					p.room-card__comments
+						span.room-card__number= comments 
+						|  Отзывов 
+

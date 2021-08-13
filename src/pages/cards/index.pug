@@ -3,7 +3,9 @@ include ../../components/logo/index.pug
 include ../../components/room-wishes/index.pug
 include ../../components/register-card/index.pug
 include ../../components/room-info/index.pug
+include ../../components/login-card/index.pug
 include ../../components/calendar/index.pug
+include ../../components/room-card/index.pug
 
 block title 
 	| Cards
@@ -25,10 +27,19 @@ block content
 								+register-card()
 						.cards__column
 							.cards__item
-								+room-info
+								+room-info()
+							.cards__item
+								+login-card()
 						.cards__column
 							.cards__item
 								+calendar()
+							.cards__item
+								+room-card({comments: '145', buttons: true, images: [
+									{alt: 'room-1', src: "./room-1.png"},
+									{alt: 'room-2', src: "./room-2.png"},
+									{alt: 'room-3', src: "./room-3.png"},
+									{alt: 'room-4', src: "./room-4.png"},
+								]})
 							
 
 				
