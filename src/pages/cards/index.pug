@@ -34,11 +34,19 @@ block content
 							.cards__item
 								+calendar()
 							.cards__item
-								+room-card({comments: '145', buttons: true, images: [
+								+room-card({comments: '145', rating: 5, buttons: true, images: [
 									{alt: 'room-1', src: "./room-1.png"},
 									{alt: 'room-2', src: "./room-2.png"},
 									{alt: 'room-3', src: "./room-3.png"},
 									{alt: 'room-4', src: "./room-4.png"},
+								]})
+							
+							.cards__item
+								+room-card({comments: '65', rating: 4, images: [
+									{alt: 'room-2', src: "./room-2.png"},
+									{alt: 'room-3', src: "./room-3.png"},
+									{alt: 'room-4', src: "./room-4.png"},
+									{alt: 'room-5', src: "./room-5.png"},
 								]})
 							
 

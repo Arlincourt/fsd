@@ -6,6 +6,7 @@ mixin room-card(params)
 		const images = params.images || []
 		const buttons = params.buttons || undefined
 		const comments = params.comments || 0
+		const rating = params.rating || 0
 	.room-card 
 		.room-card__body 
 			.room-card__gallery 
@@ -27,7 +28,7 @@ mixin room-card(params)
 					+rent-info({luxury: true, price: '9 990', number: '888', small: true})
 				.room-card__underline
 				.room-card__rating 
-					+rating(4)
+					+rating(rating)
 					p.room-card__comments
 						span.room-card__number= comments 
 						|  Отзывов 
