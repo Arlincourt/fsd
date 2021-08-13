@@ -1,11 +1,16 @@
 include ../../components/title-3/index.pug
 
 mixin dropdown(params)
-	-	const label = params.label || 'Выберите'
-	-	const title = params.title || undefined
+	-
+		const label = params.label || 'Выберите'
+		const title = params.title || undefined
+		const classes = ['dropdown__body']
+		if(params.small) {
+			classes.push('dropdown__body_small')
+		}
 
 	.dropdown.js-dropdown 
-		.dropdown__body
+		div(class=classes)
 			if(title !== undefined)
 				.dropdown__title
 					+title-3(title)

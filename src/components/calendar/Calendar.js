@@ -6,22 +6,31 @@ class Calendar {
 		this.$element = $(element).parent()
 		this.$calendar = ''
 		this.$inputs = this.$element.find('.js-dropdown-input')
+		this.$contents = this.$element.find('.js-dropdown-content')
 		this.dates = []
+		
+		this.initOptions()
+		this.init()
+	}
+
+	initOptions() {
 		const that = this
 		this.options = {
-				range: true,
-				multipleDates: true,
-				prevHtml: '<i class="datepicker-item__icon_reverse icon-arrow_forward"></i>',
-				nextHtml: '<i class="icon-arrow_forward"></i>',
-				navTitles: {
-					days: 'MM yyyy',
-      	},
-				onSelect(formattedDate, date, inst) {
-					that.onSelect(formattedDate, date)
-				}
+			range: true,
+			multipleDates: true,
+			prevHtml: '<i class="datepicker-item__icon_reverse icon-arrow_forward"></i>',
+			nextHtml: '<i class="icon-arrow_forward"></i>',
+			navTitles: {
+				days: 'MM yyyy',
+			},
+			onSelect(formattedDate, date, inst) {
+				that.onSelect(formattedDate, date)
+			}
 		}
 
-		this.init()
+		if(this.$inputs.length === 1) {
+			this.options.dateFormat = 'dd M'
+		}
 	}
 
 	init() {
@@ -38,6 +47,7 @@ class Calendar {
 			this.$calendar = $(this.$inputs[0]).datepicker(this.options).data('datepicker')
 			this.addCalendarButtons()
 			this.initInputsEvents()
+			this.initContentsEvents()
 		} else {
 			this.$calendar = $(this.element).datepicker(this.options).data('datepicker')
 			this.addCalendarButtons()
@@ -54,23 +64,44 @@ class Calendar {
 		this.initButtonsEvents()
 	}
 
+	initContentsEvents() {
+		this.$contents.on('click', (evt) => {
+			this.$calendar.show()
+		})
+	}
+
 	initButtonsEvents() {
 		this.$applyBtn.on('click', () => {
-		if(this.dates.length === 2) {
-			this.$inputs.each((idx, input) => {
-				input.value = this.dates[idx]
-			})
-			this.$calendar.hide()
-		}
+			if(this.dates.length === 2 && this.$inputs.length === 2) {
+				this.$inputs.each((idx, input) => {
+					input.value = this.dates[idx]
+				})
+				this.$calendar.hide()
+			} 
+			if(this.$inputs.length === 1 && this.dates.length === 2) {
+				this.$inputs.val(this.formatToFilter(this.dates))
+			}
 		})
 		this.$clearBtn.on('click', () => {
 			this.$calendar.clear()
 			this.$calendar.hide()
+			this.clearInputValues()
+		})
+	}
+
+	clearInputValues() {
+		this.$inputs.each((idx, input) => {
+			console.log(input)
+			input.value = ''
 		})
 	}
 
 	separateInputValue(value) {
 		return value.split(',')
+	}
+
+	formatToFilter(arr) {
+		return arr[0] + ' - ' + arr[1]
 	}
 
 	initInputsEvents() {

@@ -17,6 +17,7 @@ class QuantityDropdown {
 	}
 
 	init() {
+		this.setListStyle()
 		this.initOptions()
 		this.initButtons()
 		this.$list.append(this.$items)
@@ -26,6 +27,12 @@ class QuantityDropdown {
 		this.initEvents()
 		this.setInputValue()
 		this.hideCalendar()
+	}
+
+	setListStyle() {
+		if(!this._endings) {
+			this.$list.addClass('quantity-dropdown__list_small')
+		}
 	}
 
 	initButtons() {

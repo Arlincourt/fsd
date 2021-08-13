@@ -1,0 +1,45 @@
+extends ../../theme/layouts/layout.pug
+include ../../components/logo/index.pug
+include ../../components/calendar/index.pug
+include ../../components/input/index.pug
+include ../../components/title-3/index.pug
+include ../../components/quantity-dropdown/index.pug
+include ../../components/datepicker/index.pug
+
+block title 
+	| Form Elements
+
+block content 
+
+
+	.wrapper 
+		.content 
+			.form-elements 
+				.form-elements__logo
+					+logo("./Logo-2.svg", "Logo") 
+				.form-elements__body 
+					.form-elements__row
+						.form-elements__column
+							.form-elements__item_with_20_mb
+								.form-elements__name
+									+title-3('text field')
+									p.form-elements__explanation default
+								+input({type: 'email', placeholder: 'Email'})
+							.form-elements__item_with_20_mb
+								.form-elements__name
+									+title-3('text field')
+									p.form-elements__explanation hover / focus
+								+input({type: 'email', placeholder: 'This is pretty awesome', mode: ['focused']})
+							.form-elements__item_with_20_mb
+								+quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
+							.form-elements__item_with_40_mb
+								.form-elements__name
+									+title-3('masked text field')
+								+input({type: 'text', placeholder: 'ДД.ММ.ГГГГ', masked: true})
+							.form-elements__item_with_40_mb
+								+datepicker({title1: 'date dropdown', title2: 'date dropdown', label2: '19.08.2019'})
+							.form-elements__item_with_40_mb
+								+datepicker({title1: 'filter date dropdown', label1: '19 авг - 23 авг', oneItem: true})
+						.form-elements__column
+						.form-elements__column
+					.form-elements__footer 

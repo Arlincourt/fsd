@@ -21,6 +21,10 @@
 			display: none;
 		}
 
+		&_small {
+			max-width: 266px;
+		}
+
 		@media (max-width: 412px) {
 			width: calc(100% - 1px);
 		}

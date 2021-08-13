@@ -10,10 +10,15 @@
     font-size: 1rem;
     padding: 13px 15px;
     width: 100%;
+    max-width: 320px;
     letter-spacing: 1px;
     line-height: 1.28rem;
     box-sizing: border-box;
     outline: none;
+
+    &_small {
+      max-width: 266px;
+    }
 
     &::placeholder {
       color: $dark25;

@@ -81,6 +81,13 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/form-elements/index.pug',
+			filename: 'form-elements.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),
