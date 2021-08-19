@@ -14,16 +14,10 @@ class RangeSlider {
   init() {
     this.$rangeSlider = noUiSlider.create(this.$item, this.options)
     this.initEvents()
-    this.setTransform()
   }
 
   initEvents() {
     this.$rangeSlider.on('update', this.onChange.bind(this))
-    // this.$connect = this.$rangeSlider.querySelector('.noUi-connect')
-  }
-
-  setTransform() {
-    
   }
 
   onChange(values, handle, unencoded, tap, positions, noUiSlider) {
