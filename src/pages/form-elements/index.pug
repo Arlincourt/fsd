@@ -12,6 +12,7 @@ include ../../components/radio/index.pug
 include ../../components/checkbox-toggle/index.pug
 include ../../components/like/index.pug
 include ../../components/rating/index.pug
+include ../../components/range-slider/index.pug
 
 block title 
 	| Form Elements
@@ -126,4 +127,6 @@ block content
 								.form-elements__checkbox
 									+checkbox({name: 'help', title: 'Помощник для инвалидов', describe: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
 						.form-elements__column
+							.form-elements__item.form-elements__item_with_40_mb
+								+range-slider({title: 'Range Slider'})
 					.form-elements__footer 

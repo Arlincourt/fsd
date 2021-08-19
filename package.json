@@ -40,6 +40,7 @@
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "jquery": "^3.6.0",
-    "jquery.maskedinput": "^1.4.1"
+    "jquery.maskedinput": "^1.4.1",
+    "nouislider": "^15.4.0"
   }
 }

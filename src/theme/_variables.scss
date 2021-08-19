@@ -7,6 +7,7 @@ $purple: #bc9cff;
 $green: #6fcf97;
 $gray:#E5E5E5;
 $blue: #8BA4F9;
+$light-blue: #66D2EA;
 
 $linear-gradient: linear-gradient(
   180deg,
@@ -14,6 +15,6 @@ $linear-gradient: linear-gradient(
   rgba(139, 164, 249, 1) 100%
 );
 
-$green-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $purple-gradient: linear-gradient(180deg, rgba($purple, 100%) 0%, rgba($blue, 100%) 100%);
 $purple-gradient25: linear-gradient(180deg, rgba($purple, 0.25) 0%, rgba($blue, 0.25) 100%);
