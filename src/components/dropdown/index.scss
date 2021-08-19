@@ -1,13 +1,9 @@
 @import '@theme/variables.scss';
 
 .dropdown {
-
+	width: 100%;
 	&__body {
 		box-sizing: border-box;
-
-		&_small {
-			max-width: 266px;
-		}
 	}
 
 	&__content {

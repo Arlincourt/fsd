@@ -4,7 +4,9 @@ mixin input(params)
     let mode = params.mode || undefined
     let masked = params.masked || undefined
     let button = params.button || undefined
+    const small = params.small || undefined
     const type = params.type || 'text'
+    const formClasses = ['form-control']
     let classes = []
     if(masked !== undefined) 
       classes.push('js-input-masked')
@@ -12,12 +14,15 @@ mixin input(params)
       mode = mode.map((item)=> `${defaultClass}_${item}`)
       classes = mode
     }
+    if(small !== undefined){
+      formClasses.push('form-control_small')
+    }
     classes.unshift('form-control__input')
 
   if(button!== undefined) 
-    .form-control
+    div(class=formClasses)
       input(type=params.type, placeholder=params.placeholder, class=classes)
       button.form-control__button.icon-arrow_forward
   else 
-    .form-control
+    div.form-control
       input(type=type, placeholder=params.placeholder, class=classes)

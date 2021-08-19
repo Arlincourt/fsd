@@ -3,6 +3,10 @@
 .form-control {
   position: relative;
 
+  &_small {
+    max-width: 266px;
+  }
+
   &__input {
     color: $dark75;
     border: 1px solid $dark25;
@@ -15,10 +19,6 @@
     line-height: 1.28rem;
     box-sizing: border-box;
     outline: none;
-
-    &_small {
-      max-width: 266px;
-    }
 
     &::placeholder {
       color: $dark25;

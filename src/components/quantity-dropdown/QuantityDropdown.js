@@ -9,6 +9,8 @@ class QuantityDropdown {
 		this._buttons = options.buttons
 		this._options = options.options
 		this._endings = options.endings
+		this._words = options.words
+		this._visible = options.visible
 		this.$list = $('<div class="quantity-dropdown__list js-quantity-dropdown__list"></div>')
 		this.$items = $('<div class="quantity-dropdown__items"></div>')
 		this.$apply = ''
@@ -17,7 +19,6 @@ class QuantityDropdown {
 	}
 
 	init() {
-		this.setListStyle()
 		this.initOptions()
 		this.initButtons()
 		this.$list.append(this.$items)
@@ -26,13 +27,10 @@ class QuantityDropdown {
 		this.initButtonsEvents()
 		this.initEvents()
 		this.setInputValue()
-		this.hideCalendar()
-	}
-
-	setListStyle() {
-		if(!this._endings) {
-			this.$list.addClass('quantity-dropdown__list_small')
+		if(!this._visible) {
+			this.hideCalendar()
 		}
+		this.isZero()
 	}
 
 	initButtons() {
@@ -52,7 +50,7 @@ class QuantityDropdown {
 			evt.preventDefault()
 			evt.stopPropagation()
 			if(this.$list.hasClass('quantity-dropdown__list_hidden')) {
-				this.$list.removeClass('quantity-dropdown__list_hidden')
+				this.showCalendar()
 			} else {
 				this.hideCalendar()
 			}
@@ -102,6 +100,10 @@ class QuantityDropdown {
 		this.$list.addClass('quantity-dropdown__list_hidden')
 	}
 
+	showCalendar() {
+		this.$list.removeClass('quantity-dropdown__list_hidden')
+	}
+
 	initOptionsEvents() {
 		this.$element.find('.quantity-dropdown__items').on('click', (evt) => {
 			evt.stopPropagation()
@@ -124,7 +126,9 @@ class QuantityDropdown {
 				if(this._options[idx].value === 1) {
 					parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled')
 				}
-				this.$clean.removeClass('btn_transparent_hidden')
+				if(this.$clean) {
+					this.$clean.removeClass('btn_transparent_hidden')
+				}
 				this.setInputValue()
 			}
 		})
@@ -142,7 +146,9 @@ class QuantityDropdown {
 			}
 		})
 		if(isAllZero) {
-			this.$clean.addClass('btn_transparent_hidden')
+			if(this.$clean) {
+				this.$clean.addClass('btn_transparent_hidden')
+			}
 			this.$input.val('')
 		} else {
 			this.setInputValue()
@@ -159,7 +165,7 @@ class QuantityDropdown {
 			} else if(total > 4) {
 				this.$input.val(`${total} ${this._endings[2]}`)
 			}
-		} else {
+		} else if(this._words) {
 			const result = this.getOptionsValues()
 			let str = ``
 			for(let key in result) {
@@ -172,8 +178,24 @@ class QuantityDropdown {
 					str = str + ` ${value} ${result[key].endings[2]},`
 				}
 			}
-			if(str.length > 23) {
-				str = str.substr(0, 20)
+			str = str.substring(0, str.length - 1)
+			this.$input.val(str)
+		}	else {
+			const result = this.getOptionsValues()
+			let str = ``
+			for(let key in result) {
+				let value = result[key].value
+				if(value === 1) {
+					str = str + `${value} ${result[key].endings[0]},`
+				} else if(value > 1 && value < 5) {
+					str = str + ` ${value} ${result[key].endings[1]},`
+				} else if(value > 4) {
+					str = str + ` ${value} ${result[key].endings[2]},`
+				}
+			}
+			str = str.substring(0, str.length - 1)
+			if(str.replace(/\s+/g, '').length > 16) {
+				str = str.substr(0, 21)
 				str = str + '...'
 			}
 			this.$input.val(str)
@@ -187,7 +209,12 @@ class QuantityDropdown {
 				total += option.value
 			})
 			return total
-		} else {
+		} else if(this._words) {
+			let result = {}
+			result['0'] = {value: this._options[0].value + this._options[1].value, endings: this._words[0]}
+			result['1'] = {value: this._options[2].value, endings: this._words[1]}
+			return result
+		}	else {
 			let result = {}
 			this._options.forEach((option) => {
 				result[option.name] = {value: option.value, endings: option.endings}

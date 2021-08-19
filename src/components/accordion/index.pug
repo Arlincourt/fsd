@@ -1,0 +1,17 @@
+include ../../components/title-3/index.pug
+include ../../components/checkbox/index.pug
+
+mixin accordion(params)
+	-
+		const title = params.title || 'accordion'
+		const items = params.items || []
+	.accordion 
+		.accordion__expander.js-accordion-expander
+			.accordion__title 
+				+title-3(title)
+			button.accordion__icon.icon-expand_more.js-accordion-icon
+		.accordion__list.js-accordion-list
+			each item in items
+				.accordion__item 
+					+checkbox(item)
+		

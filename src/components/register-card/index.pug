@@ -3,7 +3,7 @@ include ../../components/title-3/index.pug
 include ../../components/input/index.pug
 include ../../components/radio/index.pug
 include ../../components/button/index.pug
-include ../../components/checkbox/index.pug
+include ../../components/checkbox-toggle/index.pug
 
 mixin register-card()
 	.register-card 
@@ -28,7 +28,7 @@ mixin register-card()
 				.register-card__input
 					+input({type: 'text', placeholder: 'Пароль'}) 
 				.register-card__checkbox
-					+checkbox({label: 'Получать спецпредложения', name: 'special-offer'}) 
+					+checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer'}) 
 				.register-card__button
 					+button({text: 'перейти к оплате', mode: ['with_arrow', 'big']})
 			.register-card__question

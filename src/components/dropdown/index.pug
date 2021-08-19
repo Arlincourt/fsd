@@ -4,13 +4,9 @@ mixin dropdown(params)
 	-
 		const label = params.label || 'Выберите'
 		const title = params.title || undefined
-		const classes = ['dropdown__body']
-		if(params.small) {
-			classes.push('dropdown__body_small')
-		}
 
 	.dropdown.js-dropdown 
-		div(class=classes)
+		.dropdown__body
 			if(title !== undefined)
 				.dropdown__title
 					+title-3(title)

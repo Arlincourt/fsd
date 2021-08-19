@@ -23,13 +23,24 @@
 	}
 
 	&__column {
-		max-width: 320px;
+		width: 320px;
 	}
 
 	&__name {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 5px;
+
+		&_small {
+			max-width: 266px;
+		}
+
+		&_with_15_mb {
+			margin-bottom: 15px;
+		}
+		&_with_20_mb {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__explanation {
@@ -44,5 +55,36 @@
 	}
 	&__item_with_40_mb {
 		margin-bottom: 40px;
+	}
+	&__item_with_100_mb {
+		margin-bottom: 100px;
+	}
+	&__item_with_170_mb {
+		margin-bottom: 170px;
+	}
+	&__item_with_195_mb {
+		margin-bottom: 195px;
+	}
+	&__item_with_255_mb {
+		margin-bottom: 255px;
+	}
+
+	&__checkbox {
+		margin-bottom: 10px;
+	}
+
+	&__toggle {
+		margin-bottom: 14px;
+	}
+
+	&__likes {
+		display: flex;
+		width: 90px;
+		justify-content: space-between;
+	}
+
+	&__rates {
+		display: flex;
+		justify-content: space-between;
 	}
 }
