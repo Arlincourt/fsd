@@ -13,6 +13,8 @@ include ../../components/checkbox-toggle/index.pug
 include ../../components/like/index.pug
 include ../../components/rating/index.pug
 include ../../components/range-slider/index.pug
+include ../../components/button/index.pug
+include ../../components/pagination/index.pug
 
 block title 
 	| Form Elements
@@ -129,4 +131,28 @@ block content
 						.form-elements__column
 							.form-elements__item.form-elements__item_with_40_mb
 								+range-slider({title: 'Range Slider'})
+							.form-elements__item.form-elements__item_with_40_mb
+								.form-elements__name.form-elements__name_with_15_mb
+										+title-3('buttons')
+								.form-elements__buttons 
+									.form-elements__button-item 
+										+button({mode: ['with_big_padding', 'linear']})
+										+button({mode: ['with_big_padding', 'linear', 'with_big_padding_disabled']})
+									.form-elements__button-item 
+										+button({mode: ['with_big_padding', 'bordered']})
+										+button({mode: ['with_big_padding', 'bordered', 'bordered_disabled']})
+									+button({mode: ['transparent', 'with_mr-20']})
+									+button({mode: ['transparent', 'transparent_disabled']})
+									.form-elements__big-button 
+										+button({text: 'перейти к оплате', mode: ['big', 'with_arrow']})
+							.form-elements__item.form-elements__item_with_40_mb
+								.form-elements__name.form-elements__name_with_15_mb
+										+title-3('pagination')
+								+pagination({items: [
+									{current: true, number: 1},
+									{number: 2},
+									{number: 3},
+									{ellipsis: true},
+									{number: 15},
+								]})
 					.form-elements__footer 

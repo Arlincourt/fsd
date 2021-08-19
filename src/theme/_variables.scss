@@ -14,6 +14,11 @@ $linear-gradient: linear-gradient(
   rgba(188, 156, 255, 1) 0%,
   rgba(139, 164, 249, 1) 100%
 );
+$linear-gradient50: linear-gradient(
+  180deg,
+  rgba(188, 156, 255, .5) 0%,
+  rgba(139, 164, 249, .5) 100%
+);
 
 $green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $purple-gradient: linear-gradient(180deg, rgba($purple, 100%) 0%, rgba($blue, 100%) 100%);

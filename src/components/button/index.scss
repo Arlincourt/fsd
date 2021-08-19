@@ -21,7 +21,7 @@ $arrow-rl: 15px + 24px + 14px;
   min-width: 87px;
 
 	&_linear {
-		background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+		background: $purple-gradient;
 		color: #fff;
 	}
 	&_bordered {
@@ -32,6 +32,11 @@ $arrow-rl: 15px + 24px + 14px;
     background-origin: border-box;
     background-clip: padding-box, border-box;
     color: $purple;
+
+    &_disabled {
+      background-image: linear-gradient(white, white), $linear-gradient50;
+      cursor: auto;
+    }
 	}
 
   &_big {
@@ -46,6 +51,11 @@ $arrow-rl: 15px + 24px + 14px;
   &_with_big_padding {
     padding: 14px 18px;
     min-width: 99px;
+
+    &_disabled {
+      opacity: .5;
+      cursor: auto;
+    }
   }
 
   &_with_arrow {
@@ -79,6 +89,9 @@ $arrow-rl: 15px + 24px + 14px;
 		text-transform: uppercase;
 		border: none;
 		background-color: transparent;
+    padding: 0px;
+    background: none;
+    min-width: 0px;
 		cursor: pointer;
 		color: $purple;
 
@@ -89,6 +102,7 @@ $arrow-rl: 15px + 24px + 14px;
 
     &_disabled {
       color: $dark50;
+      cursor: auto;
     }
   }
 }

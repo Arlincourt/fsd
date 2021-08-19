@@ -53,6 +53,9 @@
 	&__item_with_20_mb {
 		margin-bottom: 20px;
 	}
+	&__item_with_30_mb {
+		margin-bottom: 30px;
+	}
 	&__item_with_40_mb {
 		margin-bottom: 40px;
 	}
@@ -86,5 +89,15 @@
 	&__rates {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	&__button-item {
+		display: flex;
+		justify-content: space-between;
+		max-width: 220px;
+		margin-bottom: 30px;
+	}
+	&__big-button {
+		margin-top: 30px;
 	}
 }
