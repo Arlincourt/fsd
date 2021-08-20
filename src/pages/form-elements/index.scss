@@ -68,6 +68,9 @@
 	&__item_with_195_mb {
 		margin-bottom: 195px;
 	}
+	&__item_with_230_mb {
+		margin-bottom: 230px;
+	}
 	&__item_with_255_mb {
 		margin-bottom: 255px;
 	}
@@ -99,5 +102,12 @@
 	}
 	&__big-button {
 		margin-top: 30px;
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 }

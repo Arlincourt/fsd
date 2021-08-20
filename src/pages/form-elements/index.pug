@@ -15,6 +15,8 @@ include ../../components/rating/index.pug
 include ../../components/range-slider/index.pug
 include ../../components/button/index.pug
 include ../../components/pagination/index.pug
+include ../../components/bulled-list/index.pug
+include ../../components/comment/index.pug
 
 block title 
 	| Form Elements
@@ -82,10 +84,6 @@ block content
 									{name: 'TV', text: 'Телевизор', checked: false},
 									{name: 'shampoo', text: 'Шампунь', checked: false},
 								]})
-							.form-elements__item
-								+advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', border: true, class: 'icon-smile'})
-							.form-elements__item
-								+advantage({text: 'Окно в каждой из спален', name: 'Удобство', border: true, class: 'icon-location_city'})
 						.form-elements__column
 							.form-elements__item.form-elements__item_with_40_mb
 								.form-elements__name.form-elements__name_with_15_mb 
@@ -145,7 +143,7 @@ block content
 									+button({mode: ['transparent', 'transparent_disabled']})
 									.form-elements__big-button 
 										+button({text: 'перейти к оплате', mode: ['big', 'with_arrow']})
-							.form-elements__item.form-elements__item_with_40_mb
+							.form-elements__item.form-elements__item_with_230_mb
 								.form-elements__name.form-elements__name_with_15_mb
 										+title-3('pagination')
 								+pagination({items: [
@@ -155,4 +153,30 @@ block content
 									{ellipsis: true},
 									{number: 15},
 								]})
-					.form-elements__footer 
+							.form-elements__item.form-elements__item_with_255_mb
+								+quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
+							.form-elements__item.form-elements__item_with_230_mb
+								.form-elements__name.form-elements__name_with_20_mb
+										+title-3('bullet list')
+								+bulled-list({items: [
+									{text: 'Нельзя с питомцами'},
+									{text: 'Без вечеринок и мероприятий'},
+									{text: 'Время прибытия — после 13:00, а выезд до 12:00'},
+								]})
+					footer.form-elements__footer 
+						.form-elements__advantages 
+							.form-elements__item
+									+advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', border: true, class: 'icon-smile'})
+							.form-elements__item
+								+advantage({text: 'Окно в каждой из спален', name: 'Удобство', border: true, class: 'icon-location_city'})
+						.form-elements__comment 
+							+comment({
+								src: './avatar-1.jpg',
+								alt: 'Мурад Сарафанов',
+								time: '5 дней назад',
+								number: 12,
+								active: true,
+								name: 'Мурад Сарафанов',
+								message: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, 
+									действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+							})
