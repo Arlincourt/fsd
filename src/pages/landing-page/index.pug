@@ -1,13 +1,12 @@
 extends ../../theme/layouts/layout.pug
-include ../../components/logo/index.pug
+include ../../components/room-wishes/index.pug
 include ../../components/header/index.pug
-include ../../components/footer-small/index.pug
 include ../../components/footer/index.pug
 
 block title 
-	| Headers&Footers
+	| Landing Page
 
-block content 
+block header 
 	- 
 		const menu = [
 			{
@@ -87,16 +86,15 @@ block content
 			placeholder: "Email"
 		}
 
-	.headers
-		.headers__body
-			.headers__logo
-				+logo("./Logo-2.svg", "Logo") 
-			.headers__example
-				+header({user: false, menu: menu})
-			.headers__example
-				+header({user: 'Юлий Цезарь', menu: menu})
-			.headers__example
-				+footer(text, navigation, copy, subscribtion)
-			.headers__example
-				+footer-small(copy)
+	+header({user: false, menu: menu})
+
+block content
+	.landing-page 
+		.landing-page__body 
+			+room-wishes()
+			p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения 
+
+block footer
+	+footer(text, navigation, copy, subscribtion)
+
 			

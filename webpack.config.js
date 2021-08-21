@@ -63,6 +63,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: './src/pages/headers/index.pug',
+			filename: 'headers.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
@@ -88,6 +89,13 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/landing-page/index.pug',
+			filename: 'landing-page.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),
@@ -99,10 +107,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'css-loader']
-			},
-			{
 				test: /\.(png|jpg|svg)$/,
 				exclude: /src\/theme/,
 				use: [
@@ -113,6 +117,10 @@ module.exports = {
 							useRelativePath: true,	
 						},
 				}]
+			},
+			{
+				test: /\.css$/,
+				use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'css-loader']
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,

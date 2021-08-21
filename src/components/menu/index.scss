@@ -3,7 +3,7 @@
 .menu {
 
   &__list {
-		max-width: 450px;
+		max-width: 520px;
 		display: inline-flex;
 		align-items: center;
 		flex-wrap: wrap;
@@ -84,7 +84,11 @@
     &:after {
       content: '\e903';
       font-family: "icons";
-			padding-left: 3px;
+			padding-left: 5px;
+			width: 24px;
+			height: 21px;
+			font-size: 0.875rem;
+			line-height: 1.71rem;
     }
 	}
 }
