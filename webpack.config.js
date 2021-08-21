@@ -97,7 +97,7 @@ module.exports = {
 			}
 		}),
 		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash].css',
+			filename: '[name].[contenthash].css'
 		}),
 		new webpack.ProvidePlugin({
 			$: "jquery",
@@ -108,8 +108,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(png|jpg|svg)$/,
-				exclude: [/src\/theme/],
-				type: "asset",
+				exclude: [/src\/theme/, /src\/assets/],
 				use: [
 					{
 						loader: 'file-loader',
@@ -121,30 +120,24 @@ module.exports = {
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
-				exclude: [/src\/components/, /src\/pages/, /src\/assets/,],
+				exclude: [/src\/components/, /src\/assets/, /src\/pages/,],
         type: "asset/resource",
 			},
 			{
 				test: /\.s[ac]ss$/,
-				use: [
-					MiniCssExtractPlugin.loader, 
-					{
-						loader: 'css-loader',
-						options: {
-							url: {
-								filter: (url, resourcePath) => {
-									if (url.includes(".png")) {
-										return false;
-									}
-		
-									return true;
-								},
+				use: [MiniCssExtractPlugin.loader, {
+					loader: 'css-loader',
+					options: {
+						url: {
+							filter: (url, resourcePath) => {
+								if (url.includes(".png")) {
+									return false;
+								}
+								return true;
 							},
 						},
-					}, 
-					'postcss-loader', 
-					'sass-loader'
-				]
+					}
+				}, 'postcss-loader', 'sass-loader'],
 			},
 			{
         test: /\.pug$/,
