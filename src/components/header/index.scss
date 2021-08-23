@@ -7,15 +7,16 @@
 	&__body {
 		max-width: 1190px;
 		display: flex;
-		padding: 0px 15px;
+		padding: 15px;
 		margin: 0 auto;
 		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
 	}
 
 	&__logo {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		width: 106px;
+		height: 40px;
 
 		@media (max-width: 767px) {
 			display: none;

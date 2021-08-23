@@ -9,7 +9,7 @@ mixin accordion(params)
 		.accordion__expander.js-accordion-expander
 			.accordion__title 
 				+title-3(title)
-			button.accordion__icon.icon-expand_more.js-accordion-icon
+			button.accordion__icon.icon-expand_more.js-accordion-icon(type="button")
 		.accordion__list.js-accordion-list
 			each item in items
 				.accordion__item 

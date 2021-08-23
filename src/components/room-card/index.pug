@@ -7,8 +7,12 @@ mixin room-card(params)
 		const buttons = params.buttons || undefined
 		const comments = params.comments || 0
 		const rating = params.rating || 0
+		const luxury = params.luxury || false
+		const price = params.price || '9 990'
+		const number = params.number || '888'
+		const small = params.small || true
 	.room-card 
-		.room-card__body 
+		.room-card__body
 			.room-card__gallery 
 				if buttons
 					.room-card__button-wrapper
@@ -25,7 +29,7 @@ mixin room-card(params)
 						img(class="room-card__img" alt=img.alt src=img.src)
 			.room-card__info 
 				.room-card__rent-info
-					+rent-info({luxury: true, price: '9 990', number: '888', small: true})
+					+rent-info({luxury: luxury, price: price, number: number, small: small})
 				.room-card__underline
 				.room-card__rating 
 					+rating(rating)

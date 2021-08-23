@@ -6,9 +6,10 @@ $(() => {
 	new QuantityDropdown(dropdown, {
 		buttons: true,
 		options: [
-			{name: 'взрослых', value: 0},
+			{name: 'взрослые', value: 0},
 			{name: 'дети', value: 0},
+			{name: 'младенцы', value: 0},
 		], 
-		endings: ['гость', 'гостя', 'гостей']
+		words: [['гость', 'гостя', 'гостей'], ['младенец', 'младенца', 'младенцев']]
 	})
 })

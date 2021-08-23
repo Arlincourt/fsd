@@ -75,11 +75,11 @@
 
     &.-selected- {
       border-radius: 50%;
-      background-image: $linear-gradient;
+      background-image: $purple-gradient;
       font-weight: bold;
 
       &.-focus- {
-      	background-image: $linear-gradient;
+      	background-image: $purple-gradient;
       }
     }
 

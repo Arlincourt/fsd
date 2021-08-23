@@ -9,17 +9,9 @@ $gray:#E5E5E5;
 $blue: #8BA4F9;
 $light-blue: #66D2EA;
 
-$linear-gradient: linear-gradient(
-  180deg,
-  rgba(188, 156, 255, 1) 0%,
-  rgba(139, 164, 249, 1) 100%
-);
-$linear-gradient50: linear-gradient(
-  180deg,
-  rgba(188, 156, 255, .5) 0%,
-  rgba(139, 164, 249, .5) 100%
-);
+
 
 $green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $purple-gradient: linear-gradient(180deg, rgba($purple, 100%) 0%, rgba($blue, 100%) 100%);
+$purple-gradient50: linear-gradient(180deg,rgba($purple, .5) 0%, rgba($blue, .5) 100%);
 $purple-gradient25: linear-gradient(180deg, rgba($purple, 0.25) 0%, rgba($blue, 0.25) 100%);
