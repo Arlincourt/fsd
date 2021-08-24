@@ -11,11 +11,10 @@ mixin dropdown(params)
 		}
 
 	div(class=classes)
-		.dropdown__body
-			if(title !== undefined)
-				.dropdown__title
-					+title-3(title)
-			.dropdown__content.js-dropdown-content
-				label.dropdown__label
-					input(placeholder=label class="dropdown__input js-dropdown-input")
+		if(title !== undefined)
+			.dropdown__title
+				+title-3(title)
+		.dropdown__content.js-dropdown-content
+			label.dropdown__label
+				input(placeholder=label class="dropdown__input js-dropdown-input")
 						
