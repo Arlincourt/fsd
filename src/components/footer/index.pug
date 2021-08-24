@@ -28,8 +28,6 @@ mixin footer(text, navigation, copy, subscribtion)
               +input({type: 'text', placeholder: subscribtion.placeholder, button: true})
 
       section.footer__bottom
-        .footer__block
-          .footer__copy
-            p.footer__paragraph= copy
-          .footer__socials
-            +socials()
+        p.footer__copy= copy
+        .footer__socials
+          +socials()
