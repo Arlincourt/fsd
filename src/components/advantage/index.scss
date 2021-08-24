@@ -1,0 +1,40 @@
+@import '@/theme/variables.scss';
+
+
+.advantage {
+
+  &__body {
+    padding: 20px 0px;
+    display: flex;
+    width: 280px;
+    align-items: center;
+
+    &_with_border {
+      border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    }
+  }
+
+  &__icon {
+    font-size: 3.42rem;
+    margin-right: 10px;
+    background-image: $purple-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+
+  &__name {
+    color: $dark75;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    color: $dark75;
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+
+}

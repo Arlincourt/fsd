@@ -1,0 +1,157 @@
+@import '@theme/variables.scss';
+@import '~air-datepicker/src/sass/datepicker.scss';
+@import '~air-datepicker/src/sass/navigation.scss';
+@import '~air-datepicker/src/sass/cell.scss';
+
+.datepicker-item {
+
+	&__dropdowns {
+		display: flex;
+    
+    @media (max-width: 370px) {
+			flex-wrap: wrap;
+    }
+	}
+
+	&__dropdown_with_mr {
+		margin-right: 20px;
+
+    @media (max-width: 370px) {
+			margin-bottom: 20px;
+      margin-right: 0;
+    }
+	}
+
+  &__icon_reverse {
+    transform: scaleX(-1);
+  }
+}
+
+
+
+.datepicker {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.15rem;
+  padding: 10px 20px 16px; 
+  width: 320px;
+  box-sizing: border-box;
+
+  @media (max-width: 370px) {
+    width: 280px;
+    margin-left: -35px;
+  }
+  @media (max-width: 320px) {
+    margin-left: -40px;
+  }
+
+  &--content {
+    padding: 0;
+  }
+
+  &--cell {
+    height: 40px;
+		font-size: 0.85rem;
+    color: $dark50;
+
+    &.-current- {
+      background-image: $green-gradient;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+
+      &.-focus- {
+        background-image: $green-gradient;
+        color: #fff;
+      }
+
+      &.-in-range- {
+        color: #fff;
+      }
+    }
+
+    &.-focus- {
+      background: none;
+    }
+
+    &.-selected- {
+      border-radius: 50%;
+      background-image: $purple-gradient;
+      font-weight: bold;
+
+      &.-focus- {
+      	background-image: $purple-gradient;
+      }
+    }
+
+		&.-range-to- {
+			border: none;
+		}
+
+    &.-in-range- {
+      background: $purple-gradient25;
+      color: $dark50;
+    }
+
+    &.-range-from- {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 40px;
+        background-image: $purple-gradient25;
+        right: 0;
+      }
+    }
+
+    &.-range-to- {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 40px;
+        background-image: $purple-gradient25;
+        left: 0;
+      }
+    }
+  }
+
+  &--day-name {
+    font-weight: bold;
+    color: $purple;
+    width: 40px;
+    height: 40px;
+    text-transform: none;
+  }
+
+  &--nav {
+    border-bottom: none;
+    padding: 6px 0 14px;
+    font-size: 1.7rem;
+  }
+
+  &--nav-action {
+    width: auto;
+    color: $purple;
+  }
+
+  &--pointer {
+    display: none;
+  }
+
+  &--nav-title,
+  &--nav-title i {
+    color: $dark100;
+    font-size: 1.35rem;
+    font-weight: bold;
+  }
+
+  &--actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}

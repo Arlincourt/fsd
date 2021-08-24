@@ -1,0 +1,127 @@
+@import '@/theme/variables.scss';
+
+.filter {
+  border-bottom: 1px solid $dark25;
+
+  &__body {
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__sidebar {
+    width: 266px;
+    flex-shrink: 0;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    @media (max-width: 992px) {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__sidebar-item {
+    margin-bottom: 20px;
+
+    &_with_30_mb {
+      margin-bottom: 30px;
+    }
+    &_with_23_mb {
+      margin-bottom: 23px;
+    }
+
+    @media (max-width: 992px) {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  &__range-info {
+    color: $dark50;
+    font-size: 0.860rem;
+    line-height: 1rem;
+    margin-top: 13.5px;
+    text-transform: none;
+  }
+
+  &__subtitle {
+    margin-bottom: 16.5px;
+  }
+
+  &__checkbox {
+    margin-bottom: 11px;
+  }
+
+  &__content {
+    flex-grow: 1;
+    margin-left: 30px;
+    max-width: 835px;
+    
+    @media (max-width: 992px) {
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+  }
+
+  &__rooms {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  &__room-card {
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+
+  &__pagination {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__footer_big {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__footer_small {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

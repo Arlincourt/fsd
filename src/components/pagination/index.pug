@@ -1,0 +1,20 @@
+
+
+mixin pagination(params)
+  -
+    const info = params.info || '1 – 12 из 100+ вариантов аренды'
+    const items = params.items || []
+
+  .pagination 
+    .pagination__items
+      each item in items 
+        if item.current 
+          a(href="/fake-address" class="pagination__link pagination__link_current")= item.number
+        if (item.number && !item.current) 
+          a(href="/fake-address" class="pagination__link")= item.number
+        if item.ellipsis
+          .pagination__ellipsis ... 
+      button(class="pagination__button icon-arrow_forward")
+    p.pagination__info= info 
+
+  

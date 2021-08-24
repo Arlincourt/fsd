@@ -1,0 +1,48 @@
+@import '@/theme/variables.scss';
+
+.colors {
+
+	&__logo {
+		padding-top: 30px;
+		padding-left: 30px;
+		margin-bottom: 63px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1190px;
+		padding: 0 15px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	&__example {
+		display: flex;
+		margin-bottom: 55px;
+		max-width: 436px;
+	}
+
+	&__tag {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+		text-align: right;
+		color: $dark25;
+		margin-right: 30px;
+
+		&_md {
+			font-size: 19px;
+			line-height: 23px;
+		}
+		&_sm {
+			font-size: 14px;
+			line-height: 24px;
+		}
+		&_xl {
+			font-size: 12px;
+			line-height: 15px;
+		}
+	}
+}

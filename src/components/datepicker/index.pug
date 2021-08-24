@@ -1,0 +1,34 @@
+include ../../components/dropdown/index.pug
+include ../../components/calendar/index.pug
+
+mixin datepicker(params)
+	-
+		let title1
+		let label1
+		let title2
+		let label2
+		let oneItem
+		if(params) {
+			title1 = params.title1 || 'прибытие'
+			label1 = params.label1 || 'ДД.ММ.ГГГГ'
+			title2 = params.title2 || 'выезд'
+			label2 = params.label2 || 'ДД.ММ.ГГГГ'
+			oneItem = params.oneItem || undefined
+		} else {
+			title1 = 'прибытие'
+			label1 = 'ДД.ММ.ГГГГ'
+			title2 = 'выезд'
+			label2 = 'ДД.ММ.ГГГГ'
+		}
+	.datepicker-item.js-datepicker-item
+		.datepicker-item__body
+			+calendar()
+			.datepicker-item__dropdowns 
+				if oneItem 
+					+dropdown({label: label1, title: title1, small: true})
+				else
+					.datepicker-item__dropdown.datepicker-item__dropdown_with_mr
+						+dropdown({label: label1, title: title1})
+					.datepicker-item__dropdown
+						+dropdown({label: label2, title: title2})
+				

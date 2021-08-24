@@ -1,0 +1,21 @@
+include ../../components/title-1/index.pug
+include ../../components/title-3/index.pug
+include ../../components/input/index.pug
+include ../../components/radio/index.pug
+include ../../components/button/index.pug
+
+mixin login-card()
+	.login-card 
+		.login-card__body 
+			.login-card__title
+				+title-1('Войти')
+			form.login-card__form(action="/fake-address")
+				.login-card__input
+					+input({type: 'email', placeholder: 'Email'}) 
+				.login-card__input
+					+input({type: 'text', placeholder: 'Пароль'}) 
+				.login-card__button
+					+button({text: 'войти', mode: ['with_arrow', 'big']})
+			.login-card__question
+				p.login-card__paragraph Нет аккаунта на Toxin?
+				+button({link: true, text: 'создать', mode: ['bordered', 'with_big_padding']})

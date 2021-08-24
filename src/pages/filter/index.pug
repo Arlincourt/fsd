@@ -1,0 +1,319 @@
+extends ../../theme/layouts/layout.pug
+include ../../components/header/index.pug
+include ../../components/footer/index.pug
+include ../../components/datepicker/index.pug
+include ../../components/quantity-dropdown/index.pug
+include ../../components/range-slider/index.pug
+include ../../components/title-3/index.pug
+include ../../components/checkbox/index.pug
+include ../../components/accordion/index.pug
+include ../../components/title-1/index.pug
+include ../../components/room-card/index.pug
+include ../../components/pagination/index.pug
+include ../../components/footer-small/index.pug
+
+block title 
+	| Filter
+
+block header 
+	- 
+		const menu = [
+			{
+				text: "О нас",
+				link: "/fake-address",
+			},
+			{
+				text: "Услуги",
+				link: [
+					{
+						text: "Услуга 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Услуга 2",
+						link: "/fake-address"
+					},
+				]
+			}, 
+			{
+				text: "Вакансии",
+				link: "/fake-address",
+			},
+			{
+				text: "Новости",
+				link: "/fake-address",
+			},
+			{
+				text: "Соглашения",
+				link: [
+					{
+						text: "Соглашение 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Соглашение 2",
+						link: "/fake-address"
+					},
+				]
+			},
+		]
+
+		const navigation = [
+			{
+				title: 'Навигация',
+				links: [
+					{url: '/fake-address', text: 'О нас'},
+					{url: '/fake-address', text: 'Новости'},
+					{url: '/fake-address', text: 'Служба поддержки'},
+					{url: '/fake-address', text: 'Услуги'},
+				]
+			},
+			{
+				title: 'О нас',
+				links: [
+					{url: '/fake-address', text: 'О сервисе'},
+					{url: '/fake-address', text: 'Наша команда'},
+					{url: '/fake-address', text: 'Вакансии'},
+					{url: '/fake-address', text: 'Инвесторы'},
+				]
+			},
+			{
+				title: 'Служба поддержки',
+				links: [
+					{url: '/fake-address', text: 'Соглашения'},
+					{url: '/fake-address', text: 'Сообщества'},
+					{url: '/fake-address', text: 'Связь с нами'},
+				]
+			},
+		]
+		const text = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»' 
+		const copy = 'Copyright © 2018 Toxin отель. Все права защищены.' 
+		const subscribtion = {
+			title: "Подписка",
+			text: "Получайте специальные предложения и новости сервиса",
+			placeholder: "Email"
+		}
+
+	+header({user: false, menu: menu})
+
+block content
+	-
+		const roomCards = [
+			{
+				buttons: true,
+				comments: '145', 
+				rating: 5, 
+				luxury: true,
+				images: [
+					{alt: 'room-1', src: "./room-1.png"},
+					{alt: 'room-2', src: "./room-2.png"},
+					{alt: 'room-3', src: "./room-3.png"},
+					{alt: 'room-4', src: "./room-4.png"},
+				]
+			},
+			{
+				comments: '65', 
+				rating: 4, 
+				number: '840',
+				price: '9 990',
+				luxury: false,
+				images: [
+					{alt: 'room-2', src: "./room-2.png"},
+					{alt: 'room-3', src: "./room-3.png"},
+					{alt: 'room-4', src: "./room-4.png"},
+					{alt: 'room-5', src: "./room-5.png"},
+				]
+			},
+			{
+				comments: '35', 
+				rating: 3,  
+				number: '980',
+				price: '8 500',
+				luxury: true,
+				images: [
+					{alt: 'room-3', src: "./room-3.png"},
+					{alt: 'room-4', src: "./room-4.png"},
+					{alt: 'room-5', src: "./room-5.png"},
+					{alt: 'room-6', src: "./room-6.png"},
+				]
+			},
+			{
+				comments: '19', 
+				rating: 5,  
+				number: '856',
+				price: '7 300',
+				luxury: false,
+				images: [
+					{alt: 'room-4', src: "./room-4.png"},
+					{alt: 'room-5', src: "./room-5.png"},
+					{alt: 'room-6', src: "./room-6.png"},
+					{alt: 'room-7', src: "./room-7.png"},
+				]
+			},
+			{
+				comments: '44', 
+				rating: 4,  
+				number: '740',
+				price: '6 000',
+				luxury: false,
+				images: [
+					{alt: 'room-5', src: "./room-5.png"},
+					{alt: 'room-6', src: "./room-6.png"},
+					{alt: 'room-7', src: "./room-7.png"},
+					{alt: 'room-8', src: "./room-8.png"},
+				]
+			},
+			{
+				comments: '56', 
+				rating: 3,  
+				number: '982',
+				price: '5 800',
+				luxury: false,
+				images: [
+					{alt: 'room-6', src: "./room-6.png"},
+					{alt: 'room-7', src: "./room-7.png"},
+					{alt: 'room-8', src: "./room-8.png"},
+					{alt: 'room-9', src: "./room-9.png"},
+				]
+			},
+			{
+				comments: '45', 
+				rating: 5,  
+				number: '678',
+				price: '5 500',
+				luxury: false,
+				images: [
+					{alt: 'room-7', src: "./room-7.png"},
+					{alt: 'room-8', src: "./room-8.png"},
+					{alt: 'room-9', src: "./room-9.png"},
+					{alt: 'room-10', src: "./room-10.png"},
+				]
+			},
+			{
+				comments: '39', 
+				rating: 4,  
+				number: '450',
+				price: '5 300',
+				luxury: false,
+				images: [
+					{alt: 'room-8', src: "./room-8.png"},
+					{alt: 'room-9', src: "./room-9.png"},
+					{alt: 'room-10', src: "./room-10.png"},
+					{alt: 'room-11', src: "./room-11.png"},
+				]
+			},
+			{
+				comments: '77', 
+				rating: 3,  
+				number: '350',
+				price: '5 000',
+				luxury: false,
+				images: [
+					{alt: 'room-9', src: "./room-9.png"},
+					{alt: 'room-10', src: "./room-10.png"},
+					{alt: 'room-11', src: "./room-11.png"},
+					{alt: 'room-12', src: "./room-12.png"},
+				]
+			},
+			{
+				comments: '25', 
+				rating: 5,  
+				number: '666',
+				price: '5 000',
+				luxury: false,
+				images: [
+					{alt: 'room-10', src: "./room-10.png"},
+					{alt: 'room-11', src: "./room-11.png"},
+					{alt: 'room-12', src: "./room-12.png"},
+					{alt: 'room-1', src: "./room-1.png"},
+				]
+			},
+			{
+				comments: '15', 
+				rating: 3,  
+				number: '444',
+				price: '5 000',
+				luxury: false,
+				images: [
+					{alt: 'room-11', src: "./room-11.png"},
+					{alt: 'room-12', src: "./room-12.png"},
+					{alt: 'room-1', src: "./room-1.png"},
+					{alt: 'room-2', src: "./room-2.png"},
+				]
+			},
+			{
+				comments: '55', 
+				rating: 3,  
+				number: '352',
+				price: '5 000',
+				luxury: false,
+				images: [
+					{alt: 'room-12', src: "./room-12.png"},
+					{alt: 'room-1', src: "./room-1.png"},
+					{alt: 'room-2', src: "./room-2.png"},
+					{alt: 'room-3', src: "./room-3.png"},
+				]
+			},
+		]
+
+	.filter 
+		.filter__body 
+			aside.filter__sidebar 
+				form(action="/fake-address", method="post", class="filter__form") 
+					.filter__sidebar-item
+						+datepicker({title1: 'даты пребывания в отеле', label1: '19 авг - 23 авг', oneItem: true})
+					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+						+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
+					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+						+range-slider({title: 'диапазон цены'})
+						p.filter__range-info Стоимость за сутки пребывания в номере
+					.filter__sidebar-item.filter__sidebar-item_with_23_mb
+						.filter__subtitle
+							+title-3('правила дома')
+						.filter__checkbox
+							+checkbox({name: 'smoking', text: 'Можно курить', checked: false})
+						.filter__checkbox
+							+checkbox({name: 'pets', text: 'Можно с питомцами', checked: true})
+						.filter__checkbox
+							+checkbox({name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: true})
+					.filter__sidebar-item.filter__sidebar-item_with_23_mb
+						.filter__subtitle
+							+title-3('доступность')
+						.filter__checkbox
+							+checkbox({name: 'corridor', title: 'Широкий коридор', describe: 'Ширина коридоров в номере не менее 91 см.'})
+						.filter__checkbox
+							+checkbox({name: 'help', title: 'Помощник для инвалидов', describe: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+						+quantity-dropdown({label: '2 спальни, 2 кровати...', title: 'удобства номера'})
+					.filter__sidebar-item
+						+accordion({title: 'дополнительные удобства', items: [
+							{name: 'breakfast', text: 'Завтрак'},
+							{name: 'table', text: 'Письменный стол', checked: true},
+							{name: 'chair', text: 'Стул для кормления', checked: true},
+							{name: 'bed', text: 'Кроватка', checked: true},
+							{name: 'TV', text: 'Телевизор', checked: false},
+							{name: 'shampoo', text: 'Шампунь', checked: false},
+						]})
+			.filter__content
+				.filter__title 
+					+title-1('Номера, которые мы для вас подобрали')
+				.filter__rooms 
+					each roomCard in roomCards
+						.filter__room-card 
+							+room-card(roomCard)
+					.filter__pagination 
+						+pagination({items: [
+							{current: true, number: 1},
+							{number: 2},
+							{number: 3},
+							{ellipsis: true},
+							{number: 15},
+						]})
+
+
+block footer
+	.filter__footer.filter__footer_big
+		+footer(text, navigation, copy, subscribtion)
+	.filter__footer.filter__footer_small
+		+footer-small(copy)
+			

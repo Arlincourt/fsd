@@ -1,0 +1,14 @@
+@import '@/theme/variables.scss';
+
+.rating {
+	display: flex;
+
+	&__icon {
+		font-family: 'icons';
+		font-size: 1.7rem;
+		line-height: 1.42rem;
+		background: $purple-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	}
+}

@@ -1,0 +1,16 @@
+mixin button(params)
+  - 
+    const defaultclass = 'btn'
+    const link = params.link || undefined
+    const text = params.text || 'click me'
+    let mode = params.mode
+    if(mode !== undefined){
+      mode = mode.map((item)=> `${defaultclass}_${item}`)
+      classes = mode.join(' ')
+      }  else {
+      classes = ""
+      }
+  if(link!== undefined)
+    a.btn(href="/fake-address" class=classes)= text
+  else
+    button.btn(class=classes)= text

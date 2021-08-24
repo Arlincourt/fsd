@@ -1,0 +1,8 @@
+
+
+mixin checkbox-toggle(params)
+	.checkbox-toggle
+		label.checkbox-toggle__label
+			input(type="checkbox" name=params.name class="checkbox-toggle__input" checked=params.checked)
+			.checkbox-toggle__marker 
+			span.checkbox-toggle__text= params.label

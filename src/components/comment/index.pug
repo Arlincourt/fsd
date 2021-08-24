@@ -1,0 +1,21 @@
+include ../../components/like/index.pug
+
+mixin comment(params)
+  -
+    const src = params.src || './avatar-1.jpg'
+    const alt = params.alt || 'user avatar'
+    const name = params.name || 'Мурад Сарафанов'
+    const time = params.time || '5 дней назад'
+    const active = params.active || true
+    const number = params.number || 12
+    const message = params.message || ''
+  .comment 
+    .comment__author 
+      img(src=src alt=alt class="comment__avatar")
+      .comment__info 
+        p.comment__name= name
+        p.comment__time= time
+    .comment__content 
+      .comment__like 
+        +like({number: number, active: active})
+      .comment__message= message

@@ -1,0 +1,17 @@
+$dark100: #1f2041;
+$dark75: rgba($dark100, 0.75);
+$dark50: rgba($dark100, 0.5);
+$dark25: rgba($dark100, 0.25);
+$dark5: rgba($dark100, 0.05);
+$purple: #bc9cff;
+$green: #6fcf97;
+$gray:#E5E5E5;
+$blue: #8BA4F9;
+$light-blue: #66D2EA;
+
+
+
+$green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
+$purple-gradient: linear-gradient(180deg, rgba($purple, 100%) 0%, rgba($blue, 100%) 100%);
+$purple-gradient50: linear-gradient(180deg,rgba($purple, .5) 0%, rgba($blue, .5) 100%);
+$purple-gradient25: linear-gradient(180deg, rgba($purple, 0.25) 0%, rgba($blue, 0.25) 100%);

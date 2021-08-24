@@ -1,0 +1,35 @@
+include ../../components/logo/index.pug
+include ../../components/socials/index.pug
+include ../../components/input/index.pug
+include ../../components/title-3/index.pug
+
+
+mixin footer(text, navigation, copy, subscribtion)
+  footer.footer
+    .footer__body
+      .footer__top
+        .footer__wrapper
+          .footer__info
+            +logo('./Logo.svg', 'Toxin logo')
+            p.footer__paragraph= text
+
+          .footer__navigation
+            each navItem in navigation
+              .footer__nav-item
+                +title-3(navItem.title)
+                each navLink in navItem.links
+                  p.footer__paragraph
+                    a.footer__link(href=navLink.url)= navLink.text
+          
+          .footer__subscribtion
+            +title-3(subscribtion.title)
+            p.footer__paragraph= subscribtion.text
+            form.footer__subscription-form
+              +input({type: 'text', placeholder: subscribtion.placeholder, button: true})
+
+      section.footer__bottom
+        .footer__block
+          .footer__copy
+            p.footer__paragraph= copy
+          .footer__socials
+            +socials()

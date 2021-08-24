@@ -1,0 +1,62 @@
+@import '@/theme/variables.scss';
+
+
+.pagination {
+
+  &__items {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: $dark50;
+    font-size: 0.875rem;
+    line-height: 1.07rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    &_current {
+      color: #fff;
+      border-radius: 50%;
+      background-image: $purple-gradient;
+      font-weight: bold;
+    }
+  }
+
+  &__ellipsis {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: $green-gradient;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  &__info {
+    font-size: 1rem;
+    line-height: 1.71rem;
+    color: $dark75;
+  }
+}

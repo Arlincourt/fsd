@@ -1,0 +1,11 @@
+
+
+mixin bulled-list(params)
+  -
+    const items = params.items || []
+
+  .bulled-list 
+    each item in items 
+      p.bulled-list__item 
+        span.bulled-list__circle
+        | #{item.text}

@@ -1,0 +1,48 @@
+@import '@/theme/variables.scss';
+
+.color-item {
+
+	&__body {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	&__block {
+		width: 70px;
+		height: 70px;
+		border-radius: 6px;
+		margin-right: 40px;
+
+		&_dark100 {
+			background-color: $dark100;
+		}
+		&_dark75 {
+			background-color: $dark75;
+		}
+		&_dark50 {
+			background-color: $dark50;
+		}
+		&_dark25 {
+			background-color: $dark25;
+		}
+		&_dark5 {
+			background-color: $dark5;
+		}
+		&_purple {
+			background-color: $purple;
+		}
+		&_green {
+			background-color: $green;
+		}
+	}
+
+	&__text {
+		font-size: 19px;
+		line-height: 28px;
+
+		&_bold {
+			font-weight: bold;
+		}
+	}
+}
