@@ -19,7 +19,6 @@
 	
 	&__label {
 		position: relative;
-		height: 44px;
 		cursor: pointer;
 		
 		&::after {
@@ -40,16 +39,17 @@
 	}
 	
 	&__input {
-		padding: 11.5px 15px;
-		pointer-events: none;
-		width: 100%;
-		z-index: 6;
-		position: relative;
-		font-size: 1rem;
-		line-height: 1.28rem;
-		color: $dark75;
-		border-radius: 4px 4px 0px 0px;
-		border: 1px solid $dark25;
+		padding: 11.5px 20px 14px 10px;
+    pointer-events: none;
+    width: 100%;
+    z-index: 6;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.28rem;
+    color: rgba(31, 32, 65, 0.75);
+    border-radius: 4px 4px 0px 0px;
+    letter-spacing: .5px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
 
 		&::placeholder {
 			line-height: 1.28rem;

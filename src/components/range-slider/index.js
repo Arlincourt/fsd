@@ -5,8 +5,8 @@ const options = {
   start: [5000, 10000],
   connect: true,
   range: {
-      'min': 0,
-      'max': 15000
+      'min': 500,
+      'max': 15500
   }
 }
 
