@@ -2,6 +2,7 @@ extends ../../theme/layouts/layout.pug
 include ../../components/room-wishes/index.pug
 include ../../components/header/index.pug
 include ../../components/footer/index.pug
+include ../../components/footer-small/index.pug
 
 block title 
 	| Landing Page
@@ -94,6 +95,9 @@ block content
 			p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения 
 
 block footer
-	+footer(text, navigation, copy, subscribtion)
+	.landing-page__footer.landing-page__footer_big
+		+footer(text, navigation, copy, subscribtion)
+	.landing-page__footer.landing-page__footer_small
+		+footer-small(copy)
 
 			
