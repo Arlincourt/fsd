@@ -1,0 +1,50 @@
+@import '@/theme/variables.scss';
+
+
+.room-details {
+
+  &__gallery {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  &__secondary-img {
+    object-fit: cover;
+    margin-left: 68.125%;
+    width: 31.875%;
+    height: 50%;
+    vertical-align: middle;
+  }
+
+  &__main-img {
+    width: 68.125%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    height: 100%;
+  }
+
+  &__body {
+    max-width: 1190px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    padding-top: 70px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
+  }
+  
+  &__footer_big {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__footer_small {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+extends ../../theme/layouts/layout.pug
+include ../../components/room-wishes/index.pug
+include ../../components/header/index.pug
+include ../../components/footer/index.pug
+include ../../components/footer-small/index.pug
+
+block title 
+	| Room Details
+
+block header 
+	- 
+		const menu = [
+			{
+				text: "О нас",
+				link: "/fake-address",
+			},
+			{
+				text: "Услуги",
+				link: [
+					{
+						text: "Услуга 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Услуга 2",
+						link: "/fake-address"
+					},
+				]
+			}, 
+			{
+				text: "Вакансии",
+				link: "/fake-address",
+			},
+			{
+				text: "Новости",
+				link: "/fake-address",
+			},
+			{
+				text: "Соглашения",
+				link: [
+					{
+						text: "Соглашение 1",
+						link: "/fake-address"
+					},
+					{
+						text: "Соглашение 2",
+						link: "/fake-address"
+					},
+				]
+			},
+		]
+
+		const navigation = [
+			{
+				title: 'Навигация',
+				links: [
+					{url: '/fake-address', text: 'О нас'},
+					{url: '/fake-address', text: 'Новости'},
+					{url: '/fake-address', text: 'Служба поддержки'},
+					{url: '/fake-address', text: 'Услуги'},
+				]
+			},
+			{
+				title: 'О нас',
+				links: [
+					{url: '/fake-address', text: 'О сервисе'},
+					{url: '/fake-address', text: 'Наша команда'},
+					{url: '/fake-address', text: 'Вакансии'},
+					{url: '/fake-address', text: 'Инвесторы'},
+				]
+			},
+			{
+				title: 'Служба поддержки',
+				links: [
+					{url: '/fake-address', text: 'Соглашения'},
+					{url: '/fake-address', text: 'Сообщества'},
+					{url: '/fake-address', text: 'Связь с нами'},
+				]
+			},
+		]
+		const text = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»' 
+		const copy = 'Copyright © 2018 Toxin отель. Все права защищены.' 
+		const subscribtion = {
+			title: "Подписка",
+			text: "Получайте специальные предложения и новости сервиса",
+			placeholder: "Email"
+		}
+
+	+header({user: false, menu: menu})
+
+block content
+	.room-details
+		.room-details__gallery
+			img(src="./main-img.png" class="room-details__main-img" alt="main image")
+			img(src="./secondary-img1.png" class="room-details__secondary-img" alt="secondary image")
+			img(src="./secondary-img2.png" class="room-details__secondary-img" alt="secondary image")
+		.room-details__body 
+
+
+block footer
+	.room-details__footer.room-details__footer_big
+		+footer(text, navigation, copy, subscribtion)
+	.room-details__footer.room-details__footer_small
+		+footer-small(copy)
+
+			
