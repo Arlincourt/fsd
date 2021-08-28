@@ -1,0 +1,10 @@
+
+
+mixin chart(params)
+  -
+    const numbers = params.numbers || '260'
+  .chart.js-chart
+    canvas(class="chart__canvas js-chart-canvas")
+    .chart__info 
+        span.chart__numbers= numbers 
+        p.chart__text голосов

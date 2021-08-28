@@ -1,0 +1,31 @@
+@import '@/theme/variables.scss';
+
+
+.chart {
+  width: 138px;
+  height: 138px;
+  position: relative;
+
+  &__info {
+    position: absolute;
+    top: 50px;
+    left: 39px;
+    z-index: 9;
+    text-align: center;
+  }
+
+  &__numbers {
+    font-size: 1.71rem;
+    line-height: 2.07rem;
+    color: $purple;
+    font-weight: bold;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: $purple;
+    letter-spacing: 1.4px;
+  }
+}

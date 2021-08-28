@@ -20,6 +20,7 @@
 			align-items: flex-start;
 			flex-direction: column;
 			margin-top: 25px;
+			z-index: 9999;
     }
 	}
 
@@ -34,6 +35,10 @@
 		&:last-child {
 			margin-right: 16px
 		}
+
+		@media (max-width: 767px) {
+			padding: 9px 16px;
+    }
 	}
 
 	&__link {
