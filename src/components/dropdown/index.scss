@@ -36,16 +36,14 @@
 	}
 	
 	&__input {
-		padding: 11.5px 20px 14px 10px;
+		padding: 8.5px 18px 10px 13px;
     pointer-events: none;
     width: 100%;
-    z-index: 6;
-    position: relative;
     font-size: 1rem;
-    line-height: 1.28rem;
+    line-height: 1.71rem;
     color: rgba(31, 32, 65, 0.75);
     border-radius: 4px 4px 0px 0px;
-    letter-spacing: .5px;
+    font-family: 'Montserrat';
     border: 1px solid rgba(31, 32, 65, 0.25);
 
 		&::placeholder {

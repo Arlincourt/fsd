@@ -4,7 +4,7 @@
 .advantage {
 
   &__body {
-    padding: 20px 0px;
+    padding: 15px 0px 18px;
     display: flex;
     width: 280px;
     align-items: center;
@@ -15,8 +15,10 @@
   }
 
   &__icon {
-    font-size: 3.42rem;
-    margin-right: 10px;
+    font-size: 2.9rem;
+    margin-right: 13px;
+    padding-top: 5px;
+    padding-left: 4px;
     background-image: $purple-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 

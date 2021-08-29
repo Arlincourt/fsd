@@ -40,13 +40,13 @@
   }
 
   &__sidebar-item {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
     &_with_30_mb {
       margin-bottom: 30px;
     }
-    &_with_23_mb {
-      margin-bottom: 23px;
+    &_with_22_mb {
+      margin-bottom: 22px;
     }
 
     @media (max-width: 992px) {
@@ -59,7 +59,7 @@
     color: $dark50;
     font-size: 0.860rem;
     line-height: 1rem;
-    margin-top: 13.5px;
+    margin-top: 15.5px;
     text-transform: none;
   }
 

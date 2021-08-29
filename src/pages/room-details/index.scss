@@ -37,11 +37,36 @@
   }
 
   &__info {
-    max-width: 712px;
+    width: 712px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
-    
+    margin-bottom: 12px;
+
+    &_with_82_ml {
+      margin-left: 82px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.35rem;
+    line-height: 1.64rem;
+    color: $dark100;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    &_with_mb_10 {
+      margin-bottom: 10px;
+    }
+    &_with_mb_21 {
+      margin-bottom: 21px;
+    }
+  }
+
+  &__comment {
+    margin-bottom: 23px;
   }
   
   &__footer_big {

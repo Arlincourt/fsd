@@ -3,8 +3,13 @@
 mixin chart(params)
   -
     const numbers = params.numbers || '260'
+    const items = params.items || []
   .chart.js-chart
-    canvas(class="chart__canvas js-chart-canvas")
-    .chart__info 
+    .chart__canvas-wrapper
+      canvas(class="chart__canvas js-chart-canvas")
+      .chart__info 
         span.chart__numbers= numbers 
         p.chart__text голосов
+    ul.chart__list 
+      each item in items 
+        li(class="chart__item chart__item_"+item.color)= item.text 

@@ -11,7 +11,7 @@ const options = {
       }]
   },
   options: {
-    cutout: 57,
+    cutout: 53,
     events: [''],
   }
 }

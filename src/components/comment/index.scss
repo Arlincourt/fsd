@@ -7,7 +7,7 @@
   &__author {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   &__avatar {
@@ -30,6 +30,7 @@
 
   &__content {
     display: flex;
+    padding-left: 3px;
   }
 
   &__like {

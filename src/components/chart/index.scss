@@ -2,14 +2,21 @@
 
 
 .chart {
-  width: 138px;
-  height: 138px;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  &__canvas-wrapper {
+    width: 132px;
+    height: 132px;
+    margin-left: -7px;
+  }
 
   &__info {
     position: absolute;
-    top: 50px;
-    left: 39px;
+    top: 48px;
+    left: 28px;
     z-index: 9;
     text-align: center;
   }
@@ -27,5 +34,38 @@
     line-height: 1rem;
     color: $purple;
     letter-spacing: 1.4px;
+  }
+
+  &__list {
+    margin-left: 24px;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 1rem;
+    line-height: 1.71rem;
+    color: $dark75;
+  }
+
+  &__item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &__item_yellow::before {
+    background-image: $yellow-gradient;
+  }
+  &__item_purple::before {
+    background-image: $purple-gradient
+  }
+  &__item_green::before {
+    background-image: $green-gradient;
+  }
+  &__item_black::before {
+    background-image: $black-gradient
   }
 }
