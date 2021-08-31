@@ -110,6 +110,20 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/login/index.pug',
+			filename: 'login.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/register/index.pug',
+			filename: 'register.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),
