@@ -16,6 +16,12 @@
   &__card {
     width: 380px;
     margin: 0 auto;
+
+    @media (max-width: 568px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__footer_big {

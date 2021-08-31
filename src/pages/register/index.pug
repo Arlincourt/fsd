@@ -3,6 +3,7 @@ include ../../components/room-wishes/index.pug
 include ../../components/header/index.pug
 include ../../components/footer/index.pug
 include ../../components/footer-small/index.pug
+include ../../components/register-card/index.pug
 
 block title 
 	| Регистрация
@@ -91,7 +92,8 @@ block header
 block content
 	.register 
 		.register__body 
-      
+			.register__card 
+				+register-card()
 
 block footer
 	.landing-page__footer.landing-page__footer_big
