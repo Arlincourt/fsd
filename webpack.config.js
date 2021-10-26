@@ -124,6 +124,13 @@ module.exports = {
 				collapseWhitespace: !isDev
 			}
 		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/index/index.pug',
+			filename: 'index.html',
+			minify: {
+				collapseWhitespace: !isDev
+			}
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),

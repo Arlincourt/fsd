@@ -1,0 +1,11 @@
+@import '@/theme/variables.scss';
+
+.pages {
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+
+  &__item {
+    margin-bottom: 15px;
+  }
+}
