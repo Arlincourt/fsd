@@ -1,8 +1,8 @@
 import * as $ from 'jquery';
-import RoomCardSlider from './RoomCardSlider.js';
+import RoomCard from './RoomCard.js';
 
 $(() => {
 	$('.room-card__gallery').each((idx, el) => {
-		new RoomCardSlider(el);
+		new RoomCard(el);
 	})
 })

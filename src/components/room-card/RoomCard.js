@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 
 
-class RoomCardSlider {
+class RoomCard {
 	constructor(element) {
 		this.$gallery = $(element);
 		this.$line = this.$gallery.find('.room-card__gallery-line');
@@ -59,7 +59,7 @@ class RoomCardSlider {
 		}
 	}
 
-	next(evt) {
+	next() {
 		if(this._step === 3) {
 			this._step = 0;
 		} else {
@@ -69,7 +69,7 @@ class RoomCardSlider {
 		this.renderStep();
 	}
 
-	prev(evt) {
+	prev() {
 		if(this._step === 0) {
 			this._step = 3;
 		} else {
@@ -80,4 +80,4 @@ class RoomCardSlider {
 	}
 }
 
-export default RoomCardSlider
+export default RoomCard

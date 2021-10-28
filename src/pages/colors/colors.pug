@@ -1,10 +1,10 @@
 extends ../../theme/layouts/layout.pug
-include ../../components/logo/index.pug
-include ../../components/color-item/index.pug
-include ../../components/title-1/index.pug
-include ../../components/title-2/index.pug
-include ../../components/title-3/index.pug
-include ../../components/p/index.pug
+include ../../components/logo/logo.pug
+include ../../components/color-item/color-item.pug
+include ../../components/title-1/title-1.pug
+include ../../components/title-2/title-2.pug
+include ../../components/title-3/title-3.pug
+include ../../components/paragraph/paragraph.pug
 
 block title 
 	| Colors&Type
@@ -34,4 +34,4 @@ block content
 							+title-3('This is a label or CTA text')
 						.colors__example
 							.colors__tag.colors__tag_sm Body
-							+p('This is the body text which is used for most of the design, like paragraphs, lists, etc.')
+							+paragraph('This is the body text which is used for most of the design, like paragraphs, lists, etc.')

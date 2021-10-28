@@ -1,19 +1,19 @@
 extends ../../theme/layouts/layout.pug
-include ../../components/logo/index.pug
-include ../../components/header/index.pug
-include ../../components/footer-small/index.pug
-include ../../components/footer/index.pug
+include ../../components/room-wishes/room-wishes.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-small/footer-small.pug
+include ../../components/register-card/register-card.pug
 
 block title 
-	| Headers&Footers
+	| Регистрация
 
-block content 
+block header 
 	- 
 		const menu = [
 			{
 				text: "О нас",
 				link: "/fake-address",
-				current: true,
 			},
 			{
 				text: "Услуги",
@@ -87,16 +87,18 @@ block content
 			placeholder: "Email"
 		}
 
-	.headers
-		.headers__body
-			.headers__logo
-				+logo("./Logo-2.svg", "Logo") 
-			.headers__example
-				+header({user: false, menu: menu})
-			.headers__example
-				+header({user: 'Юлий Цезарь', menu: menu})
-			.headers__example
-				+footer(text, navigation, copy, subscribtion)
-			.headers__example
-				+footer-small(copy)
+	+header({user: false, menu: menu})
+
+block content
+	.register 
+		.register__body 
+			.register__card 
+				+register-card()
+
+block footer
+	.landing-page__footer.landing-page__footer_big
+		+footer(text, navigation, copy, subscribtion)
+	.landing-page__footer.landing-page__footer_small
+		+footer-small(copy)
+
 			

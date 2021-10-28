@@ -62,63 +62,63 @@ module.exports = {
 			]
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/headers/index.pug',
+			template: './src/pages/headers/headers.pug',
 			filename: 'headers.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/colors/index.pug',
+			template: './src/pages/colors/colors.pug',
 			filename: 'colors.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/cards/index.pug',
+			template: './src/pages/cards/cards.pug',
 			filename: 'cards.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/form-elements/index.pug',
+			template: './src/pages/form-elements/form-elements.pug',
 			filename: 'form-elements.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/landing-page/index.pug',
+			template: './src/pages/landing-page/landing-page.pug',
 			filename: 'landing-page.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/filter/index.pug',
+			template: './src/pages/filter/filter.pug',
 			filename: 'filter.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/room-details/index.pug',
+			template: './src/pages/room-details/room-details.pug',
 			filename: 'room-details.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/login/index.pug',
+			template: './src/pages/login/login.pug',
 			filename: 'login.html',
 			minify: {
 				collapseWhitespace: !isDev
 			}
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/register/index.pug',
+			template: './src/pages/register/register.pug',
 			filename: 'register.html',
 			minify: {
 				collapseWhitespace: !isDev

@@ -1,12 +1,12 @@
 extends ../../theme/layouts/layout.pug
-include ../../components/room-wishes/index.pug
-include ../../components/header/index.pug
-include ../../components/footer/index.pug
-include ../../components/footer-small/index.pug
-include ../../components/register-card/index.pug
+include ../../components/room-wishes/room-wishes.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+include ../../components/footer-small/footer-small.pug
+include ../../components/login-card/login-card.pug
 
 block title 
-	| Регистрация
+	| Авторизация
 
 block header 
 	- 
@@ -90,10 +90,10 @@ block header
 	+header({user: false, menu: menu})
 
 block content
-	.register 
-		.register__body 
-			.register__card 
-				+register-card()
+	.login 
+		.login__body 
+			.login__card
+				+login-card()
 
 block footer
 	.landing-page__footer.landing-page__footer_big
