@@ -16,14 +16,21 @@
 ### UI Kit
 
 [Colors](https://arlincourt.github.io/fsd/colors.html)
+
 [Cards](https://arlincourt.github.io/fsd/cards.html)
+
 [Form Elements](https://arlincourt.github.io/fsd/form-elements.html)
+
 [Headers](https://arlincourt.github.io/fsd/headers.html)
 
 ### Website pages
 
 [Filter](https://arlincourt.github.io/fsd/filter.html)
+
 [Landing page](https://arlincourt.github.io/fsd/landing-page.html)
+
 [Login](https://arlincourt.github.io/fsd/login.html)
+
 [Register](https://arlincourt.github.io/fsd/register.html)
+
 [Room details](https://arlincourt.github.io/fsd/room-details.html)
