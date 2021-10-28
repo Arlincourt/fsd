@@ -30,7 +30,7 @@ mixin register-card()
 				.register-card__checkbox
 					+checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer'}) 
 				.register-card__button
-					+button({text: 'зарегистрироваться', mode: ['with_arrow', 'big']})
+					+button({text: 'зарегистрироваться', mode: ['with_arrow', 'size_big']})
 			.register-card__question
 				p.register-card__paragraph Уже есть аккаунт на Toxin
-				+button({link: true, text: 'войти', mode: ['bordered', 'with_big_padding']})
+				+button({link: true, text: 'войти', mode: ['bordered', 'with_big-offset']})

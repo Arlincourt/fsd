@@ -21,7 +21,7 @@ $arrow-rl: 15px + 24px + 14px;
   min-width: 87px;
   text-align: center;
 
-  &_long {
+  &_length_long {
     min-width: 197px;
     padding: 11px 0px;
   }
@@ -41,16 +41,16 @@ $arrow-rl: 15px + 24px + 14px;
     }
 	}
 
-  &_big {
+  &_size_big {
     display: block;
     min-width: 100%;
     padding: 15px 0px;
   }
 
-  &_with_mr-20 {
+  &_with_small-offset {
     margin-right: 20px;
   }
-  &_with_big_padding {
+  &_with_big-offset {
     padding: 12px 16px;
     min-width: 99px;
 

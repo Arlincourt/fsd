@@ -15,7 +15,7 @@ mixin login-card()
 				.login-card__input
 					+input({type: 'text', placeholder: 'Пароль'}) 
 				.login-card__button
-					+button({text: 'войти', mode: ['with_arrow', 'big']})
+					+button({text: 'войти', mode: ['with_arrow', 'size_big']})
 			.login-card__question
 				p.login-card__paragraph Нет аккаунта на Toxin?
-				+button({link: true, text: 'создать', mode: ['bordered', 'with_big_padding']})
+				+button({link: true, text: 'создать', mode: ['bordered', 'with_big-offset']})
