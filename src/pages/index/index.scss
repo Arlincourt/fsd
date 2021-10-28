@@ -4,6 +4,17 @@
   padding: 15px;
   border-radius: 4px;
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
 
   &__list {
     list-style: none;
