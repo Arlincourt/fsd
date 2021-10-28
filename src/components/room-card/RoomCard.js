@@ -33,9 +33,9 @@ class RoomCard {
 
 	renderActivePoint() {
 		this.$pointsContainer.children().each((idx, point) => {
-			point.classList.remove('room-card__point_filled');
+			point.classList.remove('room-card__point_background_filled');
 		})
-		this.$pointsContainer.children()[this._step].classList.add('room-card__point_filled');
+		this.$pointsContainer.children()[this._step].classList.add('room-card__point_background_filled');
 	}
 
 	initPointsEvents() {

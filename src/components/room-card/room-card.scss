@@ -29,7 +29,7 @@
 		align-items: center;
 		justify-content: center;
 
-		&_reversed {
+		&_direction_reversed {
 			transform: scaleX(-1);
 		}
 	}
@@ -58,7 +58,7 @@
 		margin-right: 3.5px;
 		border-radius: 50%;
 
-		&_filled {
+		&_background_filled {
 			background-color: #fff;
 		}
 	}

@@ -57,7 +57,7 @@
   &__item {
     margin-bottom: 12px;
 
-    &_with_82_ml {
+    &_with_large-offset {
       margin-left: 82px;
 
       @media (max-width: 1131px) {
@@ -73,17 +73,17 @@
     font-weight: bold;
     margin-bottom: 5px;
 
-    &_with_mb_10 {
+    &_with_small-offset {
       margin-bottom: 10px;
     }
-    &_with_mb_17 {
+    &_with_medium-offset {
       margin-bottom: 17px;
     }
-    &_with_mb_21 {
-      margin-bottom: 21px;
-    }
-    &_with_ml_20 {
+    &_with_large-offset {
       margin-left: 20px;
+    }
+    &_with_extra-large-offset {
+      margin-bottom: 21px;
     }
   }
 
@@ -105,7 +105,7 @@
   &__note {
     max-width: 340px;
 
-    &_with_ml_100 {
+    &_with_large-offset {
       margin-left: 100px;
 
       @media (max-width: 740px) {
@@ -114,12 +114,12 @@
     }
   }
   
-  &__footer_big {
+  &__footer_size_big {
     @media (max-width: 768px) {
       display: none;
     }
   }
-  &__footer_small {
+  &__footer_size_small {
     display: none;
     @media (max-width: 768px) {
       display: block;

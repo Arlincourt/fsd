@@ -108,8 +108,8 @@ block content
 					+advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', class: 'icon-smile', border: true})
 					+advantage({text: 'Окно в каждой из спален', name: 'Удобство', class: 'icon-location_city', border: true})
 					+advantage({text: 'Номер оснащён камином', name: 'Уют', class: 'icon-comfort', border: false})
-				.room-details__item.room-details__item_with_82_ml  
-					h3.room-details__subtitle.room-details__subtitle_with_mb_10 Впечатления от номера
+				.room-details__item.room-details__item_with_large-offset
+					h3.room-details__subtitle.room-details__subtitle_with_small-offset Впечатления от номера
 					+chart({numbers: '260', items: [
 						{text: 'Великолепно', color: 'yellow'},
 						{text: 'Хорошо', color: 'green'},
@@ -117,7 +117,7 @@ block content
 						{text: 'Разочарован', color: 'black'},
 					]})
 				.room-details__item 
-					h3.room-details__subtitle.room-details__subtitle_with_mb_21 Отзывы посетителей номера
+					h3.room-details__subtitle.room-details__subtitle_with_extra-large-offset Отзывы посетителей номера
 					.room-details__comment 
 						+comment({
 							src: './avatar-1.jpg',
@@ -142,14 +142,14 @@ block content
 						})
 				.room-details__rules 
 					.room-details__note
-						h3.room-details__subtitle.room-details__subtitle_with_ml_20.room-details__subtitle_with_mb_17 Правила
+						h3.room-details__subtitle.room-details__subtitle_with_large-offset.room-details__subtitle_with_medium-offset Правила
 						+bulled-list({items: [
 							{text: 'Нельзя с питомцами'},
 							{text: 'Без вечеринок и мероприятий'},
 							{text: 'Время прибытия — после 13:00, а выезд до 12:00'},
 						]})
-					.room-details__note.room-details__note_with_ml_100
-						h3.room-details__subtitle.room-details__subtitle_with_mb_17 Отмена
+					.room-details__note.room-details__note_with_large-offset
+						h3.room-details__subtitle.room-details__subtitle_with_medium-offset Отмена
 						+paragraph(`Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.`)
 			.room-details__card
 				+room-info({label1: '19.08.2019', label2: '23.08.2019'})
@@ -158,9 +158,9 @@ block content
 
 
 block footer
-	.room-details__footer.room-details__footer_big
+	.room-details__footer.room-details__footer_size_big
 		+footer(text, navigation, copy, subscribtion)
-	.room-details__footer.room-details__footer_small
+	.room-details__footer.room-details__footer_size_small
 		+footer-small(copy)
 
 			

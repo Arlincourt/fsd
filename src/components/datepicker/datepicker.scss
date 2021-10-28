@@ -13,7 +13,7 @@
     }
 	}
 
-	&__dropdown_with_mr {
+	&__dropdown_with_medium-offset {
 		margin-right: 20px;
 
     @media (max-width: 370px) {
@@ -22,7 +22,7 @@
     }
 	}
 
-  &__icon_reverse {
+  &__icon_direction_reverse {
     transform: scaleX(-1);
   }
 }

@@ -25,12 +25,12 @@
     font-size: 1rem;
   }
 
-  &__footer_big {
+  &__footer_size_big {
     @media (max-width: 768px) {
       display: none;
     }
   }
-  &__footer_small {
+  &__footer_size_small {
     display: none;
     @media (max-width: 768px) {
       display: block;

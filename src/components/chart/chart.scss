@@ -56,16 +56,16 @@
     display: inline-block;
   }
 
-  &__item_yellow::before {
+  &__item_color_yellow::before {
     background-image: $yellow-gradient;
   }
-  &__item_purple::before {
+  &__item_color_purple::before {
     background-image: $purple-gradient
   }
-  &__item_green::before {
+  &__item_color_green::before {
     background-image: $green-gradient;
   }
-  &__item_black::before {
+  &__item_color_black::before {
     background-image: $black-gradient
   }
 }

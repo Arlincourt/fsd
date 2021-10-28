@@ -12,4 +12,4 @@ mixin chart(params)
         p.chart__text голосов
     ul.chart__list 
       each item in items 
-        li(class="chart__item chart__item_"+item.color)= item.text 
+        li(class="chart__item chart__item_color_"+item.color)= item.text 

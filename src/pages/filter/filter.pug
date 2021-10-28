@@ -262,12 +262,12 @@ block content
 				form(action="/fake-address", method="post", class="filter__form") 
 					.filter__sidebar-item
 						+datepicker({title1: 'даты пребывания в отеле', label1: '19 авг - 23 авг', oneItem: true})
-					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+					.filter__sidebar-item.filter__sidebar-item_with_medium-offset
 						+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
-					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+					.filter__sidebar-item.filter__sidebar-item_with_medium-offset
 						+range-slider({title: 'диапазон цены'})
 						p.filter__range-info Стоимость за сутки пребывания в номере
-					.filter__sidebar-item.filter__sidebar-item_with_22_mb
+					.filter__sidebar-item.filter__sidebar-item_with_small-offset
 						.filter__subtitle
 							+title-3('правила дома')
 						.filter__checkbox
@@ -276,14 +276,14 @@ block content
 							+checkbox({name: 'pets', text: 'Можно с питомцами', checked: true})
 						.filter__checkbox
 							+checkbox({name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: true})
-					.filter__sidebar-item.filter__sidebar-item_with_22_mb
+					.filter__sidebar-item.filter__sidebar-item_with_small-offset
 						.filter__subtitle
 							+title-3('доступность')
 						.filter__checkbox
 							+checkbox({name: 'corridor', title: 'Широкий коридор', describe: 'Ширина коридоров в номере не менее 91 см.'})
 						.filter__checkbox
 							+checkbox({name: 'help', title: 'Помощник для инвалидов', describe: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
-					.filter__sidebar-item.filter__sidebar-item_with_30_mb
+					.filter__sidebar-item.filter__sidebar-item_with_medium-offset
 						+quantity-dropdown({label: '2 спальни, 2 кровати...', title: 'удобства номера'})
 					.filter__sidebar-item
 						+accordion({title: 'дополнительные удобства', items: [
@@ -312,8 +312,8 @@ block content
 
 
 block footer
-	.filter__footer.filter__footer_big
+	.filter__footer.filter__footer_size_big
 		+footer(text, navigation, copy, subscribtion)
-	.filter__footer.filter__footer_small
+	.filter__footer.filter__footer_size_small
 		+footer-small(copy)
 			

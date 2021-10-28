@@ -42,10 +42,10 @@
   &__sidebar-item {
     margin-bottom: 22px;
 
-    &_with_30_mb {
+    &_with_medium-offset {
       margin-bottom: 30px;
     }
-    &_with_22_mb {
+    &_with_small-offset {
       margin-bottom: 22px;
     }
 
@@ -114,12 +114,12 @@
     padding-right: 21px;
   }
 
-  &__footer_big {
+  &__footer_size_big {
     @media (max-width: 768px) {
       display: none;
     }
   }
-  &__footer_small {
+  &__footer_size_small {
     display: none;
     @media (max-width: 768px) {
       display: block;

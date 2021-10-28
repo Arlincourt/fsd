@@ -36,10 +36,10 @@
 			max-width: 266px;
 		}
 
-		&_with_15_mb {
+		&_with_small-offset {
 			margin-bottom: 15px;
 		}
-		&_with_20_mb {
+		&_with_medium-offset {
 			margin-bottom: 20px;
 		}
 	}
@@ -51,29 +51,26 @@
 		color: $dark50;
 	}
 
-	&__item_with_20_mb {
+	&__item_with_extra-small-offset {
 		margin-bottom: 20px;
 	}
-	&__item_with_30_mb {
+	&__item_with_small-offset {
 		margin-bottom: 30px;
 	}
-	&__item_with_40_mb {
+	&__item_with_medium-offset {
 		margin-bottom: 40px;
 	}
-	&__item_with_100_mb {
+	&__item_with_upper-medium-offset {
 		margin-bottom: 100px;
 	}
-	&__item_with_170_mb {
+	&__item_with_large-offset {
 		margin-bottom: 170px;
 	}
-	&__item_with_195_mb {
+	&__item_with_extra-large-offset {
 		margin-bottom: 195px;
 	}
-	&__item_with_230_mb {
+	&__item_with_extra-extra-large-offset {
 		margin-bottom: 230px;
-	}
-	&__item_with_255_mb {
-		margin-bottom: 255px;
 	}
 
 	&__checkbox {

@@ -18,7 +18,7 @@ class Calendar {
 		this.options = {
 			range: true,
 			multipleDates: true,
-			prevHtml: '<i class="datepicker-item__icon_reverse icon-arrow_forward"></i>',
+			prevHtml: '<i class="datepicker-item__icon_direction_reverse icon-arrow_forward"></i>',
 			nextHtml: '<i class="icon-arrow_forward"></i>',
 			navTitles: {
 				days: 'MM yyyy',
