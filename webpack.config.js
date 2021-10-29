@@ -13,7 +13,8 @@ const optimization = () => {
 	const config = {
 		splitChunks: {
 			chunks: 'all'
-		}
+		},
+		runtimeChunk: 'single',
 	}
 
 	if(!isDev) {
@@ -45,9 +46,10 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 4200,
-		hot: isDev,
 		overlay: true,
-    open: true
+    open: true,
+		liveReload: true,
+		hot: true
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
