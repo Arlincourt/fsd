@@ -46,10 +46,9 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 4200,
-		overlay: true,
-    open: true,
-		liveReload: true,
-		hot: true
+		open: true,
+    hot: true,
+    contentBase: path.join(__dirname, "dist"),
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
@@ -139,7 +138,8 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
-		 })
+		}),
+		new webpack.HotModuleReplacementPlugin(),
 	],
 	module: {
 		rules: [

@@ -15,15 +15,17 @@
 	}
 
 	&__list {
-		position: absolute;
+		position: relative;
 		z-index: 10;
 		border: 1px solid $dark25;
 		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-		width: calc(100% - 1px);
-		top: 42px;
+		right: 0;
+		left: 0;
+		top: -1px;
 		background-color: #fff;
 		border-radius: 0px 0px 2px 2px;
 		box-sizing: border-box;
+		padding: 0px 6px 9px 13px;
 		
 		&_hidden {
 			display: none;
@@ -32,10 +34,6 @@
 		&_size_small {
 			max-width: 265px;
 		}
-	}
-
-	&__items {
-		padding: 0px 6px 9px 13px;
 	}
 
 	&__item {
