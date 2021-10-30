@@ -19,6 +19,7 @@ class QuantityDropdown {
 	}
 
 	init() {
+		document.addEventListener('click', this.hideCalendar.bind(this))
 		this.initOptions()
 		this.initButtons()
 		this.$list.append(this.$items)
@@ -101,6 +102,7 @@ class QuantityDropdown {
 	}
 
 	showCalendar() {
+		$('.js-quantity-dropdown__list').addClass('quantity-dropdown__list_hidden')
 		this.$list.removeClass('quantity-dropdown__list_hidden')
 	}
 
