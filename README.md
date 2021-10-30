@@ -12,6 +12,10 @@
 2. pug
 3. scss
 4. webpack
+5. jquery.maskedinput
+6. chart.js
+7. air-datepicker
+8. nouislider
 
 ### UI Kit
 
