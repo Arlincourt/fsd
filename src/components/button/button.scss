@@ -65,12 +65,12 @@ $arrow-rl: 15px + 24px + 14px;
     padding-right: $arrow-rl;
     padding-left: $arrow-rl;
     &:after {
-      content: "\e900";
+      content: '\e900';
       position: absolute;
       right: 14px;
       top: 50%;
       transform:translateY(-50%);
-      font-family: "icons";
+      font-family: 'icons';
       font-weight: 400;
       font-style: normal;
       font-size: 1.3rem;

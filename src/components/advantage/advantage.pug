@@ -6,9 +6,9 @@ mixin advantage(params)
     const name = params.name 
     const iconClass = params.class
     const isBorder = params.border || undefined
-    const bodyClasses = ['advantage__body']
+    const bodyClasses = ["advantage__body"]
     if(isBorder !== undefined) {
-      bodyClasses.push('advantage__body_with_border')
+      bodyClasses.push("advantage__body_with_border")
     }
   .advantage
     div(class=bodyClasses)
