@@ -1,5 +1,5 @@
 include ../../components/title-1/title-1.pug
-include ../../components/button/button.pug
+include ../../components/icon-button/icon-button.pug
 include ../../components/quantity-dropdown/quantity-dropdown.pug
 include ../../components/datepicker/datepicker.pug
 
@@ -15,6 +15,6 @@ mixin room-wishes()
 					.room-wishes__guests
 						+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
 				.room-wishes__button 
-					+button({text: 'подобрать номер', mode: ['with_arrow', 'size_big']})
+					+icon-button({text: 'подобрать номер', mode: ['with_arrow', 'size_big']})
 
 

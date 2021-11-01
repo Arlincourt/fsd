@@ -1,5 +1,6 @@
 include ../../components/logo/logo.pug
 include ../../components/button/button.pug
+include ../../components/simple-button/simple-button.pug
 include ../../components/menu/menu.pug
 
 mixin header(props)
@@ -25,8 +26,8 @@ mixin header(props)
 								| #{user}
 						else 
 							.header__actions 
-								+button({text: 'войти', mode: ['bordered', 'with_small-offset']})
-								+button({text: 'зарегистрироваться', mode: ['length_long']})
+								+button({text: 'войти', mode: ['with_small-offset']})
+								+simple-button({text: 'зарегистрироваться', mode: ['length_long']})
 					a.header__icon(href="/fake-address")
 						img.header__avatar(src="./user.svg")
 							

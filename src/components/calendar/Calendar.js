@@ -23,7 +23,7 @@ class Calendar {
 			navTitles: {
 				days: 'MM yyyy',
 			},
-			onSelect(formattedDate, date, inst) {
+			onSelect(formattedDate, date) {
 				that.onSelect(formattedDate, date)
 			}
 		}
@@ -37,7 +37,7 @@ class Calendar {
 		this.initCalendar()
 	}
 	
-	onSelect(formattedDate, date) {
+	onSelect(formattedDate) {
 		this.$inputs.val('')
 		this.dates = this.separateInputValue(formattedDate)
 	}
@@ -55,8 +55,8 @@ class Calendar {
 	}
 
 	addCalendarButtons() {
-		this.$applyBtn = $('<button class="btn_transparent js-calendar-button" type="button">Применить</button>') 
-		this.$clearBtn = $('<button class="btn_transparent js-calendar-button" type="button">Очистить</button>') 
+		this.$applyBtn = $('<button class="small-button js-calendar-button" type="button">Применить</button>') 
+		this.$clearBtn = $('<button class="small-button js-calendar-button" type="button">Очистить</button>') 
 		const buttonsWrapper = $('<div class="datepicker--actions"></div>')
 		buttonsWrapper.append(this.$clearBtn)
 		buttonsWrapper.append(this.$applyBtn)
@@ -65,7 +65,7 @@ class Calendar {
 	}
 
 	initContentsEvents() {
-		this.$contents.on('click', (evt) => {
+		this.$contents.on('click', () => {
 			this.$calendar.show()
 		})
 	}

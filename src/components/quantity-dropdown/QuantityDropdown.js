@@ -37,8 +37,8 @@ class QuantityDropdown {
 	initButtons() {
 		if(this._buttons) {
 			const buttons = $('<div class="quantity-dropdown__buttons"></div>')
-			this.$apply = $('<button class="btn_transparent" type="button">Применить</button>') 
-			this.$clean = $('<button class="btn_transparent" type="button">Очистить</button>') 
+			this.$apply = $('<button class="small-button" type="button">Применить</button>') 
+			this.$clean = $('<button class="small-button" type="button">Очистить</button>') 
 
 			buttons.append(this.$clean)
 			buttons.append(this.$apply)
@@ -129,7 +129,7 @@ class QuantityDropdown {
 					parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled')
 				}
 				if(this.$clean) {
-					this.$clean.removeClass('btn_transparent_hidden')
+					this.$clean.removeClass('small-button_hidden')
 				}
 				this.setInputValue()
 			}
@@ -149,7 +149,7 @@ class QuantityDropdown {
 		})
 		if(isAllZero) {
 			if(this.$clean) {
-				this.$clean.addClass('btn_transparent_hidden')
+				this.$clean.addClass('small-button_hidden')
 			}
 			this.$input.val('')
 		} else {
@@ -237,7 +237,7 @@ class QuantityDropdown {
 			}
 		})
 		this.$element.find('.quantity-dropdown__value .title-3').text('0')
-		this.$clean.addClass('btn_transparent_hidden')
+		this.$clean.addClass('small-button_hidden')
 	}
 }
 

@@ -2,7 +2,7 @@ include ../../components/rent-info/rent-info.pug
 include ../../components/datepicker/datepicker.pug
 include ../../components/quantity-dropdown/quantity-dropdown.pug
 include ../../components/expences/expences.pug
-include ../../components/button/button.pug
+include ../../components/icon-button/icon-button.pug
 
 mixin room-info(params)
 	-
@@ -34,4 +34,4 @@ mixin room-info(params)
 						total: total
 					})
 				.room-info__button
-					+button({text: 'забронировать', mode: ['with_arrow', 'size_big']})
+					+icon-button({text: 'забронировать', mode: ['size_big']})

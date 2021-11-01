@@ -1,0 +1,35 @@
+@import '@/theme/variables.scss';
+
+.simple-button {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 700;
+  background: $purple-gradient;
+  font-family: Montserrat;
+  border-radius: 22px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+	cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  min-width: 87px;
+  padding: 9px 16px;
+
+  &_length_long {
+    min-width: 197px;
+    padding: 11px 0px;
+  }
+
+  &_with_big-padding {
+    min-width: 99px;
+    padding: 12px 16px;
+  }
+
+  &_disabled {
+    cursor: auto;
+    opacity: .5;
+  }
+}

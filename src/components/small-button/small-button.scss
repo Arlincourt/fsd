@@ -1,0 +1,33 @@
+@import '@/theme/variables.scss';
+
+.small-button {
+  display: inline-block;
+  font-family: Montserrat;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 1.07rem;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  background: none;
+  cursor: pointer;
+  color: $purple;
+
+  &_with_small-offset {
+    margin-right: 20px;
+  }
+
+  &_hidden {
+    cursor: auto;
+    opacity: 0;
+  }
+
+  &_disabled {
+    color: $dark50;
+    cursor: auto;
+  }
+}

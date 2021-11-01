@@ -1,0 +1,49 @@
+@import '@/theme/variables.scss';
+
+$arrow-rl: 15px + 24px + 14px;
+
+.icon-button {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 700;
+  background: $purple-gradient;
+  font-family: Montserrat;
+  border-radius: 22px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  padding: 9px 16px;
+  text-transform: uppercase;
+	cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  padding-right: $arrow-rl;
+  padding-left: $arrow-rl;
+
+  &_size_big {
+    display: block;
+    min-width: 100%;
+    padding: 15px 0px;
+  }
+
+  &:after {
+    content: '\e900';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform:translateY(-50%);
+    font-family: 'icons';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+  }
+}

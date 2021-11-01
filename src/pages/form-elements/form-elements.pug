@@ -14,6 +14,10 @@ include ../../components/like/like.pug
 include ../../components/rating/rating.pug
 include ../../components/range-slider/range-slider.pug
 include ../../components/button/button.pug
+include ../../components/icon-button/icon-button.pug
+include ../../components/simple-button/simple-button.pug
+include ../../components/small-button/small-button.pug
+include ../../components/icon-button/icon-button.pug
 include ../../components/pagination/pagination.pug
 include ../../components/bulled-list/bulled-list.pug
 include ../../components/comment/comment.pug
@@ -130,15 +134,15 @@ block content
 								+title-3('buttons')
 						.form-elements__buttons 
 							.form-elements__button-item 
-								+button({mode: ['with_big-offset', 'linear']})
-								+button({mode: ['with_big-offset', 'linear', 'with_big-offset_disabled']})
+								+simple-button({mode: ['with_big-padding']})
+								+simple-button({mode: ['with_big-padding', 'disabled']})
 							.form-elements__button-item 
-								+button({mode: ['with_big-offset', 'bordered']})
-								+button({mode: ['with_big-offset', 'bordered', 'bordered_disabled']})
-							+button({mode: ['transparent', 'with_small-offset']})
-							+button({mode: ['transparent', 'transparent_disabled']})
+								+button({mode: ['with_big-padding']})
+								+button({mode: ['with_big-padding', 'disabled']})
+							+small-button({mode: ['with_small-offset']})
+							+small-button({mode: ['disabled']})
 							.form-elements__big-button 
-								+button({text: 'перейти к оплате', mode: ['size_big', 'with_arrow']})
+								+icon-button({text: 'перейти к оплате', mode: ['size_big']})
 					.form-elements__item.form-elements__item_with_extra-large-offset
 						.form-elements__name.form-elements__name_with_small-offset
 								+title-3('pagination')
