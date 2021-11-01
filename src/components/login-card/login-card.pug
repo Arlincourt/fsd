@@ -3,6 +3,7 @@ include ../../components/title-3/title-3.pug
 include ../../components/input/input.pug
 include ../../components/radio/radio.pug
 include ../../components/button/button.pug
+include ../../components/icon-button/icon-button.pug
 
 mixin login-card()
 	.login-card 
@@ -15,7 +16,7 @@ mixin login-card()
 				.login-card__input
 					+input({type: 'text', placeholder: 'Пароль'}) 
 				.login-card__button
-					+button({text: 'войти', mode: ['with_arrow', 'size_big']})
+					+icon-button({text: 'войти', mode: ['size_big']})
 			.login-card__question
 				p.login-card__paragraph Нет аккаунта на Toxin?
 				+button({link: true, text: 'создать', mode: ['with_big-padding']})
