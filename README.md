@@ -16,6 +16,8 @@
 6. chart.js
 7. air-datepicker
 8. nouislider
+9. node - **v16.13.0**
+10. npm - **8.1.0**
 
 ### UI Kit
 
