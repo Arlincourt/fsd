@@ -36,10 +36,10 @@
 			max-width: 266px;
 		}
 
-		&_with_small-offset {
+		&_offset_small {
 			margin-bottom: 15px;
 		}
-		&_with_medium-offset {
+		&_offset_medium {
 			margin-bottom: 20px;
 		}
 	}
@@ -51,25 +51,25 @@
 		color: $dark50;
 	}
 
-	&__item_with_extra-small-offset {
+	&__item_offset_extra-small {
 		margin-bottom: 20px;
 	}
-	&__item_with_small-offset {
+	&__item_offset_small {
 		margin-bottom: 30px;
 	}
-	&__item_with_medium-offset {
+	&__item_offset_medium {
 		margin-bottom: 40px;
 	}
-	&__item_with_upper-medium-offset {
+	&__item_offset_upper-medium {
 		margin-bottom: 100px;
 	}
-	&__item_with_large-offset {
+	&__item_offset_large {
 		margin-bottom: 170px;
 	}
-	&__item_with_extra-large-offset {
+	&__item_offset_extra-large {
 		margin-bottom: 195px;
 	}
-	&__item_with_extra-extra-large-offset {
+	&__item_offset_extra-extra-large {
 		margin-bottom: 230px;
 	}
 

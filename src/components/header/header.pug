@@ -26,7 +26,7 @@ mixin header(props)
 								| #{user}
 						else 
 							.header__actions 
-								+button({text: 'войти', mode: ['with_small-offset']})
+								+button({text: 'войти', mode: ['offset_small']})
 								+simple-button({text: 'зарегистрироваться', mode: ['length_long']})
 					a.header__icon(href="/fake-address")
 						img.header__avatar(src="./user.svg")

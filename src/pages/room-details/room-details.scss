@@ -57,7 +57,7 @@
   &__item {
     margin-bottom: 12px;
 
-    &_with_large-offset {
+    &_offset_large {
       margin-left: 82px;
 
       @media (max-width: 1131px) {
@@ -73,16 +73,16 @@
     font-weight: bold;
     margin-bottom: 5px;
 
-    &_with_small-offset {
+    &_offset_small {
       margin-bottom: 10px;
     }
-    &_with_medium-offset {
+    &_offset_medium {
       margin-bottom: 17px;
     }
-    &_with_large-offset {
+    &_offset_large {
       margin-left: 20px;
     }
-    &_with_extra-large-offset {
+    &_offset_extra-large {
       margin-bottom: 21px;
     }
   }
@@ -105,7 +105,7 @@
   &__note {
     max-width: 340px;
 
-    &_with_large-offset {
+    &_offset_large {
       margin-left: 100px;
 
       @media (max-width: 740px) {
