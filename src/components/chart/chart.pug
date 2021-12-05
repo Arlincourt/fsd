@@ -8,7 +8,7 @@ mixin chart(params)
     .chart__canvas-wrapper
       canvas(class="chart__canvas js-chart-canvas")
       .chart__info 
-        span.chart__numbers= numbers 
+        span.chart__numbers.js-chart-numbers= numbers 
         p.chart__text голосов
     ul.chart__list 
       each item in items 

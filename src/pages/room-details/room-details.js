@@ -6,13 +6,16 @@ const options = {
       datasets: [{
         data: [260, 260, 522],
         backgroundColor: [['#BC9CFF', '#8BA4F9'], ['#6FCF97', '#66D2EA'], ['#FFE39C', '#FFBA9C']],
-        borderWidth: 2,
-        borderColor: '#fff'
+        hoverBorderWidth: 2
       }]
   },
   options: {
     cutout: 53,
-    events: [''],
+    plugins: {
+      tooltip: {
+        enabled: false
+      }
+    },
   }
 }
 

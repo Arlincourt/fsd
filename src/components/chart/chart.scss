@@ -24,15 +24,23 @@
   &__numbers {
     font-size: 1.71rem;
     line-height: 2.07rem;
-    color: $purple;
     font-weight: bold;
+
+    &_color_purple {
+      color: $purple;
+    }
+    &_color_yellow {
+      color: $light-yellow;
+    }
+    &_color_green {
+      color: $green;
+    }
   }
 
   &__text {
     font-weight: bold;
     font-size: 0.875rem;
     line-height: 1rem;
-    color: $purple;
     letter-spacing: 1.4px;
   }
 
