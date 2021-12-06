@@ -144,37 +144,29 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpg|svg)$/,
-				exclude: [/src\/theme/, /src\/assets/],
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: "[name].[ext]",
-							useRelativePath: true,	
-						},
-				}]
-			},
+        test: /\.(png|jpg|svg)$/,
+				exclude: [/fonts/],
+        type: 'asset/resource',
+				generator: {
+					filename: 'images/[name][ext]',
+				},
+      },
 			{
-				test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
-				exclude: [/src\/components/, /src\/assets/, /src\/pages/,],
-        type: "asset/resource",
-			},
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
+        exclude: [/images/],
+        type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]',
+				},
+      },
 			{
 				test: /\.s[ac]ss$/,
-				use: [MiniCssExtractPlugin.loader, {
-					loader: 'css-loader',
-					options: {
-						url: {
-							filter: (url, resourcePath) => {
-								if (url.includes(".png")) {
-									return false;
-								}
-								return true;
-							},
-						},
-					}
-				}, 'postcss-loader', 'sass-loader'],
+				use: [ 
+					isDev 
+					? 'style-loader' 
+					: MiniCssExtractPlugin.loader, 
+					'css-loader', 'postcss-loader', 'sass-loader'
+				],
 			},
 			{
         test: /\.pug$/,

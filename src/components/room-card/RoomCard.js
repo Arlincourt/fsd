@@ -50,7 +50,7 @@ class RoomCard {
 	initButtonsEvents() {
 		if(this.$buttons) {
 			this.$buttons.on('click', (evt) => {
-				if(evt.target.classList.contains('room-card__button_reversed')) {
+				if(evt.target.classList.contains('room-card__button_direction_reversed')) {
 					this.next(evt);
 				} else {
 					this.prev(evt);
