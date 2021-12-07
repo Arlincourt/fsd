@@ -13,17 +13,17 @@ class Like {
 
   addClickEvent() {
     this.$element.on('click', () => {
-      if(this.$element.hasClass('like_active')) {
-        this.$element.removeClass('like_active')
+      if(this.$element.hasClass('like_activated')) {
+        this.$element.removeClass('like_activated')
 
-        this.$icon.toggleClass('like__icon_active')
+        this.$icon.toggleClass('like__icon_activated')
         this.$icon.toggleClass('icon-favorite')
         this.$icon.toggleClass('icon-favorite_border')
         this.decrementValue()
       } else {
-        this.$element.addClass('like_active')
+        this.$element.addClass('like_activated')
 
-        this.$icon.toggleClass('like__icon_active')
+        this.$icon.toggleClass('like__icon_activated')
         this.$icon.toggleClass('icon-favorite')
         this.$icon.toggleClass('icon-favorite_border')
         this.incrementValue()
