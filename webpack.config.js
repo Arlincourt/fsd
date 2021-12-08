@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
@@ -9,18 +10,20 @@ const webpack = require('webpack')
 
 const isDev = process.env.NODE_ENV === 'development'
 
+const pages = fs.readdirSync(path.resolve(__dirname, 'src/pages'))
+
 const optimization = () => {
 	const config = {
 		splitChunks: {
 			chunks: 'all'
 		},
-		runtimeChunk: 'single',
+		minimize: true
 	}
 
 	if(!isDev) {
 		config.minimizer = [
 			new OptimizeCssWebpackPlugin(),
-			new TerserWebpackPlugin()
+			new TerserWebpackPlugin({cache: true, parallel: true})
 		]
 	}
 
@@ -43,6 +46,7 @@ module.exports = {
 			'@': path.resolve(__dirname, 'src')
 		}
 	},
+	mode: 'development',
 	optimization: optimization(),
 	devServer: {
 		port: 4200,
@@ -50,6 +54,7 @@ module.exports = {
     hot: true,
     contentBase: path.join(__dirname, "dist"),
 	},
+	devtool: isDev ? 'source-map' : '',
 	plugins: [
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
@@ -62,84 +67,17 @@ module.exports = {
 				},
 			]
 		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/headers/headers.pug',
-			filename: 'headers.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/colors/colors.pug',
-			filename: 'colors.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/cards/cards.pug',
-			filename: 'cards.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/form-elements/form-elements.pug',
-			filename: 'form-elements.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/landing-page/landing-page.pug',
-			filename: 'landing-page.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/filter/filter.pug',
-			filename: 'filter.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/room-details/room-details.pug',
-			filename: 'room-details.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/login/login.pug',
-			filename: 'login.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/register/register.pug',
-			filename: 'register.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/pages/index/index.pug',
-			filename: 'index.html',
-			minify: {
-				collapseWhitespace: !isDev
-			}
-		}),
-		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash].css'
+		...pages.map((page) => {
+			return new HtmlWebpackPlugin({
+				template: `./src/pages/${page}/${page}.pug`,
+				filename: `${page}.html`,
+			})
 		}),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery",
 		}),
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.HotModuleReplacementPlugin()
 	],
 	module: {
 		rules: [
