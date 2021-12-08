@@ -23,7 +23,7 @@ const optimization = () => {
 	if(!isDev) {
 		config.minimizer = [
 			new OptimizeCssWebpackPlugin(),
-			new TerserWebpackPlugin({cache: true, parallel: true})
+			new TerserWebpackPlugin({parallel: true})
 		]
 	}
 
@@ -54,7 +54,6 @@ module.exports = {
     hot: true,
     contentBase: path.join(__dirname, "dist"),
 	},
-	devtool: isDev ? 'source-map' : '',
 	plugins: [
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
@@ -72,6 +71,9 @@ module.exports = {
 				template: `./src/pages/${page}/${page}.pug`,
 				filename: `${page}.html`,
 			})
+		}),
+		new MiniCssExtractPlugin({
+			filename: '[name].[contenthash].css'
 		}),
 		new webpack.ProvidePlugin({
 			$: "jquery",
