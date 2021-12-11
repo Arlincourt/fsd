@@ -91,7 +91,6 @@ class Calendar {
 
 	clearInputValues() {
 		this.$inputs.each((idx, input) => {
-			console.log(input)
 			input.value = ''
 		})
 	}

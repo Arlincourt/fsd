@@ -7,21 +7,34 @@ class Chart {
     this.ctx = el.querySelector('.js-chart-canvas').getContext('2d');
     this.text = el.querySelector('.js-chart-numbers')
     this._options = options
+    this.allVoices = this.setAllVoices()
     this.setEvent()
     this.init()
+    this.setText(4)
   }
 
   setEvent() {
-    this._options.options.onHover = this.onChartHover.bind(this)
+    this._options.options.onHover = this.handleChartHover.bind(this)
+    this.el.addEventListener('mousemove', this.handleParentMousemove.bind(this))
   }
 
-  onChartHover(evt, activeItem) {
+  handleParentMousemove(evt) {
+    if(evt.target.classList.contains('js-chart-canvas')) {
+      return 
+    }
+    this.setText(4)
+  }
+
+  handleChartHover(evt, activeItem) {
+    $(".js-chart-canvas").css("cursor", activeItem[0] ? "pointer" : "default");
     if(activeItem.length === 1) {
       const idx = activeItem[0].index
       this.$chart.data.datasets[0].hoverBorderColor = this._options.data.datasets[0].backgroundColor[idx]
       this.setText(idx)
       this.$chart.update()
+      return 
     }
+    this.setText(4)
   }
   
   setText(idx) {
@@ -39,7 +52,17 @@ class Chart {
       case 2:
         this.text.classList.add('chart__numbers_color_yellow')
         break
+        default:
+        this.text.textContent = this.allVoices
     }
+  }
+
+  setAllVoices() {
+    let voices = 0
+    this._options.data.datasets[0].data.forEach((voicesNumber) => {
+      voices += voicesNumber
+    })
+    return voices
   }
 
   init() {
