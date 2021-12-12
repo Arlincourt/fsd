@@ -8,14 +8,14 @@
 3. запуск сервера: **npm run start**
 
 ### Используемые технологии:
-1. jQuery
-2. pug
-3. scss
-4. webpack
-5. jquery.maskedinput
-6. chart.js
-7. air-datepicker
-8. nouislider
+1. jQuery - **^3.6.0**
+2. pug - **^3.0.2**
+3. scss - **^6.0.1**
+4. webpack - **^5.65.0**
+5. jquery.maskedinput - **^1.4.1**
+6. chart.js - **^3.5.1**
+7. air-datepicker - **^2.2.3**
+8. nouislider - **^15.4.0**
 9. node - **v16.13.0**
 10. npm - **8.1.0**
 
