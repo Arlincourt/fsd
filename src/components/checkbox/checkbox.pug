@@ -7,12 +7,15 @@ mixin checkbox(params)
     const title = params.title || undefined
     const describe = params.describe || undefined
   .checkbox
-    label.checkbox__label
+    if title 
+      label.checkbox__label
+        input(type="checkbox" class="checkbox__input" name=name checked=checked)
+        .checkbox__marker
+        h4.checkbox__title= title
+      .checkbox__rich-block
+        p.checkbox__describe= describe
+    else
+     label.checkbox__label
       input(type="checkbox" class="checkbox__input" name=name checked=checked)
       .checkbox__marker
-      if title 
-        .checkbox__rich-block
-          h4.checkbox__title= title
-          p.checkbox__describe= describe
-      else
-        span.checkbox__text= params.text
+      span.checkbox__text= params.text
