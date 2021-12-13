@@ -1,113 +1,111 @@
-import 'air-datepicker'
+import 'air-datepicker';
 
 class Calendar {
-	constructor(element) {
-		this.element = element
-		this.$element = $(element).parent()
-		this.$calendar = ''
-		this.$inputs = this.$element.find('.js-dropdown-input')
-		this.$contents = this.$element.find('.js-dropdown-content')
-		this.dates = []
-		
-		this.initOptions()
-		this.init()
-	}
+  constructor(element) {
+    this.element = element;
+    this.$element = $(element).parent();
+    this.$calendar = '';
+    this.$inputs = this.$element.find('.js-dropdown-input');
+    this.$contents = this.$element.find('.js-dropdown-content');
+    this.dates = [];
 
-	initOptions() {
-		const that = this
-		this.options = {
-			range: true,
-			multipleDates: true,
-			prevHtml: '<i class="datepicker-item__icon_direction_reverse icon-arrow_forward"></i>',
-			nextHtml: '<i class="icon-arrow_forward"></i>',
-			navTitles: {
-				days: 'MM yyyy',
-			},
-			onSelect(formattedDate, date) {
-				that.onSelect(formattedDate, date)
-			}
-		}
+    this.initOptions();
+    this.init();
+  }
 
-		if(this.$inputs.length === 1) {
-			this.options.dateFormat = 'dd M'
-		}
-	}
+  initOptions() {
+    const that = this;
+    this.options = {
+      range: true,
+      multipleDates: true,
+      prevHtml: '<i class="datepicker-item__icon_direction_reverse icon-arrow_forward"></i>',
+      nextHtml: '<i class="icon-arrow_forward"></i>',
+      navTitles: {
+        days: 'MM yyyy',
+      },
+      onSelect(formattedDate, date) {
+        that.onSelect(formattedDate, date);
+      },
+    };
 
-	init() {
-		this.initCalendar()
-	}
-	
-	onSelect(formattedDate) {
-		this.$inputs.val('')
-		this.dates = this.separateInputValue(formattedDate)
-	}
-	
-	initCalendar() {
-		if(this.$inputs.length > 0) {
-			this.$calendar = $(this.$inputs[0]).datepicker(this.options).data('datepicker')
-			this.addCalendarButtons()
-			this.initInputsEvents()
-			this.initContentsEvents()
-		} else {
-			this.$calendar = $(this.element).datepicker(this.options).data('datepicker')
-			this.addCalendarButtons()
-		}
-	}
+    if (this.$inputs.length === 1) {
+      this.options.dateFormat = 'dd M';
+    }
+  }
 
-	addCalendarButtons() {
-		this.$applyBtn = $('<button class="small-button js-calendar-button" type="button">Применить</button>') 
-		this.$clearBtn = $('<button class="small-button js-calendar-button" type="button">Очистить</button>') 
-		const buttonsWrapper = $('<div class="datepicker--actions"></div>')
-		buttonsWrapper.append(this.$clearBtn)
-		buttonsWrapper.append(this.$applyBtn)
-		this.$calendar.$content.append(buttonsWrapper)
-		this.initButtonsEvents()
-	}
+  init() {
+    this.initCalendar();
+  }
 
-	initContentsEvents() {
-		this.$contents.on('click', () => {
-			this.$calendar.show()
-		})
-	}
+  onSelect(formattedDate) {
+    this.clearInputValues();
+    this.dates = this.separateInputValue(formattedDate);
+  }
 
-	initButtonsEvents() {
-		this.$applyBtn.on('click', () => {
-			if(this.dates.length === 2 && this.$inputs.length === 2) {
-				this.$inputs.each((idx, input) => {
-					input.value = this.dates[idx]
-				})
-				this.$calendar.hide()
-			} 
-			if(this.$inputs.length === 1 && this.dates.length === 2) {
-				this.$inputs.val(this.formatToFilter(this.dates))
-			}
-		})
-		this.$clearBtn.on('click', () => {
-			this.$calendar.clear()
-			this.$calendar.hide()
-			this.clearInputValues()
-		})
-	}
+  initCalendar() {
+    if (this.$inputs.length > 0) {
+      this.$calendar = $(this.$inputs[0]).datepicker(this.options).data('datepicker');
+      this.addCalendarButtons();
+      this.initInputsEvents();
+      this.initContentsEvents();
+    } else {
+      this.$calendar = $(this.element).datepicker(this.options).data('datepicker');
+      this.addCalendarButtons();
+    }
+  }
 
-	clearInputValues() {
-		this.$inputs.each((idx, input) => {
-			input.value = ''
-		})
-	}
+  addCalendarButtons() {
+    this.$applyBtn = $('<button class="small-button js-calendar-button" type="button">Применить</button>');
+    this.$clearBtn = $('<button class="small-button js-calendar-button" type="button">Очистить</button>');
+    const buttonsWrapper = $('<div class="datepicker--actions"></div>');
+    buttonsWrapper.append(this.$clearBtn);
+    buttonsWrapper.append(this.$applyBtn);
+    this.$calendar.$content.append(buttonsWrapper);
+    this.initButtonsEvents();
+  }
 
-	separateInputValue(value) {
-		return value.split(',')
-	}
+  initContentsEvents() {
+    this.$contents.on('click', () => {
+      this.$calendar.show();
+    });
+  }
 
-	formatToFilter(arr) {
-		return arr[0] + ' - ' + arr[1]
-	}
+  initButtonsEvents() {
+    this.$applyBtn.on('click', () => {
+      if (this.dates.length === 2 && this.$inputs.length === 2) {
+        this.$inputs.each((idx, input) => {
+          $(input).val(this.dates[idx]);
+        });
+        this.$calendar.hide();
+      }
+      if (this.$inputs.length === 1 && this.dates.length === 2) {
+        this.$inputs.val(this.formatToFilter(this.dates));
+      }
+    });
+    this.$clearBtn.on('click', () => {
+      this.$calendar.clear();
+      this.$calendar.hide();
+      this.clearInputValues();
+    });
+  }
 
-	initInputsEvents() {
-		this.$inputs.on('click', () => {
-			this.$calendar.show()
-		})
-	}
+  clearInputValues() {
+    this.$inputs.val('');
+  }
+
+  separateInputValue(value) {
+    return value.split(',');
+  }
+
+  formatToFilter(arr) {
+    return `${arr[0]} - ${arr[1]}`;
+  }
+
+  initInputsEvents() {
+    this.$inputs.on('click', () => {
+      this.$calendar.show();
+    });
+  }
 }
 
-export default Calendar
+export default Calendar;

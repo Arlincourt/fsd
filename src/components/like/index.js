@@ -1,9 +1,9 @@
-import Like from './Like'
+import Like from './Like';
 
 $(() => {
   $('.like').each((idx, el) => {
-    new Like(el)
-  })
+    new Like(el);
+  });
 
-  $('.form-elements__item_with_100_mb .js-accordion-expander').click()
-})
+  $('.form-elements__item_with_100_mb .js-accordion-expander').click();
+});

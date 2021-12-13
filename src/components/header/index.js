@@ -1,8 +1,8 @@
-import Header from './Header'
-import * as $ from 'jquery'
+import * as $ from 'jquery';
+import Header from './Header';
 
-$(document).ready(function() {
-	$('.js-header').each(function(idx, el) {
-		new Header(el)
-	})
+$(document).ready(() => {
+  $('.js-header').each((idx, el) => {
+    new Header(el);
+  });
 });

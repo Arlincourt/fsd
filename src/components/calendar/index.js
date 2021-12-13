@@ -1,7 +1,7 @@
-import Datepicker from './Calendar'
+import Datepicker from './Calendar';
 
-$(document).ready(function() {
-	$('.js-calendar').each(function(idx, el) {
-		new Datepicker(el)
-	})
+$(document).ready(() => {
+  $('.js-calendar').each((idx, el) => {
+    new Datepicker(el);
+  });
 });
