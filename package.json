@@ -8,7 +8,9 @@
     "prod": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack serve --mode development",
     "lint": "eslint src",
-    "lint-fix": "eslint src --fix "
+    "lint-fix": "eslint src --fix",
+    "stylelint": "stylelint \"src/**/*.scss\"",
+    "stylelint-fix": "stylelint \"src/**/*.scss\" --fix"
   },
   "browserslist": "> 0.25%, not dead",
   "keywords": [],
