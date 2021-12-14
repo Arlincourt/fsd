@@ -4,7 +4,7 @@
   display: flex;
 
   &__icon {
-    font-family: "icons";
+    font-family: "icons", sans-serif;
     font-size: 1.7rem;
     line-height: 1.42rem;
     background: $purple-gradient;

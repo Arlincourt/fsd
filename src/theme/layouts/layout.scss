@@ -1,4 +1,4 @@
-@import "@/theme/variables.scss";
+@import "@/theme/variables";
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 html {
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   color: $dark100;
   background-color: #fff;

@@ -24,7 +24,7 @@
       top: 50%;
       transform: translateY(-50%);
       color: $dark50;
-      font-family: "icons";
+      font-family: "icons", sans-serif;
       cursor: pointer;
       z-index: 7;
     }
@@ -42,7 +42,6 @@
     line-height: 1.71rem;
     color: rgba(31, 32, 65, 0.75);
     border-radius: 4px 4px 0 0;
-    font-family: "Montserrat";
     border: 1px solid rgba(31, 32, 65, 0.25);
 
     &::placeholder {

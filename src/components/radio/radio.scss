@@ -13,6 +13,21 @@
     margin-bottom: 5px;
   }
 
+  &__marker {
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    position: relative;
+    margin-top: 2px;
+    margin-right: 12px;
+  }
+
+  &__text {
+    color: $dark50;
+    letter-spacing: -0.2px;
+  }
+
   &__input {
     display: none;
 
@@ -35,20 +50,5 @@
     &:checked ~ .radio__text {
       color: $dark75;
     }
-  }
-
-  &__marker {
-    width: 18px;
-    height: 18px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 50%;
-    position: relative;
-    margin-top: 2px;
-    margin-right: 12px;
-  }
-
-  &__text {
-    color: $dark50;
-    letter-spacing: -0.2px;
   }
 }
