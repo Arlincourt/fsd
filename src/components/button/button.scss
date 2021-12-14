@@ -1,11 +1,10 @@
-@import "@/theme/variables.scss";
+@import "@/theme/variables";
 
 .button {
   display: inline-block;
   font-size: 0.875rem;
   line-height: 1rem;
   font-weight: 700;
-  font-family: Montserrat;
   border-radius: 22px;
   text-decoration: none;
   padding: 9px 16px;

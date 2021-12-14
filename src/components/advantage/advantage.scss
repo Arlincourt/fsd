@@ -1,4 +1,4 @@
-@import "@/theme/variables.scss";
+@import "@/theme/variables";
 
 .advantage {
   &__body {
@@ -20,7 +20,6 @@
     background-image: $purple-gradient;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     -moz-text-fill-color: transparent;
   }
 
