@@ -1,47 +1,45 @@
-@import '@/theme/variables.scss';
-
+@import "@/theme/variables.scss";
 
 .accordion {
+  max-width: 266px;
 
-	max-width: 266px;
+  &__expander {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 17px;
+    cursor: pointer;
+    justify-content: space-between;
+  }
 
-	&__expander {
-		display: flex;
-		align-items: baseline;
-		margin-bottom: 17px;
-		cursor: pointer;
-		justify-content: space-between;
-	}
+  &__icon {
+    background-color: transparent;
+    border: none;
+    color: $dark50;
+    cursor: pointer;
+    width: 44px;
+    transition-duration: 0.3s;
+    transform-origin: center center;
 
-	&__icon {
-		background-color: transparent;
-		border: none;
-		color: $dark50;
-		cursor: pointer;
-		width: 44px;
-		transition-duration: .3s;
-		transform-origin: center center;
-		
-		&_active {
-			transform: scaleY(-1);
-		}
-	}
+    &_active {
+      transform: scaleY(-1);
+    }
+  }
 
-	&__list {
-		transition: .3s ease-in-out;
-		transform-origin: top center;
-		visibility: hidden;
-		opacity: 0;
-		max-height: 0;
-		
-		&_active {
-			opacity: 1;
-			visibility: visible;
-			max-height: 3000px;
-		}
-	}
+  &__list {
+    transition: 0.3s ease-in-out;
+    transform-origin: top center;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
 
-	&__item {
-		margin-bottom: 10px;
-	}
+    &_active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 3000px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
 }

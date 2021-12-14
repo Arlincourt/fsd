@@ -1,24 +1,24 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .container {
-	max-width: 1440px;
-	margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .headers {
-	background-color: $gray;
-	
-	&__logo {
-		padding-top: 30px;
-		padding-left: 30px;
-		margin-bottom: 62px;
-	}
-	
-	&__body {
-		padding-bottom: 140px;
-	}
+  background-color: $gray;
 
-	&__example {
-		margin-bottom: 40px;
-	}
+  &__logo {
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-bottom: 62px;
+  }
+
+  &__body {
+    padding-bottom: 140px;
+  }
+
+  &__example {
+    margin-bottom: 40px;
+  }
 }

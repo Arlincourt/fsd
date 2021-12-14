@@ -1,38 +1,35 @@
-@import '@theme/variables.scss';
-@import '~air-datepicker/src/sass/datepicker.scss';
-@import '~air-datepicker/src/sass/navigation.scss';
-@import '~air-datepicker/src/sass/cell.scss';
+@import "@theme/variables.scss";
+@import "~air-datepicker/src/sass/datepicker.scss";
+@import "~air-datepicker/src/sass/navigation.scss";
+@import "~air-datepicker/src/sass/cell.scss";
 
 .datepicker-item {
+  &__dropdowns {
+    display: flex;
 
-	&__dropdowns {
-		display: flex;
-    
     @media (max-width: 370px) {
-			flex-wrap: wrap;
+      flex-wrap: wrap;
     }
-	}
+  }
 
-	&__dropdown_offset_medium {
-		margin-right: 20px;
+  &__dropdown_offset_medium {
+    margin-right: 20px;
 
     @media (max-width: 370px) {
-			margin-bottom: 20px;
+      margin-bottom: 20px;
       margin-right: 0;
     }
-	}
+  }
 
   &__icon_direction_reverse {
     transform: scaleX(-1);
   }
 }
 
-
-
 .datepicker {
   font-family: Montserrat, Arial, sans-serif;
   font-size: 1.15rem;
-  padding: 10px 20px 16px; 
+  padding: 10px 20px 16px;
   width: 320px;
   box-sizing: border-box;
 
@@ -40,6 +37,7 @@
     width: 280px;
     margin-left: -35px;
   }
+
   @media (max-width: 320px) {
     margin-left: -40px;
   }
@@ -50,7 +48,7 @@
 
   &--cell {
     height: 40px;
-		font-size: 0.85rem;
+    font-size: 0.85rem;
     color: $dark50;
 
     &.-current- {
@@ -79,13 +77,13 @@
       font-weight: bold;
 
       &.-focus- {
-      	background-image: $purple-gradient;
+        background-image: $purple-gradient;
       }
     }
 
-		&.-range-to- {
-			border: none;
-		}
+    &.-range-to- {
+      border: none;
+    }
 
     &.-in-range- {
       background: $purple-gradient25;
@@ -97,7 +95,7 @@
 
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         width: 20px;
         height: 40px;
         background-image: $purple-gradient25;
@@ -110,7 +108,7 @@
 
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         width: 20px;
         height: 40px;
         background-image: $purple-gradient25;

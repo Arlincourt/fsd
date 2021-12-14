@@ -1,4 +1,4 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .form-control {
   position: relative;
@@ -42,14 +42,14 @@
     top: 50%;
     width: 44px;
     height: 44px;
-    right: 0px;
+    right: 0;
     transform: translateY(-50%);
     cursor: pointer;
     border: none;
     background-image: $purple-gradient;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent; 
-		-moz-background-clip: text;
-		-moz-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
   }
 }

@@ -1,4 +1,4 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .like {
   width: 40px;
@@ -18,7 +18,7 @@
 
   &_activated {
     border-color: $purple;
-    color: $purple; 
+    color: $purple;
   }
 
   &__icon {
@@ -28,9 +28,9 @@
 
     &_activated {
       background-image: $purple-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; 
-      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       -moz-text-fill-color: transparent;
     }
   }

@@ -1,48 +1,53 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .color-item {
+  &__body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
-	&__body {
-		display: flex;
-		align-items: center;
-		margin-bottom: 20px;
-	}
+  &__block {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-right: 40px;
 
-	&__block {
-		width: 70px;
-		height: 70px;
-		border-radius: 6px;
-		margin-right: 40px;
+    &_color_dark100 {
+      background-color: $dark100;
+    }
 
-		&_color_dark100 {
-			background-color: $dark100;
-		}
-		&_color_dark75 {
-			background-color: $dark75;
-		}
-		&_color_dark50 {
-			background-color: $dark50;
-		}
-		&_color_dark25 {
-			background-color: $dark25;
-		}
-		&_color_dark5 {
-			background-color: $dark5;
-		}
-		&_color_purple {
-			background-color: $purple;
-		}
-		&_color_green {
-			background-color: $green;
-		}
-	}
+    &_color_dark75 {
+      background-color: $dark75;
+    }
 
-	&__text {
-		font-size: 19px;
-		line-height: 28px;
+    &_color_dark50 {
+      background-color: $dark50;
+    }
 
-		&_font_bold {
-			font-weight: bold;
-		}
-	}
+    &_color_dark25 {
+      background-color: $dark25;
+    }
+
+    &_color_dark5 {
+      background-color: $dark5;
+    }
+
+    &_color_purple {
+      background-color: $purple;
+    }
+
+    &_color_green {
+      background-color: $green;
+    }
+  }
+
+  &__text {
+    font-size: 19px;
+    line-height: 28px;
+
+    &_font_bold {
+      font-weight: bold;
+    }
+  }
 }

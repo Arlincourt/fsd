@@ -1,5 +1,4 @@
-@import '@/theme/variables.scss';
-
+@import "@/theme/variables.scss";
 
 .chart {
   position: relative;
@@ -29,9 +28,11 @@
     &_color_purple {
       color: $purple;
     }
+
     &_color_yellow {
       color: $light-yellow;
     }
+
     &_color_green {
       color: $light-blue;
     }
@@ -56,7 +57,7 @@
   }
 
   &__item::before {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     margin-right: 5px;
@@ -67,13 +68,16 @@
   &__item_color_yellow::before {
     background-image: $yellow-gradient;
   }
+
   &__item_color_purple::before {
-    background-image: $purple-gradient
+    background-image: $purple-gradient;
   }
+
   &__item_color_green::before {
     background-image: $green-gradient;
   }
+
   &__item_color_black::before {
-    background-image: $black-gradient
+    background-image: $black-gradient;
   }
 }

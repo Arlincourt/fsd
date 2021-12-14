@@ -1,15 +1,13 @@
-@import '@/theme/variables.scss';
-
+@import "@/theme/variables.scss";
 
 .room-details {
-
   &__gallery {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     position: relative;
   }
-  
+
   &__secondary-img {
     object-fit: cover;
     margin-left: 68.125%;
@@ -45,10 +43,11 @@
     max-width: 712px;
     display: flex;
     flex-wrap: wrap;
-    
+
     @media (max-width: 1132px) {
       justify-content: space-between;
     }
+
     @media (max-width: 651px) {
       justify-content: center;
     }
@@ -76,12 +75,15 @@
     &_offset_small {
       margin-bottom: 10px;
     }
+
     &_offset_medium {
       margin-bottom: 17px;
     }
+
     &_offset_large {
       margin-left: 20px;
     }
+
     &_offset_extra-large {
       margin-bottom: 21px;
     }
@@ -113,14 +115,16 @@
       }
     }
   }
-  
+
   &__footer_size_big {
     @media (max-width: 768px) {
       display: none;
     }
   }
+
   &__footer_size_small {
     display: none;
+
     @media (max-width: 768px) {
       display: block;
     }

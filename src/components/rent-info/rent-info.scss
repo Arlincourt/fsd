@@ -1,43 +1,41 @@
-@import '@/theme/variables.scss';
-
+@import "@/theme/variables.scss";
 
 .rent-info {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
 
+  &__number {
+    display: flex;
+    align-items: baseline;
+  }
 
-	&__number {
-		display: flex;
-		align-items: baseline;
-	}
+  &__title {
+    margin-left: 6px;
+    margin-right: 7px;
+    font-size: 1.71rem;
 
-	&__title {
-		margin-left: 6px;
-		margin-right: 7px;
-		font-size: 1.71rem;
+    &_size_small {
+      font-size: 1.35rem;
+    }
+  }
 
-		&_size_small {
-			font-size: 1.35rem;
-		}
-	}
+  &__luxury {
+    color: $purple;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-	&__luxury {
-		color: $purple;
-		font-size: 0.875rem;
-		text-transform: uppercase;
-		font-weight: bold;
-	}
+  &__price {
+    color: $dark50;
+    font-size: 0.875rem;
+    line-height: 1.28rem;
+  }
 
-	&__price {
-		color: $dark50;
-		font-size: 0.875rem;
-		line-height: 1.28rem;
-	}
-
-	&__text {
-		font-weight: bold;
-		font-size: 1rem;
-	}
+  &__text {
+    font-weight: bold;
+    font-size: 1rem;
+  }
 }

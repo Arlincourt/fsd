@@ -1,43 +1,46 @@
 @font-face {
-	font-family: 'Montserrat';
-	src: url(./fonts/montserrat-medium.ttf) format('truetype'), 
-	url(./fonts/montserrat-medium.woff) format('woff'),
-	url(./fonts/montserrat-medium.svg) format('svg');
-	font-weight: 500;
-	font-style: normal;
-} 
-@font-face {
-	font-family: 'Montserrat';
-	src: url(./fonts/montserrat-regular.ttf) format('truetype'), 
-	url(./fonts/montserrat-regular.woff) format('woff'),
-	url(./fonts/montserrat-regular.svg) format('svg');
-	font-weight: 400;
-	font-style: normal;
-} 
-
-@font-face {
-	font-family: 'Montserrat';
-	src: url(./fonts/montserrat-bold.ttf) format('truetype'), 
-	url(./fonts/montserrat-bold.woff) format('woff'), 
-	url(./fonts/montserrat-regular.svg) format('svg');
-	font-weight: 700;
-	font-style: normal;
+  font-family: "Montserrat";
+  src:
+    url(./fonts/montserrat-medium.ttf) format("truetype"),
+    url(./fonts/montserrat-medium.woff) format("woff"),
+    url(./fonts/montserrat-medium.svg) format("svg");
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'icons';
-	src: url(./fonts/icons.ttf) format('truetype'), 
-	url(./fonts/icons.woff) format('woff'), 
-	url(./fonts/icons.svg) format('svg');
-	font-style: normal;
+  font-family: "Montserrat";
+  src:
+    url(./fonts/montserrat-regular.ttf) format("truetype"),
+    url(./fonts/montserrat-regular.woff) format("woff"),
+    url(./fonts/montserrat-regular.svg) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url(./fonts/montserrat-bold.ttf) format("truetype"),
+    url(./fonts/montserrat-bold.woff) format("woff"),
+    url(./fonts/montserrat-regular.svg) format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  src:
+    url(./fonts/icons.ttf) format("truetype"),
+    url(./fonts/icons.woff) format("woff"),
+    url(./fonts/icons.svg) format("svg");
+  font-style: normal;
   font-weight: 400;
 }
 
-
-
-
-[class^="icon-"]::before, [class*=" icon-"]::before {
-  font-family: 'icons' !important;
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  font-family: "icons" !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -47,44 +50,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-.icon-arrow_forward:before {
+.icon-arrow_forward::before {
   content: "\e900";
 }
-.icon-check:before {
+
+.icon-check::before {
   content: "\e901";
 }
-.icon-comfort:before {
+
+.icon-comfort::before {
   content: "\e902";
 }
-.icon-expand_more:before {
+
+.icon-expand_more::before {
   content: "\e903";
 }
-.icon-facebook:before {
+
+.icon-facebook::before {
   content: "\e904";
 }
-.icon-favorite:before {
+
+.icon-favorite::before {
   content: "\e905";
 }
-.icon-favorite_border:before {
+
+.icon-favorite_border::before {
   content: "\e906";
 }
-.icon-inst:before {
+
+.icon-inst::before {
   content: "\e907";
 }
-.icon-location_city:before {
+
+.icon-location_city::before {
   content: "\e908";
 }
-.icon-smile:before {
+
+.icon-smile::before {
   content: "\e909";
 }
-.icon-star:before {
+
+.icon-star::before {
   content: "\e90a";
 }
-.icon-star_border:before {
+
+.icon-star_border::before {
   content: "\e90b";
 }
-.icon-twitter:before {
+
+.icon-twitter::before {
   content: "\e90c";
 }

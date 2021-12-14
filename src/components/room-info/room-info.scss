@@ -1,30 +1,29 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .room-info {
+  &__body {
+    background-color: #fff;
+    padding: 40px 30px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    max-width: 380px;
+    box-sizing: border-box;
+  }
 
-	&__body {
-		background-color: #fff;
-		padding: 40px 30px 30px;
-		border-radius: 4px;
-		border: 1px solid rgba(0, 0, 0, 0.12);
-		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-		max-width: 380px;
-		box-sizing: border-box;
-	}
+  &__top {
+    margin-bottom: 21px;
+  }
 
-	&__top {
-		margin-bottom: 21px;
-	}
+  &__dates {
+    margin-bottom: 22px;
+  }
 
-	&__dates {
-		margin-bottom: 22px;
-	}
+  &__guests {
+    margin-bottom: 18px;
+  }
 
-	&__guests {
-		margin-bottom: 18px;
-	}
-
-	&__expences {
-		margin-bottom: 21px;
-	}
+  &__expences {
+    margin-bottom: 21px;
+  }
 }

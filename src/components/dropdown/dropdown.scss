@@ -1,54 +1,53 @@
-@import '@theme/variables.scss';
+@import "@theme/variables.scss";
 
 .dropdown {
+  width: 100%;
+  box-sizing: border-box;
 
-	width: 100%;
-	box-sizing: border-box;
+  &_size_small {
+    max-width: 266px;
+  }
 
-	&_size_small {
-		max-width: 266px;
-	}
+  &__content {
+    cursor: pointer;
+    padding-right: 33px;
+  }
 
-	&__content {
-		cursor: pointer;
-		padding-right: 33px;
-	}
-	
-	&__label {
-		position: relative;
-		cursor: pointer;
-		
-		&::after {
-			content: '\e903';
-			position: absolute;
-			right: 15px;
-			top: 50%;
-			transform: translateY(-50%);
-			color: $dark50;
-			font-family: 'icons';
-			cursor: pointer;
-			z-index: 7;
-		}
-	}
+  &__label {
+    position: relative;
+    cursor: pointer;
 
-	&__title {
-		margin-bottom: 5px;
-	}
-	
-	&__input {
-		padding: 8.5px 18px 10px 13px;
+    &::after {
+      content: "\e903";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $dark50;
+      font-family: "icons";
+      cursor: pointer;
+      z-index: 7;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    padding: 8.5px 18px 10px 13px;
     pointer-events: none;
     width: 100%;
     font-size: 1rem;
     line-height: 1.71rem;
     color: rgba(31, 32, 65, 0.75);
-    border-radius: 4px 4px 0px 0px;
-    font-family: 'Montserrat';
+    border-radius: 4px 4px 0 0;
+    font-family: "Montserrat";
     border: 1px solid rgba(31, 32, 65, 0.25);
 
-		&::placeholder {
-			line-height: 1.28rem;
-			color: $dark75;
-		}
-	}
+    &::placeholder {
+      line-height: 1.28rem;
+      color: $dark75;
+    }
+  }
 }

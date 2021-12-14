@@ -1,4 +1,4 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .filter {
   border-bottom: 1px solid $dark25;
@@ -6,7 +6,7 @@
   &__body {
     max-width: 1190px;
     margin: 0 auto;
-    padding: 0px 15px;
+    padding: 0 15px;
     padding-top: 30px;
     padding-bottom: 72px;
     box-sizing: border-box;
@@ -45,6 +45,7 @@
     &_offset_medium {
       margin-bottom: 30px;
     }
+
     &_offset_small {
       margin-bottom: 22px;
     }
@@ -57,7 +58,7 @@
 
   &__range-info {
     color: $dark50;
-    font-size: 0.860rem;
+    font-size: 0.86rem;
     line-height: 1rem;
     margin-top: 15.5px;
     text-transform: none;
@@ -75,7 +76,7 @@
     flex-grow: 1;
     margin-left: 30px;
     max-width: 835px;
-    
+
     @media (max-width: 992px) {
       margin: 0 auto;
       margin-top: 30px;
@@ -94,7 +95,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: -10px;
-    
+
     @media (max-width: 992px) {
       justify-content: center;
     }
@@ -119,8 +120,10 @@
       display: none;
     }
   }
+
   &__footer_size_small {
     display: none;
+
     @media (max-width: 768px) {
       display: block;
     }

@@ -1,8 +1,6 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .checkbox {
-
-
   &__label {
     display: inline-flex;
     cursor: pointer;
@@ -14,6 +12,7 @@
     &:checked + .checkbox__marker {
       border-color: $purple;
     }
+
     &:checked + .checkbox__marker::after {
       display: block;
     }
@@ -30,17 +29,17 @@
     margin-right: 10px;
 
     &::after {
-      content: '\e901';
-      font-family: 'icons';
+      content: "\e901";
+      font-family: "icons";
       position: absolute;
       width: 1rem;
       top: 40%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
       background-image: $purple-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; 
-      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       -moz-text-fill-color: transparent;
       display: none;
     }

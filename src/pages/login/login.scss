@@ -1,7 +1,7 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .login {
-  background-image: url('images/login-background.png');
+  background-image: url("images/login-background.png");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,8 +29,10 @@
       display: none;
     }
   }
+
   &__footer_size_small {
     display: none;
+
     @media (max-width: 768px) {
       display: block;
     }

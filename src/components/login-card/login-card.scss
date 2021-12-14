@@ -1,46 +1,44 @@
-@import '@/theme/variables.scss';
-
+@import "@/theme/variables.scss";
 
 .login-card {
-	
-	&__body {
-		background-color: #fff;
-		padding: 40px 30px 30px;
-		border-radius: 4px;
-		border: 1px solid rgba(0, 0, 0, 0.12);
-		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-		max-width: 380px;
-		box-sizing: border-box;
-	}
-	
-	&__form {
-		margin-bottom: 30px;
-	}
+  &__body {
+    background-color: #fff;
+    padding: 40px 30px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    max-width: 380px;
+    box-sizing: border-box;
+  }
 
-	&__title {
-		margin-bottom: 19px;
-	}
+  &__form {
+    margin-bottom: 30px;
+  }
 
-	&__input {
-		margin-bottom: 9px;
-	}
+  &__title {
+    margin-bottom: 19px;
+  }
 
-	&__button {
-		margin-top: 20px;
-	}
+  &__input {
+    margin-bottom: 9px;
+  }
 
-	&__question {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-	}
+  &__button {
+    margin-top: 20px;
+  }
 
-	&__paragraph {
-		font-size: 1rem;
-		line-height: 1.28rem;
-		color: #000;
-		font-weight: 500;
-		letter-spacing: -.2px;
-	}
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__paragraph {
+    font-size: 1rem;
+    line-height: 1.28rem;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
 }

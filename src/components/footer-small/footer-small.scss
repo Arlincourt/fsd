@@ -1,21 +1,21 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .footer-small {
-	text-align: center;
-	background-color: #fff;
-	padding: 120px 0px;
+  text-align: center;
+  background-color: #fff;
+  padding: 120px 0;
 
-	&__logo {
-		margin-bottom: 20px;
-	}
-	
-	&__text {
-		font-size: 1rem;
-		line-height: 1.2rem;
-		color: $dark75;
-		margin: 0 auto;
-		padding: 0px 15px;
-		margin-bottom: 25px;
-		max-width: 768px;
-	}
+  &__logo {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: $dark75;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    max-width: 768px;
+  }
 }

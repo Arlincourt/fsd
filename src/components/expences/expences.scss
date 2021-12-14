@@ -1,69 +1,67 @@
-@import '@/theme/variables.scss';
+@import "@/theme/variables.scss";
 
 .expences {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 11px;
+  }
 
+  &__name {
+    line-height: 1.28rem;
+    font-size: 1rem;
+    color: $dark75;
+    max-width: 220px;
+    width: 70%;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+  }
 
-	&__item {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		margin-bottom: 11px;
-	}
+  &__price {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    font-weight: 500;
+    line-height: 1.7rem;
+    font-size: 1rem;
+    color: $dark75;
+  }
 
-	&__name {
-		line-height: 1.28rem;
-		font-size: 1rem;
-		color: $dark75;
-		max-width: 220px;
-		width: 70%;
-		font-weight: 500;
-		letter-spacing: -.1px;
-	}
-
-	&__price {
-		width: 100px;
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row-reverse;
-		font-weight: 500;
-		line-height: 1.7rem;
-		font-size: 1rem;
-		color: $dark75;
-	}
-
-	&__icon {
-		width: 18px;
+  &__icon {
+    width: 18px;
     height: 19px;
-		border: 1px solid $dark25;
-		position: relative;
-		border-radius: 50%;
+    border: 1px solid $dark25;
+    position: relative;
+    border-radius: 50%;
 
-		&::after {
-			position: absolute;
-			content: 'i';
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
-			line-height: 1rem;
-			font-size: 0.875rem;
-			color: $dark25;
-			font-weight: bold;
-		}
-	}
+    &::after {
+      position: absolute;
+      content: "i";
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      line-height: 1rem;
+      font-size: 0.875rem;
+      color: $dark25;
+      font-weight: bold;
+    }
+  }
 
-	&__footer {
-		margin-top: 30px;
-		display: flex;
-	}
+  &__footer {
+    margin-top: 30px;
+    display: flex;
+  }
 
-	&__line {
-		flex-grow: 1;
-		border-bottom: 1px dashed $dark25;
-		margin-bottom: 3px;
-	}
+  &__line {
+    flex-grow: 1;
+    border-bottom: 1px dashed $dark25;
+    margin-bottom: 3px;
+  }
 
-	&__title {
-		font-size: 1.35rem;
-		line-height: 1.64rem;
-	}
+  &__title {
+    font-size: 1.35rem;
+    line-height: 1.64rem;
+  }
 }
