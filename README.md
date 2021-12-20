@@ -6,6 +6,10 @@
 1. запуск режима разработки: **npm run dev**
 2. запуск режима сборки: **npm run prod**
 3. запуск сервера: **npm run start**
+4. запуск eslint: **npm run lint**
+5. запуск автоматического исправления eslint: **npm run lint-fix**
+6. запуск stylelint: **npm run stylelint**
+7. запуск автоматического исправления stylelint: **npm run stylelint-fix**
 
 ### Используемые технологии:
 1. jQuery - **^3.6.0**
