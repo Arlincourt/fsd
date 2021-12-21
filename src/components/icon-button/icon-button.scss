@@ -6,6 +6,7 @@ $arrow-rl: 15px + 24px + 14px;
   display: inline-block;
   font-size: 0.875rem;
   line-height: 1rem;
+  letter-spacing: .5px;
   font-weight: 700;
   background: $purple-gradient;
   border-radius: 22px;
@@ -24,7 +25,7 @@ $arrow-rl: 15px + 24px + 14px;
   &_size_big {
     display: block;
     min-width: 100%;
-    padding: 15px 0;
+    padding: 14px 0;
   }
 
   &::after {
