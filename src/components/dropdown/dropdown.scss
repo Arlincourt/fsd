@@ -35,7 +35,7 @@
   }
 
   &__input {
-    padding: 8.5px 18px 10px 13px;
+    padding: 8.5px 22px 10px 8px;
     pointer-events: none;
     width: 100%;
     font-size: 1rem;
@@ -43,7 +43,7 @@
     color: rgba(31, 32, 65, 0.75);
     border-radius: 4px 4px 0 0;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    letter-spacing: 0.9px;
+    letter-spacing: 0.7px;
 
     &::placeholder {
       line-height: 1.28rem;
