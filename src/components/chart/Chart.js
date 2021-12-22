@@ -7,6 +7,7 @@ class Chart {
     this.el = el;
     this.ctx = el.querySelector('.js-chart-canvas').getContext('2d');
     this.text = el.querySelector('.js-chart-numbers');
+    this.info = el.querySelector('.js-chart-info');
     this.options = options;
     this.allVoices = this.setAllVoices();
     this.setEvent();
@@ -41,18 +42,18 @@ class Chart {
 
   setText(idx) {
     this.text.textContent = this.options.data.datasets[0].data[idx];
-    this.text.className = '';
-    this.text.classList.add('chart__numbers');
-    this.text.classList.add('js-chart-numbers');
+    this.info.className = '';
+    this.info.classList.add('chart__info');
+    this.info.classList.add('js-chart-info');
     switch (idx) {
       case 0:
-        this.text.classList.add('chart__numbers_color_purple');
+        this.info.classList.add('chart__info_color_purple');
         break;
       case 1:
-        this.text.classList.add('chart__numbers_color_green');
+        this.info.classList.add('chart__info_color_green');
         break;
       case 2:
-        this.text.classList.add('chart__numbers_color_yellow');
+        this.info.classList.add('chart__info_color_yellow');
         break;
       default:
         this.text.textContent = this.allVoices;
