@@ -18,22 +18,22 @@
     left: 28px;
     z-index: 9;
     text-align: center;
-    
+
     &_color_purple {
       background: $purple-gradient;
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     &_color_yellow {
       background: $yellow-gradient;
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     &_color_green {
       background: $green-gradient;
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
