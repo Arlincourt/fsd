@@ -4,6 +4,7 @@ class RoomCard {
   constructor(element) {
     this.$gallery = $(element);
     this.$line = this.$gallery.find('.room-card__gallery-line');
+    this.$actions = this.$gallery.find('.room-card__actions');
     this.$pointsContainer = this.$gallery.find('.room-card__points');
     this.$buttons = this.$gallery.find('.room-card__button');
     this.step = 0;
@@ -15,8 +16,27 @@ class RoomCard {
 
   init() {
     this.initButtonsEvents();
+    this.initGalleryEvents();
     this.initPointsEvents();
     this.renderStep();
+  }
+
+  initGalleryEvents() {
+    this.$gallery.on('mouseenter', () => {
+      if (this.isHidden()) {
+        this.$actions.removeClass('room-card__actions_hidden');
+      }
+    });
+
+    this.$gallery.on('mouseleave', () => {
+      if (!this.isHidden()) {
+        this.$actions.addClass('room-card__actions_hidden');
+      }
+    });
+  }
+
+  isHidden() {
+    return this.$actions.hasClass('room-card__actions_hidden');
   }
 
   renderStep() {
