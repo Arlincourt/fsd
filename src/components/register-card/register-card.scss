@@ -44,6 +44,10 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    @media (max-width: 400px) {
+      justify-content: center;
+    }
   }
 
   &__paragraph {
@@ -53,5 +57,12 @@
     font-weight: 500;
     margin: 0;
     letter-spacing: -0.1px;
+    margin-right: 20px;
+
+    @media (max-width: 400px) {
+      margin-bottom: 20px;
+      flex-basis: 100%;
+      text-align: center;
+    }
   }
 }

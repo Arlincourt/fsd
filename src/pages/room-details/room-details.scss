@@ -34,7 +34,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @media (max-width: 1132px) {
+    @media (max-width: 1142px) {
       justify-content: center;
     }
   }
@@ -43,8 +43,9 @@
     max-width: 712px;
     display: flex;
     flex-wrap: wrap;
+    margin-right: 10px;
 
-    @media (max-width: 1132px) {
+    @media (max-width: 1142px) {
       justify-content: space-between;
     }
 
