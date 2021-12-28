@@ -56,7 +56,9 @@ class Calendar {
 
   addCalendarButtons() {
     this.$applyBtn = $('<button class="small-button js-calendar-button" type="button">Применить</button>');
-    this.$clearBtn = $('<button class="small-button js-calendar-button" type="button">Очистить</button>');
+    this.$clearBtn = $(
+      '<button class="small-button small-button_hidden js-calendar-button" type="button">Очистить</button>',
+    );
     const buttonsWrapper = $('<div class="datepicker--actions"></div>');
     buttonsWrapper.append(this.$clearBtn);
     buttonsWrapper.append(this.$applyBtn);
@@ -76,21 +78,32 @@ class Calendar {
         this.$inputs.each((idx, input) => {
           $(input).val(this.dates[idx]);
         });
+        this.showClearButton();
         this.$calendar.hide();
       }
       if (this.$inputs.length === 1 && this.dates.length === 2) {
         this.$inputs.val(this.formatToFilter(this.dates));
+        this.showClearButton();
       }
     });
     this.$clearBtn.on('click', () => {
       this.$calendar.clear();
       this.$calendar.hide();
+      this.hideClearButton();
       this.clearInputValues();
     });
   }
 
   clearInputValues() {
     this.$inputs.val('');
+  }
+
+  hideClearButton() {
+    this.$clearBtn.addClass('small-button_hidden');
+  }
+
+  showClearButton() {
+    this.$clearBtn.removeClass('small-button_hidden');
   }
 
   separateInputValue(value) {
