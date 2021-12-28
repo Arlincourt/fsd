@@ -100,7 +100,7 @@ class QuantityDropdown {
   }
 
   hideCalendar() {
-    this.$list.addClass('quantity-dropdown__list_hidden');
+    $('.js-quantity-dropdown__list').addClass('quantity-dropdown__list_hidden');
   }
 
   showCalendar() {

@@ -8,12 +8,28 @@ class Menu {
   }
 
   addClickListenersToExpanders(idx, element) {
+    document.addEventListener('click', this.onDocumentClick.bind(this));
     $(element).on('click', this.onClickExpander.bind(this));
   }
 
-  onClickExpander(e) {
-    const submenu = $(e.currentTarget).parent().find('.js-submenu');
-    submenu.toggleClass('menu__submenu_opened');
+  onClickExpander(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    const submenu = $(evt.currentTarget).parent().find('.js-submenu');
+    if (submenu.hasClass('menu__submenu_opened')) {
+      this.hideMenus();
+      return;
+    }
+    this.hideMenus();
+    submenu.addClass('menu__submenu_opened');
+  }
+
+  onDocumentClick() {
+    this.hideMenus();
+  }
+
+  hideMenus() {
+    $('.js-submenu').removeClass('menu__submenu_opened');
   }
 }
 
