@@ -17,7 +17,8 @@
     z-index: 10;
     border: 1px solid $dark25;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-    width: calc(100% - 1px);
+    right: 0;
+    left: 0;
     top: 42px;
     background-color: #fff;
     border-radius: 0 0 2px 2px;
