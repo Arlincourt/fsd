@@ -21,6 +21,7 @@ $arrow-rl: 15px + 24px + 14px;
   padding-right: $arrow-rl;
   padding-left: $arrow-rl;
   font-family: "Montserrat", sans-serif;
+  word-break: break-word;
 
   &_size_big {
     display: block;
