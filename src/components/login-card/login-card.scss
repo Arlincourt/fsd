@@ -33,7 +33,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    @media (max-width: 380px) {
+    @media (max-width: 400px) {
       justify-content: center;
     }
   }
@@ -46,8 +46,10 @@
     letter-spacing: -0.2px;
     margin-right: 20px;
 
-    @media (max-width: 373px) {
+    @media (max-width: 400px) {
       margin-bottom: 20px;
+      flex-basis: 100%;
+      text-align: center;
     }
   }
 }
