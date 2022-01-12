@@ -84,6 +84,7 @@ class Calendar {
       if (this.$inputs.length === 1 && this.dates.length === 2) {
         this.$inputs.val(this.formatToFilter(this.dates));
         this.showClearButton();
+        this.$calendar.hide();
       }
     });
     this.$clearBtn.on('click', () => {
