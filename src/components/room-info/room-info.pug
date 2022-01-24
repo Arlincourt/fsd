@@ -5,33 +5,33 @@ include ../../components/expences/expences.pug
 include ../../components/icon-button/icon-button.pug
 
 mixin room-info(params)
-	-
-		const items = params.items || [
-						{name: '9 990₽ х 4 суток', price: '39 960₽'}, 
-						{name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', icon: true}, 
-						{name: 'Сбор за дополнительные услуги', price: '300₽', icon: true},
-						]
-		const total = params.total || '38 081₽'
-		const luxury = params.luxury || true
-		const price = params.price || '9 990'
-		const number = params.number || '888'
-		const label1 = params.label1 || 'ДД.ММ.ГГГГ'
-		const label2 = params.label2 || 'ДД.ММ.ГГГГ'
+  -
+    const items = params.items || [
+    {name: '9 990₽ х 4 суток', price: '39 960₽'}, 
+    {name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', icon: true}, 
+    {name: 'Сбор за дополнительные услуги', price: '300₽', icon: true},
+    ]
+    const total = params.total || '38 081₽'
+    const luxury = params.luxury || true
+    const price = params.price || '9 990'
+    const number = params.number || '888'
+    const label1 = params.label1 || 'ДД.ММ.ГГГГ'
+    const label2 = params.label2 || 'ДД.ММ.ГГГГ'
 
 
-	.room-info
-		.room-info__body 
-			.room-info__top 
-				+rent-info({luxury: luxury, price: price, number: number})
-			form.room-info__form(action="/fake-address")
-				.room-info__dates 
-					+datepicker({label1: label1, label2: label2})
-				.room-info__guests 
-					+quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
-				.room-info__expences
-					+expences({
-						items: items,
-						total: total
-					})
-				.room-info__button
-					+icon-button({text: 'забронировать', mode: ['size_big']})
+  .room-info
+    .room-info__body 
+      .room-info__top 
+        +rent-info({luxury: luxury, price: price, number: number})
+      form.room-info__form(action="/fake-address")
+        .room-info__dates 
+          +datepicker({label1: label1, label2: label2})
+        .room-info__guests 
+          +quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
+        .room-info__expences
+          +expences({
+            items: items,
+            total: total
+          })
+        .room-info__button
+          +icon-button({text: 'забронировать', mode: ['size_big']})

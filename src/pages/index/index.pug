@@ -1,37 +1,37 @@
 extends ../../theme/layouts/layout.pug
 
 block title 
-	| Index page
+  | Index page
 
 
 block content 
-	- 
-		const UIKitLinks = [
-			{ link: "colors", title: "Colors-type"},
-			{ link: "headers", title: "Headers & Footers"},
-			{ link: "cards", title: "Cards"},
-			{ link: "form-elements", title: "Form-elements"},
-		]
+  - 
+    const UIKitLinks = [
+      { link: "colors", title: "Colors-type"},
+      { link: "headers", title: "Headers & Footers"},
+      { link: "cards", title: "Cards"},
+      { link: "form-elements", title: "Form-elements"},
+    ]
 
-		const pagesLinks = [
-			{ link: "landing-page", title: "Langing Page"},
-			{ link: "register", title: "Register"},
-			{ link: "login", title: "Sign In"},
-			{ link: "filter", title: "Search Room"},
-			{ link: "room-details", title: "Room Details"},
-		]
+    const pagesLinks = [
+      { link: "landing-page", title: "Langing Page"},
+      { link: "register", title: "Register"},
+      { link: "login", title: "Sign In"},
+      { link: "filter", title: "Search Room"},
+      { link: "room-details", title: "Room Details"},
+    ]
 
-	.pages
-		.pages__body
-			.pages__left-list
-				h2.pages__title UI kit
-				ul.pages__list
-					each link in UIKitLinks
-						li.pages__item 
-							a.pages__link(href=`${link.link}.html` target="_blank" rel="noopener noreferrer")= link.title
-			.pages__right-list
-				h2.pages__title Website pages
-				ul.pages__list
-					each link in pagesLinks
-						li.pages__item 
-							a.pages__link(href=`${link.link}.html` target="_blank" rel="noopener noreferrer")= link.title
+  .pages
+    .pages__body
+      .pages__left-list
+        h2.pages__title UI kit
+        ul.pages__list
+          each link in UIKitLinks
+            li.pages__item 
+              a.pages__link(href=`${link.link}.html` target="_blank" rel="noopener noreferrer")= link.title
+      .pages__right-list
+        h2.pages__title Website pages
+        ul.pages__list
+          each link in pagesLinks
+            li.pages__item 
+              a.pages__link(href=`${link.link}.html` target="_blank" rel="noopener noreferrer")= link.title

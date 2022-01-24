@@ -2,42 +2,42 @@ include ../../components/rent-info/rent-info.pug
 include ../../components/rating/rating.pug
 
 mixin room-card(params)
-	-
-		const images = params.images || []
-		const buttons = params.buttons || undefined
-		const comments = params.comments || 0
-		const rating = params.rating || 0
-		const luxury = params.luxury || false
-		const price = params.price || '9 990'
-		const number = params.number || '888'
-		const small = params.small || true
-		const classes = ['room-card__actions']
-		if(buttons === undefined) {
-			classes.push('room-card__actions_hidden')
-		}
-	.room-card 
-		.room-card__body
-			.room-card__gallery 
-				div(class=classes)
-					.room-card__button-wrapper
-						button.room-card__button.icon-expand_more
-					.room-card__button-wrapper.room-card__button-wrapper_direction_reverse
-						button.room-card__button.room-card__button_direction_reversed.icon-expand_more
-				.room-card__points 
-					button.room-card__point.room-card__point_background_filled(data-id="0") 
-					button.room-card__point(data-id="1")
-					button.room-card__point(data-id="2") 
-					button.room-card__point(data-id="3") 
-				.room-card__gallery-line 
-					each img in images
-						img(class="room-card__img" alt=img.alt src=img.src)
-			.room-card__info 
-				.room-card__rent-info
-					+rent-info({luxury: luxury, price: price, number: number, small: small})
-				.room-card__underline
-				.room-card__rating 
-					+rating(rating)
-					p.room-card__comments
-						span.room-card__number= comments 
-						|  Отзывов 
+  -
+    const images = params.images || []
+    const buttons = params.buttons || undefined
+    const comments = params.comments || 0
+    const rating = params.rating || 0
+    const luxury = params.luxury || false
+    const price = params.price || '9 990'
+    const number = params.number || '888'
+    const small = params.small || true
+    const classes = ['room-card__actions']
+    if(buttons === undefined) {
+      classes.push('room-card__actions_hidden')
+    }
+  .room-card 
+    .room-card__body
+      .room-card__gallery 
+        div(class=classes)
+          .room-card__button-wrapper
+            button.room-card__button.icon-expand_more
+          .room-card__button-wrapper.room-card__button-wrapper_direction_reverse
+            button.room-card__button.room-card__button_direction_reversed.icon-expand_more
+        .room-card__points 
+          button.room-card__point.room-card__point_background_filled(data-id="0") 
+          button.room-card__point(data-id="1")
+          button.room-card__point(data-id="2") 
+          button.room-card__point(data-id="3") 
+        .room-card__gallery-line 
+          each img in images
+            img(class="room-card__img" alt=img.alt src=img.src)
+      .room-card__info 
+        .room-card__rent-info
+          +rent-info({luxury: luxury, price: price, number: number, small: small})
+        .room-card__underline
+        .room-card__rating 
+          +rating(rating)
+          p.room-card__comments
+            span.room-card__number= comments 
+            |  Отзывов 
 

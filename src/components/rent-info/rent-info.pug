@@ -1,23 +1,23 @@
 include ../../components/title-3/title-3.pug
 
 mixin rent-info(params)
-	-
-		const luxury = params.luxury || undefined 
-		const number = params.number 
-		const price = params.price
-		const small = params.small || undefined
-		const classes = ["rent-info__title"]
-		if(small !== undefined) {
-			classes.push("rent-info__title_size_small")
-		}
+  -
+    const luxury = params.luxury || undefined 
+    const number = params.number 
+    const price = params.price
+    const small = params.small || undefined
+    const classes = ["rent-info__title"]
+    if(small !== undefined) {
+      classes.push("rent-info__title_size_small")
+    }
 
-	.rent-info 
-		.rent-info__number
-			+title-3('№') 
-			h2(class=classes)= number
-			if luxury 
-				p.rent-info__luxury люкс
-		p.rent-info__price
-			span.rent-info__text= price 
-				| &#8381; 
-			|в сутки
+  .rent-info 
+    .rent-info__number
+      +title-3('№') 
+      h2(class=classes)= number
+      if luxury 
+        p.rent-info__luxury люкс
+    p.rent-info__price
+      span.rent-info__text= price 
+        | &#8381; 
+      |в сутки

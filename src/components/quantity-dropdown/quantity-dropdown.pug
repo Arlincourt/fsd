@@ -2,17 +2,17 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/title-3/title-3.pug
 
 mixin quantity-dropdown(props)
-	-
-		const label = props.label || ''
-		const title = props.title || ''
-		const small = props.small || undefined
-		const classes = ['quantity-dropdown']
-		if(small !== undefined) {
-			classes.push('quantity-dropdown_size_small')
-		}
-	div(class=classes)
-		if title 
-			.quantity-dropdown__title
-				+title-3(title)
-		.quantity-dropdown__body.js-quantity-dropdown__body
-			+dropdown({label: label})
+  -
+    const label = props.label || ''
+    const title = props.title || ''
+    const small = props.small || undefined
+    const classes = ['quantity-dropdown']
+    if(small !== undefined) {
+      classes.push('quantity-dropdown_size_small')
+    }
+  div(class=classes)
+    if title 
+      .quantity-dropdown__title
+        +title-3(title)
+    .quantity-dropdown__body.js-quantity-dropdown__body
+      +dropdown({label: label})

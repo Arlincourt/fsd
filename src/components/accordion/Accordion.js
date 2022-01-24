@@ -9,7 +9,7 @@ class Accordion {
   init() {
     this.addClickEvent();
   }
-
+  
   addClickEvent() {
     this.$element.on('click', () => {
       if (this.$list.hasClass('accordion__list_active') && this.$icon.hasClass('accordion__icon_active')) {

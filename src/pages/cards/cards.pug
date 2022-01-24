@@ -8,42 +8,39 @@ include ../../components/calendar/calendar.pug
 include ../../components/room-card/room-card.pug
 
 block title 
-	| Cards
+  | Cards
 
 block content 
-	.cards 
-		.cards__logo
-			+logo("images/Logo-2.svg", "Logo") 
-		.cards__body 
-			.cards__row 
-				.cards__column
-					.cards__item
-						+room-wishes()
-					.cards__item
-						+register-card()
-				.cards__column
-					.cards__item
-						+room-info({})
-					.cards__item
-						+login-card()
-				.cards__column
-					.cards__item
-						+calendar()
-					.cards__item
-						+room-card({comments: '145', rating: 5, buttons: true, images: [
-							{alt: 'room-1', src: "images/room-1.png"},
-							{alt: 'room-2', src: "images/room-2.png"},
-							{alt: 'room-3', src: "images/room-3.png"},
-							{alt: 'room-4', src: "images/room-4.png"},
-						]})
+  .cards 
+    .cards__logo
+      +logo("images/Logo-2.svg", "Logo") 
+    .cards__body 
+      .cards__row 
+        .cards__column
+          .cards__item
+            +room-wishes()
+          .cards__item
+            +register-card()
+        .cards__column
+          .cards__item
+            +room-info({})
+          .cards__item
+            +login-card()
+        .cards__column
+          .cards__item
+            +calendar()
+          .cards__item
+            +room-card({comments: '145', rating: 5, buttons: true, images: [
+              {alt: 'room-1', src: "images/room-1.png"},
+              {alt: 'room-2', src: "images/room-2.png"},
+              {alt: 'room-3', src: "images/room-3.png"},
+              {alt: 'room-4', src: "images/room-4.png"},
+            ]})
 					
-					.cards__item
-						+room-card({comments: '65', rating: 4, images: [
-							{alt: 'room-2', src: "images/room-2.png"},
-							{alt: 'room-3', src: "images/room-3.png"},
-							{alt: 'room-4', src: "images/room-4.png"},
-							{alt: 'room-5', src: "images/room-5.png"},
-						]})
-					
-
-		
+          .cards__item
+            +room-card({comments: '65', rating: 4, images: [
+              {alt: 'room-2', src: "images/room-2.png"},
+              {alt: 'room-3', src: "images/room-3.png"},
+              {alt: 'room-4', src: "images/room-4.png"},
+              {alt: 'room-5', src: "images/room-5.png"},
+            ]})

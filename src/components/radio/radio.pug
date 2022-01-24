@@ -1,10 +1,10 @@
 
 mixin radio(params)
-	-
-		const items = params.items || []
-	.radio 
-		each item in items 
-			label.radio__label
-				input.radio__input(type="radio" name= item.name checked= item.checked)
-				.radio__marker
-				span.radio__text= item.label
+  -
+    const items = params.items || []
+  .radio 
+    each item in items 
+      label.radio__label
+        input.radio__input(type="radio" name= item.name checked= item.checked)
+        .radio__marker
+        span.radio__text= item.label

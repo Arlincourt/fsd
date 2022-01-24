@@ -22,160 +22,160 @@ include ../../components/bulled-list/bulled-list.pug
 include ../../components/comment/comment.pug
 
 block title 
-	| Form Elements
+  | Form Elements
 
 block content 
-	.form-elements 
-		.form-elements__logo
-			+logo("images/Logo-2.svg", "Logo") 
-		.form-elements__body 
-			.form-elements__row
-				.form-elements__column
-					.form-elements__item.form-elements__item_offset_extra-small
-						.form-elements__name
-							+title-3('text field')
-							p.form-elements__explanation default
-						+input({type: 'email', placeholder: 'Email'})
-					.form-elements__item.form-elements__item_offset_extra-small
-						.form-elements__name
-							+title-3('text field')
-							p.form-elements__explanation hover / focus
-						+input({type: 'email', placeholder: 'This is pretty awesome', mode: ['focused']})
-					.form-elements__item.form-elements__item_offset_extra-small
-						+quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name
-							+title-3('masked text field')
-						+input({type: 'text', placeholder: 'ДД.ММ.ГГГГ', masked: true})
-					.form-elements__item.form-elements__item_offset_medium
-						+datepicker({title1: 'date dropdown', title2: 'date dropdown', label2: '19.08.2019'})
-					.form-elements__item.form-elements__item_offset_medium
-						+datepicker({title1: 'filter date dropdown', label1: '19 авг - 23 авг', oneItem: true})
-					.form-elements__item.form-elements__item_offset_upper-medium
-						.form-elements__name
-							+title-3('subscription text field')
-						+input({type: 'email', placeholder: 'Email', button: true, small: true})
-					.form-elements__item.form-elements__item_offset_extra-small
-						.form-elements__name.form-elements__name_small
-							+title-3('dropdown')
-							p.form-elements__explanation default
-						+quantity-dropdown({label: '2 спальни, 2 кровати...', small: true})
-					.form-elements__item.form-elements__item_offset_large
-						.form-elements__name.form-elements__name_small
-							+title-3('dropdown')
-							p.form-elements__explanation expanded
-						+quantity-dropdown({label: '2 спальни, 2 кровати...', small: true})
-					.form-elements__item.form-elements__item_offset_medium
-						+accordion({title: 'expandable checkbox list', items: [
-							{name: 'breakfast', text: 'Завтрак'},
-							{name: 'table', text: 'Письменный стол', checked: true},
-							{name: 'chair', text: 'Стул для кормления', checked: true},
-							{name: 'bed', text: 'Кроватка', checked: true},
-							{name: 'TV', text: 'Телевизор', checked: false},
-							{name: 'shampoo', text: 'Шампунь', checked: false},
-						]})
-					.form-elements__item.form-elements__item_upper-medium
-						+accordion({title: 'expandable checkbox list', items: [
-							{name: 'breakfast', text: 'Завтрак'},
-							{name: 'table', text: 'Письменный стол', checked: true},
-							{name: 'chair', text: 'Стул для кормления', checked: true},
-							{name: 'bed', text: 'Кроватка', checked: true},
-							{name: 'TV', text: 'Телевизор', checked: false},
-							{name: 'shampoo', text: 'Шампунь', checked: false},
-						]})
-				.form-elements__column
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name.form-elements__name_offset_small 
-							+title-3('Checkbox Buttons')
-						.form-elements__checkbox
-							+checkbox({name: 'smoking', text: 'Можно курить', checked: false})
-						.form-elements__checkbox
-							+checkbox({name: 'pets', text: 'Можно с питомцами', checked: true})
-						.form-elements__checkbox
-							+checkbox({name: 'invite', text: 'Можно пригласить гостей (до 10 человек)', checked: true})
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name.form-elements__name_offset_medium
-							+title-3('Radio Buttons')
-						+radio({items: [{name: 'gender', label: 'Мужчина', checked: true}, {name: 'gender', label: 'Женщина'}]}) 
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name.form-elements__name_offset_small
-							+title-3('toggle')
-						.form-elements__toggle
-							+checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer', checked: true}) 
-						.form-elements__toggle
-							+checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer'}) 
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name.form-elements__name_offset_small
-							+title-3('like button')
-						.form-elements__likes
-							+like({active: false, number: 2})
-							+like({active: true, number: 12})
-					.form-elements__item.form-elements__item_offset_extra-large
-						.form-elements__name.form-elements__name_offset_small
-							+title-3('rate button')
-						.form-elements__rates
-							+rating(4)
-							+rating(5)
-					.form-elements__item.form-elements__item_offset_extra-large
-						+quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
-					.form-elements__item.form-elements__item_offset_extra-large
-						.form-elements__name.form-elements__name_offset_small
-							+title-3('rich Checkbox Buttons')
-						.form-elements__checkbox
-							+checkbox({name: 'corridor', title: 'Широкий коридор', describe: 'Ширина коридоров в номере не менее 91 см.'})
-						.form-elements__checkbox
-							+checkbox({name: 'help', title: 'Помощник для инвалидов', describe: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
-				.form-elements__column
-					.form-elements__item.form-elements__item_offset_medium
-						+range-slider({title: 'Range Slider'})
-					.form-elements__item.form-elements__item_offset_medium
-						.form-elements__name.form-elements__name_offset_small
-								+title-3('buttons')
-						.form-elements__buttons 
-							.form-elements__button-item 
-								+simple-button({mode: ['padding_big']})
-								+simple-button({mode: ['padding_big', 'disabled']})
-							.form-elements__button-item 
-								+button({mode: ['padding_big']})
-								+button({mode: ['padding_big', 'disabled']})
-							+small-button({mode: ['offset_small']})
-							+small-button({mode: ['disabled']})
-							.form-elements__big-button 
-								+icon-button({text: 'перейти к оплате', mode: ['size_big']})
-					.form-elements__item.form-elements__item_offset_extra-large
-						.form-elements__name.form-elements__name_offset_small
-								+title-3('pagination')
-						+pagination({items: [
-							{current: true, number: 1},
-							{number: 2},
-							{number: 3},
-							{ellipsis: true},
-							{number: 15},
-						]})
-					.form-elements__item.form-elements__item_offset_extra-extra-large
-						+quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
-					.form-elements__item.form-elements__item_offset_extra-extra-large
-						.form-elements__name.form-elements__name_offset_offset_small
-								+title-3('bullet list')
-						+bulled-list({items: [
-							{text: 'Нельзя с питомцами'},
-							{text: 'Без вечеринок и мероприятий'},
-							{text: 'Время прибытия — после 13:00, а выезд до 12:00'},
-						]})
-			footer.form-elements__footer 
-				.form-elements__advantages 
-					.form-elements__item
-						+advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', border: true, class: 'icon-smile'})
-					.form-elements__item
-						+advantage({text: 'Окно в каждой из спален', name: 'Удобство', border: true, class: 'icon-location_city'})
-				.form-elements__comment 
-					+comment({
-						src: 'images/avatar-1.jpg',
-						alt: 'Мурад Сарафанов',
-						time: '5 дней назад',
-						number: 12,
-						active: true,
-						name: 'Мурад Сарафанов',
-						message: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, 
-							действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
-					})
+  .form-elements 
+    .form-elements__logo
+      +logo("images/Logo-2.svg", "Logo") 
+    .form-elements__body 
+      .form-elements__row
+        .form-elements__column
+          .form-elements__item.form-elements__item_offset_extra-small
+            .form-elements__name
+              +title-3('text field')
+              p.form-elements__explanation default
+            +input({type: 'email', placeholder: 'Email'})
+          .form-elements__item.form-elements__item_offset_extra-small
+            .form-elements__name
+              +title-3('text field')
+              p.form-elements__explanation hover / focus
+            +input({type: 'email', placeholder: 'This is pretty awesome', mode: ['focused']})
+          .form-elements__item.form-elements__item_offset_extra-small
+            +quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name
+              +title-3('masked text field')
+            +input({type: 'text', placeholder: 'ДД.ММ.ГГГГ', masked: true})
+          .form-elements__item.form-elements__item_offset_medium
+            +datepicker({title1: 'date dropdown', title2: 'date dropdown', label2: '19.08.2019'})
+          .form-elements__item.form-elements__item_offset_medium
+            +datepicker({title1: 'filter date dropdown', label1: '19 авг - 23 авг', oneItem: true})
+          .form-elements__item.form-elements__item_offset_upper-medium
+            .form-elements__name
+              +title-3('subscription text field')
+            +input({type: 'email', placeholder: 'Email', button: true, small: true})
+          .form-elements__item.form-elements__item_offset_extra-small
+            .form-elements__name.form-elements__name_small
+              +title-3('dropdown')
+              p.form-elements__explanation default
+            +quantity-dropdown({label: '2 спальни, 2 кровати...', small: true})
+          .form-elements__item.form-elements__item_offset_large
+            .form-elements__name.form-elements__name_small
+              +title-3('dropdown')
+              p.form-elements__explanation expanded
+            +quantity-dropdown({label: '2 спальни, 2 кровати...', small: true})
+          .form-elements__item.form-elements__item_offset_medium
+            +accordion({title: 'expandable checkbox list', items: [
+              {name: 'breakfast', text: 'Завтрак'},
+              {name: 'table', text: 'Письменный стол', checked: true},
+              {name: 'chair', text: 'Стул для кормления', checked: true},
+              {name: 'bed', text: 'Кроватка', checked: true},
+              {name: 'TV', text: 'Телевизор', checked: false},
+              {name: 'shampoo', text: 'Шампунь', checked: false},
+            ]})
+          .form-elements__item.form-elements__item_upper-medium
+            +accordion({title: 'expandable checkbox list', items: [
+              {name: 'breakfast', text: 'Завтрак'},
+              {name: 'table', text: 'Письменный стол', checked: true},
+              {name: 'chair', text: 'Стул для кормления', checked: true},
+              {name: 'bed', text: 'Кроватка', checked: true},
+              {name: 'TV', text: 'Телевизор', checked: false},
+              {name: 'shampoo', text: 'Шампунь', checked: false},
+            ]})
+        .form-elements__column
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name.form-elements__name_offset_small 
+              +title-3('Checkbox Buttons')
+            .form-elements__checkbox
+              +checkbox({name: 'smoking', text: 'Можно курить', checked: false})
+            .form-elements__checkbox
+              +checkbox({name: 'pets', text: 'Можно с питомцами', checked: true})
+            .form-elements__checkbox
+              +checkbox({name: 'invite', text: 'Можно пригласить гостей (до 10 человек)', checked: true})
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name.form-elements__name_offset_medium
+              +title-3('Radio Buttons')
+            +radio({items: [{name: 'gender', label: 'Мужчина', checked: true}, {name: 'gender', label: 'Женщина'}]}) 
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name.form-elements__name_offset_small
+              +title-3('toggle')
+            .form-elements__toggle
+              +checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer', checked: true}) 
+            .form-elements__toggle
+              +checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer'}) 
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name.form-elements__name_offset_small
+              +title-3('like button')
+            .form-elements__likes
+              +like({active: false, number: 2})
+              +like({active: true, number: 12})
+          .form-elements__item.form-elements__item_offset_extra-large
+            .form-elements__name.form-elements__name_offset_small
+              +title-3('rate button')
+            .form-elements__rates
+              +rating(4)
+              +rating(5)
+          .form-elements__item.form-elements__item_offset_extra-large
+            +quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
+          .form-elements__item.form-elements__item_offset_extra-large
+            .form-elements__name.form-elements__name_offset_small
+              +title-3('rich Checkbox Buttons')
+            .form-elements__checkbox
+              +checkbox({name: 'corridor', title: 'Широкий коридор', describe: 'Ширина коридоров в номере не менее 91 см.'})
+            .form-elements__checkbox
+              +checkbox({name: 'help', title: 'Помощник для инвалидов', describe: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+        .form-elements__column
+          .form-elements__item.form-elements__item_offset_medium
+            +range-slider({title: 'Range Slider'})
+          .form-elements__item.form-elements__item_offset_medium
+            .form-elements__name.form-elements__name_offset_small
+                +title-3('buttons')
+            .form-elements__buttons 
+              .form-elements__button-item 
+                +simple-button({mode: ['padding_big']})
+                +simple-button({mode: ['padding_big', 'disabled']})
+              .form-elements__button-item 
+                +button({mode: ['padding_big']})
+                +button({mode: ['padding_big', 'disabled']})
+              +small-button({mode: ['offset_small']})
+              +small-button({mode: ['disabled']})
+              .form-elements__big-button 
+                +icon-button({text: 'перейти к оплате', mode: ['size_big']})
+          .form-elements__item.form-elements__item_offset_extra-large
+            .form-elements__name.form-elements__name_offset_small
+                +title-3('pagination')
+            +pagination({items: [
+              {current: true, number: 1},
+              {number: 2},
+              {number: 3},
+              {ellipsis: true},
+              {number: 15},
+            ]})
+          .form-elements__item.form-elements__item_offset_extra-extra-large
+            +quantity-dropdown({label: 'Сколько гостей', title: 'dropdown'})
+          .form-elements__item.form-elements__item_offset_extra-extra-large
+            .form-elements__name.form-elements__name_offset_offset_small
+                +title-3('bullet list')
+            +bulled-list({items: [
+              {text: 'Нельзя с питомцами'},
+              {text: 'Без вечеринок и мероприятий'},
+              {text: 'Время прибытия — после 13:00, а выезд до 12:00'},
+            ]})
+      footer.form-elements__footer 
+        .form-elements__advantages 
+          .form-elements__item
+            +advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', border: true, class: 'icon-smile'})
+          .form-elements__item
+            +advantage({text: 'Окно в каждой из спален', name: 'Удобство', border: true, class: 'icon-location_city'})
+        .form-elements__comment 
+          +comment({
+            src: 'images/avatar-1.jpg',
+            alt: 'Мурад Сарафанов',
+            time: '5 дней назад',
+            number: 12,
+            active: true,
+            name: 'Мурад Сарафанов',
+            message: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, 
+              действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.`
+          })

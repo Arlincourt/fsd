@@ -1,21 +1,21 @@
 include ../../components/title-3/title-3.pug
 
 mixin dropdown(params)
-	-
-		const label = params.label || 'Выберите'
-		const title = params.title || undefined
-		const quantity = params.quantity || undefined
-		const small = params.small || undefined
-		const classes = ['dropdown', 'js-dropdown']
-		if(small !== undefined) {
-			classes.push('dropdown_size_small')
-		}
-		
-	div(class=classes)
-		if(title !== undefined)
-			.dropdown__title
-				+title-3(title)
-		.dropdown__content.js-dropdown-content
-			label.dropdown__label
-				input(placeholder=label class="dropdown__input js-dropdown-input")
-						
+  -
+    const label = params.label || 'Выберите'
+    const title = params.title || undefined
+    const quantity = params.quantity || undefined
+    const small = params.small || undefined
+    const classes = ['dropdown', 'js-dropdown']
+    if(small !== undefined) {
+      classes.push('dropdown_size_small')
+    }
+    
+  div(class=classes)
+    if(title !== undefined)
+      .dropdown__title
+        +title-3(title)
+    .dropdown__content.js-dropdown-content
+      label.dropdown__label
+        input(placeholder=label class="dropdown__input js-dropdown-input")
+            
