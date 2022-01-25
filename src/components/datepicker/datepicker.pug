@@ -1,25 +1,7 @@
 include ../../components/dropdown/dropdown.pug
 include ../../components/calendar/calendar.pug
 
-mixin datepicker(params)
-  -
-    let title1
-    let label1
-    let title2
-    let label2
-    let oneItem
-    if(params) {
-      title1 = params.title1 || 'прибытие'
-      label1 = params.label1 || 'ДД.ММ.ГГГГ'
-      title2 = params.title2 || 'выезд'
-      label2 = params.label2 || 'ДД.ММ.ГГГГ'
-      oneItem = params.oneItem || undefined
-    } else {
-      title1 = 'прибытие'
-      label1 = 'ДД.ММ.ГГГГ'
-      title2 = 'выезд'
-      label2 = 'ДД.ММ.ГГГГ'
-    }
+mixin datepicker({ title1 = 'прибытие', label1 = 'ДД.ММ.ГГГГ', title2 = 'выезд', label2 = 'ДД.ММ.ГГГГ', oneItem = undefined })
   .datepicker-item.js-datepicker-item
     .datepicker-item__body
       +calendar()

@@ -1,10 +1,7 @@
 include ../../components/title-3/title-3.pug
 include ../../components/checkbox/checkbox.pug
 
-mixin accordion(params)
-  -
-    const title = params.title || "accordion"
-    const items = params.items || []
+mixin accordion({title = "accordion", items = []})
   .accordion 
     .accordion__expander.js-accordion-expander
       .accordion__title 

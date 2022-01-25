@@ -1,11 +1,6 @@
 
 
-mixin checkbox(params)
-  -
-    const checked = params.checked || false
-    const name = params.name || 'name'
-    const title = params.title || undefined
-    const describe = params.describe || undefined
+mixin checkbox({checked = false, name = 'name', title = undefined, describe = 'describe', text = 'text'})
   .checkbox
     if title 
       label.checkbox__label
@@ -18,4 +13,4 @@ mixin checkbox(params)
      label.checkbox__label
       input(type="checkbox" class="checkbox__input" name=name checked=checked)
       .checkbox__marker
-      span.checkbox__text= params.text
+      span.checkbox__text= text

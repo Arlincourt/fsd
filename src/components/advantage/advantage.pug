@@ -1,18 +1,14 @@
 
 
-mixin advantage(params)
+mixin advantage({text = "text", name = "Max", className = "", border = undefined})
   -
-    const text = params.text 
-    const name = params.name 
-    const iconClass = params.class
-    const isBorder = params.border || undefined
     const bodyClasses = ["advantage__body"]
-    if(isBorder !== undefined) {
+    if(border !== undefined) {
       bodyClasses.push("advantage__body_line_bottom")  
     }
   .advantage
     div(class=bodyClasses)
-      i(class="advantage__icon " + iconClass)
+      i(class="advantage__icon " + className)
       .advantage__info 
         p.advantage__name= name 
         p.advantage__text= text

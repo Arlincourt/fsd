@@ -105,9 +105,9 @@ block content
       .room-details__info
         .room-details__item 
           h3.room-details__subtitle Сведения о номере
-          +advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', class: 'icon-smile', border: true})
-          +advantage({text: 'Окно в каждой из спален', name: 'Удобство', class: 'icon-location_city', border: true})
-          +advantage({text: 'Номер оснащён камином', name: 'Уют', class: 'icon-comfort', border: false})
+          +advantage({text: 'Шумопоглощающие стены', name: 'Комфорт', className: 'icon-smile', border: true})
+          +advantage({text: 'Окно в каждой из спален', name: 'Удобство', className: 'icon-location_city', border: true})
+          +advantage({text: 'Номер оснащён камином', name: 'Уют', className: 'icon-comfort'})
         .room-details__item.room-details__item_offset_large
           h3.room-details__subtitle.room-details__subtitle_offset_small Впечатления от номера
           +chart({numbers: '260', items: [
@@ -159,7 +159,7 @@ block content
 
 block footer
   .room-details__footer.room-details__footer_size_big
-    +footer(text, navigation, copy, subscribtion)
+    +footer({text, navigation, copy, subscribtion})
   .room-details__footer.room-details__footer_size_small
     +footer-small(copy)
 

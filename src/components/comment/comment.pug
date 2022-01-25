@@ -1,14 +1,6 @@
 include ../../components/like/like.pug
 
-mixin comment(params)
-  -
-    const src = params.src || './avatar-1.jpg'
-    const alt = params.alt || 'user avatar'
-    const name = params.name || 'Мурад Сарафанов'
-    const time = params.time || '5 дней назад'
-    const active = params.active || false
-    const number = params.number || 12
-    const message = params.message || ''
+mixin comment({src = './avatar-1.jpg', alt = 'user avatar', name = 'Мурад Сарафанов', time = '5 дней назад', active = false, number = 12, message = ''})
   .comment 
     .comment__author 
       img(src=src alt=alt class="comment__avatar")

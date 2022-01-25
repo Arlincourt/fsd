@@ -3,10 +3,7 @@ include ../../components/button/button.pug
 include ../../components/simple-button/simple-button.pug
 include ../../components/menu/menu.pug
 
-mixin header(props)
-  - const {user} = props
-  - const {menu} = props
-    
+mixin header({user, menu = []})
   header.header.js-header
     .header__wrapper 
       .header__body 

@@ -20,7 +20,7 @@ class RangeSlider {
     this.$rangeSlider.on('update', this.onChange.bind(this));
   }
 
-  onChange(values, handle, unencoded, tap, positions, noUiSlider) {
+  onChange(values) {
     const value = this.formatValue(values);
     this.$input.value = `${value[0]} ${value[1]}`;
     this.$info.textContent = `${value[0]}₽ - ${value[1]}₽`;

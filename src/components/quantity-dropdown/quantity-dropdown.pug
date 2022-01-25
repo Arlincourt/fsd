@@ -1,13 +1,10 @@
 include ../../components/dropdown/dropdown.pug
 include ../../components/title-3/title-3.pug
 
-mixin quantity-dropdown(props)
+mixin quantity-dropdown({label = 'label', title = '', small = undefined})
   -
-    const label = props.label || ''
-    const title = props.title || ''
-    const small = props.small || undefined
     const classes = ['quantity-dropdown']
-    if(small !== undefined) {
+    if(small) {
       classes.push('quantity-dropdown_size_small')
     }
   div(class=classes)

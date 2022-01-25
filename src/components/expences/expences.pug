@@ -1,10 +1,6 @@
 
 
-mixin expences(params)
-  -
-    const items = params.items 
-    const total = params.total 
-
+mixin expences({items = [], total = 'total'})
   .expences 
     each item in items 
       .expences__item 

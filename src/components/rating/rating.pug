@@ -1,12 +1,9 @@
-
-
 mixin rating(filled)
   -
-    const filledStars = filled
     let counter = 0
   .rating 
     while counter < 5
-      if counter < filledStars
+      if counter < filled
         i.rating__icon.icon-star
       else 
         i.rating__icon.icon-star_border

@@ -1,11 +1,6 @@
-mixin input(params)
+mixin input({mode = undefined, masked = undefined, button = undefined, small = undefined, type = 'text', placeholder = 'text'})
   -
     let defaultClass = 'form-control__input'
-    let mode = params.mode || undefined
-    let masked = params.masked || undefined
-    let button = params.button || undefined
-    const small = params.small || undefined
-    const type = params.type || 'text'
     const formClasses = ['form-control']
     let classes = []
     if(masked !== undefined) 
@@ -21,8 +16,8 @@ mixin input(params)
 
   if(button!== undefined) 
     div(class=formClasses)
-      input(type=params.type, placeholder=params.placeholder, class=classes)
+      input(type=type, placeholder=placeholder, class=classes)
       button.form-control__button.icon-arrow_forward
   else 
     div.form-control
-      input(type=type, placeholder=params.placeholder, class=classes)
+      input(type=type, placeholder=placeholder, class=classes)

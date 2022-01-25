@@ -1,12 +1,10 @@
 
 
-mixin like(params)
+mixin like({active = undefined, number = '2'})
   -
-    const active = params.active || undefined 
-    const number = params.number
     const classes = ['like']
     let iconClasses = ['like__icon', 'js-like__icon']
-    if(active !== undefined) {
+    if(active) {
       iconClasses.push('icon-favorite')
       iconClasses.push('like__icon_activated')
       classes.push('like_activated')

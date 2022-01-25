@@ -1,9 +1,6 @@
 
 
-mixin bulled-list(params)
-  -
-    const items = params.items || []
-
+mixin bulled-list({items = []})
   .bulled-list 
     each item in items 
       p.bulled-list__item 

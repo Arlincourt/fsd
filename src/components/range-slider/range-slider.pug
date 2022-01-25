@@ -1,8 +1,6 @@
 include ../../components/title-3/title-3.pug
 
-mixin range-slider(params)
-  -
-    const title = params.title || 'диапазон цены'
+mixin range-slider({title = 'диапазон цены'})
   .range-slider 
     .range-slider__header 
       +title-3(title) 

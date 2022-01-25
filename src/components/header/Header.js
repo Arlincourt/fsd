@@ -8,7 +8,7 @@ class Header {
     this.headerMenu = $(this.header).find('.js-header-menu');
   }
 
-  onButtonClick(e) {
+  onButtonClick(evt) {
     this.btn.toggleClass('header__burger_active');
     this.headerMenu.toggleClass('header__menu_active');
   }

@@ -4,7 +4,7 @@ include ../../components/input/input.pug
 include ../../components/title-3/title-3.pug
 
 
-mixin footer(text, navigation, copy, subscribtion)
+mixin footer({text = 'text', navigation = [], copy = 'copy', subscribtion = {}})
   footer.footer
     .footer__body
       .footer__top

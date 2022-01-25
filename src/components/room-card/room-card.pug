@@ -1,16 +1,8 @@
 include ../../components/rent-info/rent-info.pug
 include ../../components/rating/rating.pug
 
-mixin room-card(params)
+mixin room-card({images = [], buttons = undefined, comments = 0, rating = 0, luxury = false, price = '9 990', number = '888', small = true})
   -
-    const images = params.images || []
-    const buttons = params.buttons || undefined
-    const comments = params.comments || 0
-    const rating = params.rating || 0
-    const luxury = params.luxury || false
-    const price = params.price || '9 990'
-    const number = params.number || '888'
-    const small = params.small || true
     const classes = ['room-card__actions']
     if(buttons === undefined) {
       classes.push('room-card__actions_hidden')

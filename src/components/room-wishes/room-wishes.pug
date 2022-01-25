@@ -11,7 +11,7 @@ mixin room-wishes()
       form.room-wishes__form(action="/fake-address")
         .room-wishes__settings 
           .room-wishes__dates 
-            +datepicker()
+            +datepicker({})
           .room-wishes__guests
             +quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
         .room-wishes__button 
