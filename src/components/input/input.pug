@@ -4,7 +4,7 @@ mixin input({mode = undefined, masked = undefined, button = undefined, small = u
     const formClasses = ['form-control']
     let classes = []
     if(masked !== undefined) 
-      classes.push('js-input-masked')
+      classes.push('js-input__masked')
     if(mode !== undefined){
       mode = mode.map((item)=> `${defaultClass}_${item}`)
       classes = mode

@@ -5,9 +5,9 @@ Doughnut.register(...registerables);
 class Chart {
   constructor(el, options) {
     this.el = el;
-    this.ctx = el.querySelector('.js-chart-canvas').getContext('2d');
-    this.text = el.querySelector('.js-chart-numbers');
-    this.info = el.querySelector('.js-chart-info');
+    this.ctx = el.querySelector('.js-chart__canvas').getContext('2d');
+    this.text = el.querySelector('.js-chart__numbers');
+    this.info = el.querySelector('.js-chart__info');
     this.options = options;
     this.allVoices = this.setAllVoices();
     this.setEvent();
@@ -21,14 +21,14 @@ class Chart {
   }
 
   handleParentMousemove(evt) {
-    if (evt.target.classList.contains('js-chart-canvas')) {
+    if (evt.target.classList.contains('js-chart__canvas')) {
       return;
     }
     this.setText(4);
   }
 
   handleChartHover(evt, activeItem) {
-    $('.js-chart-canvas').css('cursor', activeItem[0] ? 'pointer' : 'default');
+    $('.js-chart__canvas').css('cursor', activeItem[0] ? 'pointer' : 'default');
     if (activeItem.length === 1) {
       const idx = activeItem[0].index;
       this.$chart.data.datasets[0].hoverBorderColor = this.options.data.datasets[0]
@@ -44,7 +44,7 @@ class Chart {
     this.text.textContent = this.options.data.datasets[0].data[idx];
     this.info.className = '';
     this.info.classList.add('chart__info');
-    this.info.classList.add('js-chart-info');
+    this.info.classList.add('js-chart__info');
     switch (idx) {
       case 0:
         this.info.classList.add('chart__info_color_purple');

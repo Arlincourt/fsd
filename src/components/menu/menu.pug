@@ -1,13 +1,13 @@
 mixin menu(links)
   nav.menu.js-menu
-    .menu__body.js-menu-body
-      ul.menu__list.js-menu-list
+    .menu__body.js-menu__body
+      ul.menu__list.js-menu__list
         each link in links
           li.menu__item
             if Array.isArray(link.link)
-              .menu__expander.js-menu-expander
+              .menu__expander.js-menu__expander
                 a.menu__link= link.text
-              ul.menu__submenu.js-submenu
+              ul.menu__submenu.js-menu__submenu
                 each subitem in link.link
                   li.menu__sub-item
                     a.menu__link(href=subitem.link)= subitem.text

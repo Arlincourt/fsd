@@ -4,7 +4,7 @@ class QuantityDropdown {
   constructor(element, options) {
     this.$element = $(element);
     this.$dropdown = this.$element.find('.js-dropdown');
-    this.$input = this.$element.find('.js-dropdown-input');
+    this.$input = this.$element.find('.js-dropdown__input');
     this.value = '';
     this.buttons = options.buttons;
     this.options = options.options;
@@ -17,7 +17,7 @@ class QuantityDropdown {
     this.$clean = '';
     this.init();
   }
-
+  
   init() {
     document.addEventListener('click', this.hideCalendar.bind(this));
     this.initOptions();

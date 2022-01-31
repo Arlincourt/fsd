@@ -9,13 +9,13 @@ mixin header({user, menu = []})
       .header__body 
         .header__logo
           +logo("images/Logo.svg", "Logo Toxin")
-        button.header__burger.js-header-burger
+        button.header__burger.js-header__burger
           .header__line-wrapper
             span.header__line 
             span.header__line 
             span.header__line 
         .header__main
-          .header__menu.js-header-menu
+          .header__menu.js-header__menu
             +menu(menu)
           .header__user
             if user 

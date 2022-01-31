@@ -5,8 +5,8 @@ class Calendar {
     this.element = element;
     this.$element = $(element).parent();
     this.$calendar = '';
-    this.$inputs = this.$element.find('.js-dropdown-input');
-    this.$contents = this.$element.find('.js-dropdown-content');
+    this.$inputs = this.$element.find('.js-dropdown__input');
+    this.$contents = this.$element.find('.js-dropdown__content');
     this.dates = [];
 
     this.initOptions();
@@ -55,9 +55,9 @@ class Calendar {
   }
 
   addCalendarButtons() {
-    this.$applyBtn = $('<button class="small-button js-calendar-button" type="button">Применить</button>');
+    this.$applyBtn = $('<button class="small-button js-calendar__button" type="button">Применить</button>');
     this.$clearBtn = $(
-      '<button class="small-button small-button_hidden js-calendar-button" type="button">Очистить</button>',
+      '<button class="small-button small-button_hidden js-calendar__button" type="button">Очистить</button>',
     );
     const buttonsWrapper = $('<div class="datepicker--actions"></div>');
     buttonsWrapper.append(this.$clearBtn);
