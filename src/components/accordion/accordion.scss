@@ -26,16 +26,10 @@
   }
 
   &__list {
-    transition: 0.3s ease-in-out;
-    transform-origin: top center;
-    visibility: hidden;
-    opacity: 0;
-    max-height: 0;
+    display: none;
 
     &_active {
-      opacity: 1;
-      visibility: visible;
-      max-height: 3000px;
+      display: block;
     }
   }
 
