@@ -7,6 +7,7 @@ mixin quantity-dropdown({label = 'label', title = '', small = undefined})
     if(small) {
       classes.push('quantity-dropdown_size_small')
     }
+    
   div(class=classes)
     if title 
       .quantity-dropdown__title

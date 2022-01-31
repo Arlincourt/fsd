@@ -1,11 +1,10 @@
-
-
 mixin advantage({text = "text", name = "Max", className = "", border = undefined})
   -
     const bodyClasses = ["advantage__body"]
     if(border !== undefined) {
       bodyClasses.push("advantage__body_line_bottom")  
     }
+    
   .advantage
     div(class=bodyClasses)
       i(class="advantage__icon " + className)
