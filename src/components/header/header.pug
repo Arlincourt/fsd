@@ -5,28 +5,27 @@ include ../../components/menu/menu.pug
 
 mixin header({user, menu = []})
   header.header.js-header
-    .header__wrapper 
-      .header__body 
-        .header__logo
-          +logo("images/Logo.svg", "Logo Toxin")
-        button.header__burger.js-header__burger
-          .header__line-wrapper
-            span.header__line 
-            span.header__line 
-            span.header__line 
-        .header__main
-          .header__menu.js-header__menu
-            +menu(menu)
-          .header__user
-            if user 
-              .header__info 
-                | #{user}
-            else 
-              .header__actions 
-                +button({text: 'войти', mode: ['offset_small']})
-                +simple-button({text: 'зарегистрироваться', mode: ['length_long']})
-          a.header__icon(href="/fake-address")
-            img.header__avatar(src="./user.svg")
+    .header__body 
+      .header__logo
+        +logo("images/Logo.svg", "Logo Toxin")
+      button.header__burger.js-header__burger
+        .header__line-wrapper
+          span.header__line 
+          span.header__line 
+          span.header__line 
+      .header__main
+        .header__menu.js-header__menu
+          +menu(menu)
+        .header__user
+          if user 
+            .header__info 
+              | #{user}
+          else 
+            .header__actions 
+              +button({text: 'войти', mode: ['offset_small']})
+              +simple-button({text: 'зарегистрироваться', mode: ['length_long']})
+        a.header__icon(href="/fake-address")
+          img.header__avatar(src="./user.svg")
               
 
         

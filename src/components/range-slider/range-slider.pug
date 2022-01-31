@@ -1,9 +1,9 @@
 include ../../components/title-3/title-3.pug
 
 mixin range-slider({title = 'диапазон цены'})
-  .range-slider 
+  .range-slider.js-range-slider
     .range-slider__header 
       +title-3(title) 
-      p.range-slider__info 
-    .range-slider__item
-    input(class="range-slider__input" name="range-slider")
+      p.range-slider__info.js-range-slider__info 
+    .range-slider__item.js-range-slider__item
+    input(class="range-slider__input js-range-slider__input" name="range-slider")

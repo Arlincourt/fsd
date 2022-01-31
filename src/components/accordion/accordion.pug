@@ -4,8 +4,7 @@ include ../../components/checkbox/checkbox.pug
 mixin accordion({title = "accordion", items = []})
   .accordion 
     .accordion__expander.js-accordion__expander
-      .accordion__title 
-        +title-3(title)
+      +title-3(title)
       button.accordion__icon.icon-expand_more.js-accordion__icon(type="button")
     .accordion__list.js-accordion__list
       each item in items

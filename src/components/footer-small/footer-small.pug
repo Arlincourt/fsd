@@ -3,9 +3,8 @@ include ../../components/socials/socials.pug
 
 mixin footer-small(text)
   footer.footer-small 
-    .footer-small__body 
-      .footer-small__logo
-        +logo("images/Logo.svg", "Logo Toxin")
-      .footer-small__text= text
-      +socials()
-    
+    .footer-small__logo
+      +logo("images/Logo.svg", "Logo Toxin")
+    .footer-small__text= text
+    +socials()
+  

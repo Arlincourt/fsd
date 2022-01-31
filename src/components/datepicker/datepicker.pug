@@ -2,8 +2,7 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/calendar/calendar.pug
 
 mixin datepicker({ title1 = 'прибытие', label1 = 'ДД.ММ.ГГГГ', title2 = 'выезд', label2 = 'ДД.ММ.ГГГГ', oneItem = undefined })
-  .datepicker-item.js-datepicker__item
-    .datepicker-item__body
+  .datepicker-item
       +calendar()
       .datepicker-item__dropdowns 
         if oneItem 

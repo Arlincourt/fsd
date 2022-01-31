@@ -4,10 +4,10 @@ class RangeSlider {
   constructor(el, options) {
     this.$el = el;
     this.options = options;
-    this.$item = this.$el.querySelector('.range-slider__item');
-    this.$input = this.$el.querySelector('.range-slider__input');
+    this.$item = this.$el.querySelector('.js-range-slider__item');
+    this.$input = this.$el.querySelector('.js-range-slider__input');
     this.$rangeSlider = null;
-    this.$info = this.$el.querySelector('.range-slider__info');
+    this.$info = this.$el.querySelector('.js-range-slider__info');
     this.init();
   }
 

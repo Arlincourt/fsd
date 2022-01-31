@@ -5,28 +5,26 @@ include ../../components/title-3/title-3.pug
 
 mixin footer({text = 'text', navigation = [], copy = 'copy', subscribtion = {}})
   footer.footer
-    .footer__body
-      .footer__top
-        .footer__wrapper
-          .footer__info
-            +logo('images/Logo.svg', 'Toxin logo')
-            p.footer__paragraph= text
+    .footer__top
+      .footer__wrapper
+        .footer__info
+          +logo('images/Logo.svg', 'Toxin logo')
+          p.footer__paragraph= text
 
-          .footer__navigation
-            each navItem in navigation
-              .footer__nav-item
-                +title-3(navItem.title)
-                each navLink in navItem.links
-                  p.footer__paragraph
-                    a.footer__link(href=navLink.url)= navLink.text
-          
-          .footer__subscribtion
-            +title-3(subscribtion.title)
-            p.footer__paragraph.footer__paragraph_offset_medium= subscribtion.text
-            form.footer__subscription-form
-              +input({type: 'text', placeholder: subscribtion.placeholder, button: true})
+        .footer__navigation
+          each navItem in navigation
+            .footer__nav-item
+              +title-3(navItem.title)
+              each navLink in navItem.links
+                p.footer__paragraph
+                  a.footer__link(href=navLink.url)= navLink.text
+        
+        .footer__subscribtion
+          +title-3(subscribtion.title)
+          p.footer__paragraph.footer__paragraph_offset_medium= subscribtion.text
+          form.footer__subscription-form
+            +input({type: 'text', placeholder: subscribtion.placeholder, button: true})
 
-      section.footer__bottom
-        p.footer__copy= copy
-        .footer__socials
-          +socials()
+    section.footer__bottom
+      p.footer__copy= copy
+      +socials()

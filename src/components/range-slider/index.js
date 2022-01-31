@@ -10,7 +10,7 @@ const options = {
 };
 
 $(() => {
-  $('.range-slider').each((idx, el) => {
+  $('.js-range-slider').each((idx, el) => {
     new RangeSlider(el, options);
   });
 });

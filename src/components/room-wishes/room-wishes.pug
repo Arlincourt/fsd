@@ -12,9 +12,7 @@ mixin room-wishes()
         .room-wishes__settings 
           .room-wishes__dates 
             +datepicker({})
-          .room-wishes__guests
-            +quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
-        .room-wishes__button 
-          +icon-button({text: 'подобрать номер', mode: ['size_big']})
+          +quantity-dropdown({label: 'Сколько гостей', title: 'гости'})
+        +icon-button({text: 'подобрать номер', mode: ['size_big']})
 
 
