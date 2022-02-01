@@ -3,12 +3,29 @@ import { Chart as Doughnut, registerables } from 'chart.js';
 Doughnut.register(...registerables);
 
 class Chart {
-  constructor(el, options) {
+  options = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        hoverBorderWidth: 2,
+      }],
+    },
+    options: {
+      cutout: 53,
+      plugins: {
+        tooltip: {
+          enabled: false,
+        },
+      },
+    },
+  };
+
+  constructor(el) {
     this.el = el;
     this.ctx = el.querySelector('.js-chart__canvas').getContext('2d');
     this.text = el.querySelector('.js-chart__numbers');
     this.info = el.querySelector('.js-chart__info');
-    this.options = options;
+    this.setDatasets()
     this.allVoices = this.setAllVoices();
     this.setEvent();
     this.init();
@@ -18,6 +35,12 @@ class Chart {
   setEvent() {
     this.options.options.onHover = this.handleChartHover.bind(this);
     this.el.addEventListener('mousemove', this.handleParentMousemove.bind(this));
+  }
+
+  setDatasets() {
+    const $element = $(this.el)
+    this.options.data.datasets[0].backgroundColor = $element.data('colors');
+    this.options.data.datasets[0].data = $element.data('voices');
   }
 
   handleParentMousemove(evt) {
