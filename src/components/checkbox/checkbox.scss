@@ -4,6 +4,7 @@
   &__label {
     display: inline-flex;
     cursor: pointer;
+    user-select: none;
   }
 
   &__marker {

@@ -17,6 +17,7 @@
   &__label {
     position: relative;
     cursor: pointer;
+    user-select: none;
 
     &::after {
       content: "\e903";
@@ -47,7 +48,7 @@
     border: none;
     letter-spacing: 0.7px;
     font-family: "Montserrat", sans-serif;
-
+    
     &::placeholder {
       line-height: 1.28rem;
       color: $dark75;

@@ -5,9 +5,10 @@ mixin chart({numbers = '260', items = []})
     items.forEach((item) => {
       if(item.gradient && item.voices) {
         colors.push(item.gradient)
-        voices.unshift(item.voices)
+        voices.push(item.voices)
       }
     })
+    items.reverse()
 
   .chart.js-chart(data-voices=voices data-colors=colors)
     .chart__canvas-wrapper

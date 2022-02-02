@@ -29,7 +29,7 @@ class Chart {
     this.allVoices = this.setAllVoices();
     this.setEvent();
     this.init();
-    this.setText(4);
+    this.setText('none');
   }
 
   setEvent() {
@@ -41,13 +41,14 @@ class Chart {
     const $element = $(this.el)
     this.options.data.datasets[0].backgroundColor = $element.data('colors');
     this.options.data.datasets[0].data = $element.data('voices');
+    this.colors = $element.data('colors');
   }
 
   handleParentMousemove(evt) {
     if (evt.target.classList.contains('js-chart__canvas')) {
       return;
     }
-    this.setText(4);
+    this.setText('none');
   }
 
   handleChartHover(evt, activeItem) {
@@ -60,27 +61,22 @@ class Chart {
       this.$chart.update();
       return;
     }
-    this.setText(4);
+    this.setText('none');
   }
 
   setText(idx) {
     this.text.textContent = this.options.data.datasets[0].data[idx];
-    this.info.className = '';
-    this.info.classList.add('chart__info');
-    this.info.classList.add('js-chart__info');
-    switch (idx) {
-      case 0:
-        this.info.classList.add('chart__info_color_purple');
-        break;
-      case 1:
-        this.info.classList.add('chart__info_color_green');
-        break;
-      case 2:
-        this.info.classList.add('chart__info_color_yellow');
-        break;
-      default:
-        this.text.textContent = this.allVoices;
+    if(idx === 'none') {
+      this.text.textContent = this.allVoices;
+      this.info.style.backgroundClip = '';
+      this.info.style.webkitTextFillColor = '';
+      this.info.style.backgroundImage = '';
+      return
     }
+    
+    this.info.style.backgroundImage = `linear-gradient(180deg, ${this.colors[idx][0]} 0%, ${this.colors[idx][1]} 100%)`;
+    this.info.style.webkitBackgroundClip = 'text';
+    this.info.style.webkitTextFillColor = 'transparent';
   }
 
   setAllVoices() {
