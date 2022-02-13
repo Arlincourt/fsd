@@ -9,11 +9,14 @@
     line-height: 1.71rem;
     align-items: baseline;
     color: $dark75;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__circle {
     margin-right: 10px;
-    display: inline-block;
     width: 10px;
     height: 10px;
     background: $dark25;

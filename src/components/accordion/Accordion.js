@@ -5,7 +5,7 @@ class Accordion {
     this.$icon = this.$element.find('.js-accordion__icon');
     this.init();
   }
-
+  
   init() {
     this.addClickEvent();
   }
