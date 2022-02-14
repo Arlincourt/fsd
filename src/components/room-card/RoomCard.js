@@ -2,6 +2,10 @@ import * as $ from 'jquery';
 
 class RoomCard {
   constructor(element) {
+    this.init(element);
+  }
+  
+  init(element) {
     this.$gallery = $(element);
     this.$line = this.$gallery.find('.room-card__gallery-line');
     this.$actions = this.$gallery.find('.room-card__actions');
@@ -10,11 +14,6 @@ class RoomCard {
     this.step = 0;
     this.offsetStep = 271;
     this.offset = 0;
-
-    this.init();
-  }
-
-  init() {
     this.initButtonsEvents();
     this.initGalleryEvents();
     this.initPointsEvents();

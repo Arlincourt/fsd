@@ -22,7 +22,5 @@ const options = [
 ];
 
 $(() => {
-  $('.filter__sidebar-item .quantity-dropdown__body').each((idx, el) => {
-    new QuantityDropdown(el, options[idx]);
-  });
+  $('.filter__sidebar-item .quantity-dropdown__body').each((idx, el) => new QuantityDropdown(el, options[idx]));
 });

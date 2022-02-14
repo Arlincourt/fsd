@@ -2,16 +2,16 @@ import noUiSlider from 'nouislider';
 
 class RangeSlider {
   constructor(el, options) {
+    this.init(el, options);
+  }
+  
+  init(el, options) {
     this.$el = el;
     this.options = options;
     this.$item = this.$el.querySelector('.js-range-slider__item');
     this.$input = this.$el.querySelector('.js-range-slider__input');
     this.$rangeSlider = null;
     this.$info = this.$el.querySelector('.js-range-slider__info');
-    this.init();
-  }
-
-  init() {
     this.$rangeSlider = noUiSlider.create(this.$item, this.options);
     this.initEvents();
   }

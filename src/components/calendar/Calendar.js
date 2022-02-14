@@ -2,15 +2,8 @@ import 'air-datepicker';
 
 class Calendar {
   constructor(element) {
-    this.element = element;
-    this.$element = $(element).parent();
-    this.$calendar = '';
-    this.$inputs = this.$element.find('.js-dropdown__input');
-    this.$contents = this.$element.find('.js-dropdown__content');
-    this.dates = [];
-
     this.initOptions();
-    this.init();
+    this.init(element);
   }
 
   initOptions() {
@@ -34,6 +27,12 @@ class Calendar {
   }
 
   init() {
+    this.element = element;
+    this.$element = $(element).parent();
+    this.$calendar = '';
+    this.$inputs = this.$element.find('.js-dropdown__input');
+    this.$contents = this.$element.find('.js-dropdown__content');
+    this.dates = [];
     this.initCalendar();
   }
 

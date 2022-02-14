@@ -1,11 +1,11 @@
 class Like {
   constructor(element) {
+    this.init(element);
+  }
+  
+  init() {
     this.$element = $(element);
     this.$icon = this.$element.find('.js-like__icon');
-    this.init();
-  }
-
-  init() {
     this.addClickEvent();
   }
 

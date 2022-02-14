@@ -1,12 +1,12 @@
 class Accordion {
   constructor(element) {
+    this.init(element);
+  }
+  
+  init(element) {
     this.$element = $(element);
     this.$list = this.$element.siblings('.js-accordion__list');
     this.$icon = this.$element.find('.js-accordion__icon');
-    this.init();
-  }
-  
-  init() {
     this.addClickEvent();
   }
   

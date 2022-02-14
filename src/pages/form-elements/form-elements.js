@@ -50,9 +50,7 @@ const options = [
 ];
 
 $(() => {
-  $('.form-elements__item .quantity-dropdown__body').each((idx, el) => {
-    new QuantityDropdown(el, options[idx]);
-  });
+  $('.form-elements__item .quantity-dropdown__body').each((idx, el) => new QuantityDropdown(el, options[idx]));
   
   $('.form-elements__item_with_100_mb .js-accordion__expander').click();
 });
