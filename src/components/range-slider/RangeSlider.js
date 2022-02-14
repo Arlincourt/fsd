@@ -17,10 +17,10 @@ class RangeSlider {
   }
 
   initEvents() {
-    this.$rangeSlider.on('update', this.onChange.bind(this));
+    this.$rangeSlider.on('update', this.handleSliderChange.bind(this));
   }
 
-  onChange(values) {
+  handleSliderChange(values) {
     const value = this.formatValue(values);
     this.$input.value = `${value[0]} ${value[1]}`;
     this.$info.textContent = `${value[0]}₽ - ${value[1]}₽`;

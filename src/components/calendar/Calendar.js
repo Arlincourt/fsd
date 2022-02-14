@@ -21,18 +21,18 @@ class Calendar {
       },
     };
 
-    if (this.$inputs.length === 1) {
-      this.options.dateFormat = 'dd M';
-    }
   }
-
-  init() {
+  
+  init(element) {
     this.element = element;
     this.$element = $(element).parent();
     this.$calendar = '';
     this.$inputs = this.$element.find('.js-dropdown__input');
     this.$contents = this.$element.find('.js-dropdown__content');
     this.dates = [];
+    if (this.$inputs.length === 1) {
+      this.options.dateFormat = 'dd M';
+    }
     this.initCalendar();
   }
 
@@ -66,32 +66,42 @@ class Calendar {
   }
 
   initContentsEvents() {
-    this.$contents.on('click', () => {
-      this.$calendar.show();
-    });
+    this.$contents.on('click', this.handleContentsClick.bind(this));
+  }
+
+  handleContentsClick() {
+    this.$calendar.show();
   }
 
   initButtonsEvents() {
-    this.$applyBtn.on('click', () => {
-      if (this.dates.length === 2 && this.$inputs.length === 2) {
-        this.$inputs.each((idx, input) => {
-          $(input).val(this.dates[idx]);
-        });
-        this.showClearButton();
-        this.$calendar.hide();
-      }
-      if (this.$inputs.length === 1 && this.dates.length === 2) {
-        this.$inputs.val(this.formatToFilter(this.dates));
-        this.showClearButton();
-        this.$calendar.hide();
-      }
-    });
-    this.$clearBtn.on('click', () => {
-      this.$calendar.clear();
+    this.$applyBtn.on('click', this.handleApplyButtonClick.bind(this));
+    this.$clearBtn.on('click', this.handleClearButtonClick.bind(this));
+  }
+
+  handleClearButtonClick() {
+    this.$calendar.clear();
+    this.$calendar.hide();
+    this.hideClearButton();
+    this.clearInputValues();
+  }
+
+  handleApplyButtonClick() {
+    const isTwoDateSelected = this.dates.length === 2
+    const isTwoFields = this.$inputs.length === 2
+    const inOneField = this.$inputs.length === 1
+    if (isTwoDateSelected && isTwoFields) {
+      this.$inputs.each((idx, input) => {
+        $(input).val(this.dates[idx]);
+      });
+      this.showClearButton();
       this.$calendar.hide();
-      this.hideClearButton();
-      this.clearInputValues();
-    });
+    }
+
+    if (inOneField && isTwoDateSelected) {
+      this.$inputs.val(this.formatToFilter(this.dates));
+      this.showClearButton();
+      this.$calendar.hide();
+    }
   }
 
   clearInputValues() {

@@ -4,22 +4,19 @@ class Accordion {
   }
   
   init(element) {
-    this.$element = $(element);
-    this.$list = this.$element.siblings('.js-accordion__list');
-    this.$icon = this.$element.find('.js-accordion__icon');
+    this.$expander = $(element);
+    this.$list = this.$expander.siblings('.js-accordion__list');
+    this.$icon = this.$expander.find('.js-accordion__icon');
     this.addClickEvent();
   }
   
   addClickEvent() {
-    this.$element.on('click', () => {
-      if (this.$list.hasClass('accordion__list_active') && this.$icon.hasClass('accordion__icon_active')) {
-        this.$icon.removeClass('accordion__icon_active');
-        this.$list.removeClass('accordion__list_active');
-      } else {
-        this.$icon.addClass('accordion__icon_active');
-        this.$list.addClass('accordion__list_active');
-      }
-    });
+    this.$expander.on('click', this.handleExpanderClick.bind(this));
+  }
+  
+  handleExpanderClick() {
+    this.$list.toggleClass('accordion__list_active');
+    this.$icon.toggleClass('accordion__icon_active');
   }
 }
 

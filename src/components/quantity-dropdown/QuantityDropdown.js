@@ -47,15 +47,17 @@ class QuantityDropdown {
   }
 
   initEvents() {
-    this.$element.on('click', (evt) => {
-      evt.preventDefault();
-      evt.stopPropagation();
-      if (this.$list.hasClass('quantity-dropdown__list_hidden')) {
-        this.showCalendar();
-      } else {
-        this.hideCalendar();
-      }
-    });
+    this.$element.on('click', this.handleElementClick.bind(this));
+  }
+
+  handleElementClick(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    if (this.$list.hasClass('quantity-dropdown__list_hidden')) {
+      this.showCalendar();
+    } else {
+      this.hideCalendar();
+    }
   }
 
   initOptions() {
@@ -88,15 +90,19 @@ class QuantityDropdown {
 
   initButtonsEvents() {
     if (this.$apply) {
-      this.$apply.on('click', () => {
-        this.hideCalendar();
-      });
+      this.$apply.on('click', this.handleApplyButtonClick.bind(this));
     }
     if (this.$clean) {
-      this.$clean.on('click', () => {
-        this.resetState();
-      });
+      this.$clean.on('click', this.handleCleanButtonClick.bind(this));
     }
+  }
+
+  handleApplyButtonClick() {
+    this.hideCalendar();
+  }
+
+  handleCleanButtonClick() {
+    this.resetState();
   }
 
   hideCalendar() {
@@ -108,34 +114,39 @@ class QuantityDropdown {
     this.$list.removeClass('quantity-dropdown__list_hidden');
   }
 
-  initOptionsEvents() {
-    this.$element.find('.quantity-dropdown__items').on('click', (evt) => {
-      evt.stopPropagation();
-      if (evt.target.tagName.toLocaleLowerCase() === 'button' && evt.target.textContent === '-') {
-        const parent = evt.target.parentElement;
-        const idx = +parent.dataset.id;
-        if (this.options[idx].value !== 0) {
-          this.options[idx].value -= 1;
-          const counter = parent.querySelector('.title-3');
-          counter.textContent = +counter.textContent - 1;
-          this.isZero(evt.target, this.options[idx].value);
-        }
-      }
-      if (evt.target.tagName.toLocaleLowerCase() === 'button' && evt.target.textContent === '+') {
-        const parent = evt.target.parentElement;
-        const idx = +parent.dataset.id;
-        this.options[idx].value += 1;
+  handleQuantityDropdownItemsClick(evt) {
+    evt.stopPropagation();
+    const isButton = evt.target.tagName.toLocaleLowerCase() === 'button'
+    const isMinus = evt.target.textContent === '-'
+    const isPlus = evt.target.textContent === '+'
+    if (isButton && isMinus) {
+      const parent = evt.target.parentElement;
+      const idx = +parent.dataset.id;
+      if (this.options[idx].value !== 0) {
+        this.options[idx].value -= 1;
         const counter = parent.querySelector('.title-3');
-        counter.textContent = +counter.textContent + 1;
-        if (this.options[idx].value === 1) {
-          parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled');
-        }
-        if (this.$clean) {
-          this.$clean.removeClass('small-button_hidden');
-        }
-        this.setInputValue();
+        counter.textContent = +counter.textContent - 1;
+        this.isZero(evt.target, this.options[idx].value);
       }
-    });
+    }
+    if (isButton && isPlus) {
+      const parent = evt.target.parentElement;
+      const idx = +parent.dataset.id;
+      this.options[idx].value += 1;
+      const counter = parent.querySelector('.title-3');
+      counter.textContent = +counter.textContent + 1;
+      if (this.options[idx].value === 1) {
+        parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled');
+      }
+      if (this.$clean) {
+        this.$clean.removeClass('small-button_hidden');
+      }
+      this.setInputValue();
+    }
+  }
+
+  initOptionsEvents() {
+    this.$element.find('.quantity-dropdown__items').on('click', this.handleQuantityDropdownItemsClick.bind(this));
   }
 
   isZero(minusBtn, optionValue) {
@@ -164,7 +175,7 @@ class QuantityDropdown {
       const total = this.getOptionsValues();
       if (total === 1) {
         this.$input.val(`${total} ${this.endings[0]}`);
-      } else if (total > 1 && total < 5) {
+      } else if (this.isSecondDeclination(total)) {
         this.$input.val(`${total} ${this.endings[1]}`);
       } else if (total > 4) {
         this.$input.val(`${total} ${this.endings[2]}`);
@@ -189,7 +200,7 @@ class QuantityDropdown {
       const { value } = result[key];
       if (value === 1) {
         str += `${value} ${result[key].endings[0]},`;
-      } else if (value > 1 && value < 5) {
+      } else if (this.isSecondDeclination(value)) {
         str += ` ${value} ${result[key].endings[1]},`;
       } else if (value > 4) {
         str += ` ${value} ${result[key].endings[2]},`;
@@ -197,6 +208,12 @@ class QuantityDropdown {
     });
     str = str.substring(0, str.length - 1);
     return str;
+  }
+
+  isSecondDeclination(num) {
+    const isMoreThanOne = num > 1
+    const isLessThanFive = num < 5
+    return isMoreThanOne && isLessThanFive
   }
 
   getOptionsValues() {

@@ -8,11 +8,11 @@ class Menu {
   }
 
   addClickListenersToExpanders(idx, element) {
-    document.addEventListener('click', this.onDocumentClick.bind(this));
-    $(element).on('click', this.onClickExpander.bind(this));
+    document.addEventListener('click', this.handleDocumentClick.bind(this));
+    $(element).on('click', this.handleExpanderClick.bind(this));
   }
 
-  onClickExpander(evt) {
+  handleExpanderClick(evt) {
     evt.preventDefault();
     evt.stopPropagation();
     const submenu = $(evt.currentTarget).parent().find('.js-menu__submenu');
@@ -24,7 +24,7 @@ class Menu {
     submenu.addClass('menu__submenu_opened');
   }
 
-  onDocumentClick() {
+  handleDocumentClick() {
     this.hideMenus();
   }
 

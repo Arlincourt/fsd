@@ -21,17 +21,21 @@ class RoomCard {
   }
 
   initGalleryEvents() {
-    this.$gallery.on('mouseenter', () => {
-      if (this.isHidden()) {
-        this.$actions.removeClass('room-card__actions_hidden');
-      }
-    });
+    this.$gallery.on('mouseenter', this.handleGalleryEnter.bind(this));
 
-    this.$gallery.on('mouseleave', () => {
-      if (!this.isHidden()) {
-        this.$actions.addClass('room-card__actions_hidden');
-      }
-    });
+    this.$gallery.on('mouseleave', this.handleGalleryLeave.bind(this));
+  }
+
+  handleGalleryEnter() {
+    if (this.isHidden()) {
+      this.$actions.removeClass('room-card__actions_hidden');
+    }
+  }
+
+  handleGalleryLeave() {
+    if (!this.isHidden()) {
+      this.$actions.addClass('room-card__actions_hidden');
+    }
   }
 
   isHidden() {
@@ -57,23 +61,27 @@ class RoomCard {
   }
 
   initPointsEvents() {
-    this.$pointsContainer.on('click', (evt) => {
-      if (evt.target.dataset.id) {
-        this.step = +evt.target.dataset.id;
-        this.renderStep();
-      }
-    });
+    this.$pointsContainer.on('click', this.handlePointsContainerClick.bind(this));
+  }
+
+  handlePointsContainerClick(evt) {
+    if (evt.target.dataset.id) {
+      this.step = +evt.target.dataset.id;
+      this.renderStep();
+    }
+  }
+
+  handleButtonsContainerClick(evt) {
+    if (evt.target.classList.contains('room-card__button_direction_reversed')) {
+      this.next(evt);
+    } else {
+      this.prev(evt);
+    }
   }
 
   initButtonsEvents() {
     if (this.$buttons) {
-      this.$buttons.on('click', (evt) => {
-        if (evt.target.classList.contains('room-card__button_direction_reversed')) {
-          this.next(evt);
-        } else {
-          this.prev(evt);
-        }
-      });
+      this.$buttons.on('click', this.handleButtonsContainerClick.bind(this));
     }
   }
 

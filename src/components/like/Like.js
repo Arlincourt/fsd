@@ -3,30 +3,26 @@ class Like {
     this.init(element);
   }
   
-  init() {
+  init(element) {
     this.$element = $(element);
     this.$icon = this.$element.find('.js-like__icon');
     this.addClickEvent();
   }
 
   addClickEvent() {
-    this.$element.on('click', () => {
-      if (this.$element.hasClass('like_activated')) {
-        this.$element.removeClass('like_activated');
+    this.$element.on('click', this.handleElementClick.bind(this));
+  }
 
-        this.$icon.toggleClass('like__icon_activated');
-        this.$icon.toggleClass('icon-favorite');
-        this.$icon.toggleClass('icon-favorite_border');
-        this.decrementValue();
-      } else {
-        this.$element.addClass('like_activated');
-
-        this.$icon.toggleClass('like__icon_activated');
-        this.$icon.toggleClass('icon-favorite');
-        this.$icon.toggleClass('icon-favorite_border');
-        this.incrementValue();
-      }
-    });
+  handleElementClick() {
+    if (this.$element.hasClass('like_activated')) {
+      this.decrementValue();
+    } else {
+      this.incrementValue();
+    }
+    this.$element.toggleClass('like_activated');
+    this.$icon.toggleClass('like__icon_activated');
+    this.$icon.toggleClass('icon-favorite');
+    this.$icon.toggleClass('icon-favorite_border');
   }
 
   decrementValue() {
