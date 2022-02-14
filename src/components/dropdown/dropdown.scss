@@ -11,6 +11,7 @@
     cursor: pointer;
     padding-right: 33px;
     border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px 4px 0 0;
   }
 
   &__label {
@@ -27,7 +28,6 @@
       color: $dark50;
       font-family: "icons", sans-serif;
       cursor: pointer;
-      z-index: 7;
     }
   }
 
@@ -38,12 +38,10 @@
   &__input {
     padding: 8.5px 22px 10px 8px;
     pointer-events: none;
-    outline: none;
     width: 100%;
     font-size: 1rem;
     line-height: 1.71rem;
     color: rgba(31, 32, 65, 0.75);
-    border-radius: 4px 4px 0 0;
     border: none;
     letter-spacing: 0.7px;
     font-family: "Montserrat", sans-serif;

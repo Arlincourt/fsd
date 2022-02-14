@@ -16,7 +16,6 @@
     position: absolute;
     top: 48px;
     left: 28px;
-    z-index: 9;
     text-align: center;
   }
 
@@ -39,7 +38,6 @@
   }
 
   &__item {
-    font-size: 1rem;
     line-height: 1.71rem;
     color: $dark75;
   }

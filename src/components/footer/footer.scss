@@ -1,7 +1,6 @@
 @import "@/theme/variables";
 
 .footer {
-  text-align: center;
   background-color: #fff;
 
   &__wrapper {
@@ -24,7 +23,6 @@
   }
 
   &__top {
-    background-color: #fff;
     padding: 101px 0 97px;
     box-shadow: inset 0 -1px 0 rgba(31, 32, 65, 0.2);
   }
@@ -80,7 +78,6 @@
 
   &__subscribtion {
     max-width: 260px;
-    text-align: left;
     padding-top: 5px;
   }
 
