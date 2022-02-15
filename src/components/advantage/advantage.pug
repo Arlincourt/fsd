@@ -1,7 +1,7 @@
-mixin advantage({ text = "text", name = "Max", className = "", border = undefined })
+mixin advantage({ text = "text", name = "Max", className = "", border = null })
   -
     let lineClass = ""
-    if(border !== undefined) {
+    if(border) {
       lineClass = "advantage__body_line_bottom"  
     }
     

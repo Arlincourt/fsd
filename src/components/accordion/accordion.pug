@@ -5,7 +5,7 @@ mixin accordion({ title = "accordion", items = [] })
   .accordion 
     .accordion__expander.js-accordion__expander
       +title-3(title)
-      button.accordion__icon.icon-expand_more.js-accordion__icon(type="button")
+      button.accordion__icon.icon-expand.icon-expand_more.js-accordion__icon(type="button")
     .accordion__list.js-accordion__list
       each item in items
         .accordion__item 

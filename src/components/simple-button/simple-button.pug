@@ -1,14 +1,14 @@
-mixin simple-button({ link = undefined, text = 'click me', mode = undefined })
+mixin simple-button({ link = null, text = 'click me', mode = null })
   - 
     const defaultclass = 'simple-button'
-    if(mode !== undefined){
+    if(mode) {
      mode = mode.map((item)=> `${defaultclass}_${item}`)
       classes = mode.join(' ')
     }  else {
       classes = ""
     }
     
-  if(link!== undefined)
+  if(link)
     a.simple-button(href="/fake-address" class=classes)= text
   else
     button.simple-button(class=classes)= text

@@ -1,14 +1,14 @@
-mixin icon-button({ link = undefined, text = 'click me', mode = undefined })
+mixin icon-button({ link = null, text = 'click me', mode = null })
   - 
     const defaultclass = 'icon-button'
-    if(mode !== undefined){
+    if(mode){
       mode = mode.map((item)=> `${defaultclass}_${item}`)
       classes = mode.join(' ')
     }  else {
       classes = ""
     }
     
-  if(link!== undefined)
+  if(link)
     a.icon-button(href="/fake-address" class=classes)= text
   else
     button.icon-button(class=classes)= text

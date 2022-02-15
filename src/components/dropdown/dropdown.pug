@@ -1,14 +1,14 @@
 include ../../components/title-3/title-3.pug
 
-mixin dropdown({ label = 'Выберите', title = undefined, quantity = undefined, small = undefined })
+mixin dropdown({ label = 'Выберите', title = null, small = null })
   -
-    const classes = ['dropdown', 'js-dropdown']
-    if(small !== undefined) {
+    const classes = ['']
+    if(small) {
       classes.push('dropdown_size_small')
     }
     
-  div(class=classes)
-    if(title !== undefined)
+  .dropdown.js-dropdown(class=classes)
+    if(title)
       .dropdown__title
         +title-3(title)
     .dropdown__content.js-dropdown__content

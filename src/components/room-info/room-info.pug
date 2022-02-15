@@ -4,7 +4,7 @@ include ../../components/quantity-dropdown/quantity-dropdown.pug
 include ../../components/expences/expences.pug
 include ../../components/icon-button/icon-button.pug
 
-mixin room-info({ items = undefined, total = '38 081₽', luxury = true, price = '9 990', number = '888', label1 = 'ДД.ММ.ГГГГ', label2 = 'ДД.ММ.ГГГГ' })
+mixin room-info({ items = null, total = '38 081₽', luxury = true, price = '9 990', number = '888', label1 = 'ДД.ММ.ГГГГ', label2 = 'ДД.ММ.ГГГГ' })
   - 
     items = items || [
       { name: '9 990₽ х 4 суток', price: '39 960₽' }, 

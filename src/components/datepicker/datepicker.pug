@@ -1,7 +1,7 @@
 include ../../components/dropdown/dropdown.pug
 include ../../components/calendar/calendar.pug
 
-mixin datepicker({ title1 = 'прибытие', label1 = 'ДД.ММ.ГГГГ', title2 = 'выезд', label2 = 'ДД.ММ.ГГГГ', oneItem = undefined })
+mixin datepicker({ title1 = 'прибытие', label1 = 'ДД.ММ.ГГГГ', title2 = 'выезд', label2 = 'ДД.ММ.ГГГГ', oneItem = null })
   .datepicker-item
       +calendar()
       .datepicker-item__dropdowns 

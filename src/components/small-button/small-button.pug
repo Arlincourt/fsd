@@ -1,14 +1,14 @@
-mixin small-button({ link = undefined, text = 'click me', mode = undefined })
+mixin small-button({ link = null, text = 'click me', mode = null })
   - 
     const defaultclass = 'small-button'
-    if(mode !== undefined){
+    if(mode) {
       mode = mode.map((item)=> `${defaultclass}_${item}`)
       classes = mode.join(' ')
     } else {
       classes = ""
     }
     
-  if(link!== undefined)
+  if(link)
     a.small-button(href="/fake-address" class=classes)= text
   else
     button.small-button(class=classes)= text

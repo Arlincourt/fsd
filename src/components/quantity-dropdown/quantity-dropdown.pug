@@ -1,14 +1,14 @@
 include ../../components/dropdown/dropdown.pug
 include ../../components/title-3/title-3.pug
 
-mixin quantity-dropdown({ label = 'label', title = '', small = undefined })
+mixin quantity-dropdown({ label = 'label', title = '', small = null })
   -
-    const classes = ['quantity-dropdown']
+    const classes = ['']
     if(small) {
       classes.push('quantity-dropdown_size_small')
     }
     
-  div(class=classes)
+  .quantity-dropdown(class=classes)
     if title 
       .quantity-dropdown__title
         +title-3(title)

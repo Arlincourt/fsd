@@ -1,9 +1,9 @@
 include ../../components/title-3/title-3.pug
 
-mixin rent-info({ luxury = undefined, number = '2', price = '1000', small = undefined })
+mixin rent-info({ luxury = null, number = '2', price = '1000', small = null })
   -
     const classes = ["rent-info__title"]
-    if(small !== undefined) {
+    if(small) {
       classes.push("rent-info__title_size_small")
     }
 
