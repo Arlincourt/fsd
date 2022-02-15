@@ -1,7 +1,7 @@
 include ../../components/rent-info/rent-info.pug
 include ../../components/rating/rating.pug
 
-mixin room-card({images = [], buttons = undefined, comments = 0, rating = 0, luxury = false, price = '9 990', number = '888', small = true})
+mixin room-card({ images = [], buttons = undefined, comments = 0, rating = 0, luxury = false, price = '9 990', number = '888', small = true })
   -
     const classes = ['room-card__actions']
     if(buttons === undefined) {
@@ -26,7 +26,7 @@ mixin room-card({images = [], buttons = undefined, comments = 0, rating = 0, lux
             img(class="room-card__img" alt=img.alt src=img.src)
       .room-card__info 
         .room-card__rent-info
-          +rent-info({luxury: luxury, price: price, number: number, small: small})
+          +rent-info({ luxury: luxury, price: price, number: number, small: small })
         .room-card__underline
         .room-card__rating 
           +rating(rating)

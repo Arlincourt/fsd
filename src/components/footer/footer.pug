@@ -3,7 +3,7 @@ include ../../components/socials/socials.pug
 include ../../components/input/input.pug
 include ../../components/title-3/title-3.pug
 
-mixin footer({text = 'text', navigation = [], copy = 'copy', subscribtion = {}})
+mixin footer({ text = 'text', navigation = [], copy = 'copy', subscribtion = {} })
   footer.footer
     .footer__top
       .footer__wrapper
@@ -23,7 +23,7 @@ mixin footer({text = 'text', navigation = [], copy = 'copy', subscribtion = {}})
           +title-3(subscribtion.title)
           p.footer__paragraph.footer__paragraph_offset_medium= subscribtion.text
           form.footer__subscription-form
-            +input({type: 'text', placeholder: subscribtion.placeholder, button: true})
+            +input({ type: 'text', placeholder: subscribtion.placeholder, button: true })
 
     section.footer__bottom
       p.footer__copy= copy

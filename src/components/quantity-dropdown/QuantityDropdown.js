@@ -224,12 +224,12 @@ class QuantityDropdown {
       });
       return total;
     } if (this.words) {
-      const result = {};
+      const result = { };
       result['0'] = { value: this.options[0].value + this.options[1].value, endings: this.words[0] };
       result['1'] = { value: this.options[2].value, endings: this.words[1] };
       return result;
     }
-    const result = {};
+    const result = { };
     this.options.forEach((option) => {
       result[option.name] = { value: option.value, endings: option.endings };
     });

@@ -13,25 +13,25 @@ mixin register-card()
         +title-1('Регистрация аккаунта')
       form.register-card__form(action="/fake-address")
         .register-card__input
-          +input({type: text, placeholder: 'Имя'}) 
+          +input({ type: text, placeholder: 'Имя' }) 
         .register-card__input
-          +input({type: text, placeholder: 'Фамилия'}) 
+          +input({ type: text, placeholder: 'Фамилия' }) 
         .register-card__radio
-          +radio({items: [{name: 'gender', label: 'Мужчина', checked: true}, {name: 'gender', label: 'Женщина'}]}) 
+          +radio({ items: [{ name: 'gender', label: 'Мужчина', checked: true }, { name: 'gender', label: 'Женщина' }] }) 
         .register-card__date
           .register-card__subtitle
             +title-3('дата рождения')
-          +input({masked: true, type: 'text', placeholder: 'ДД.ММ.ГГГГ'}) 
+          +input({ masked: true, type: 'text', placeholder: 'ДД.ММ.ГГГГ' }) 
         .register-card__input
           .register-card__subtitle
             +title-3('данные для входа в сервис')
-          +input({type: 'email', placeholder: 'Email'}) 
+          +input({ type: 'email', placeholder: 'Email' }) 
         .register-card__input
-          +input({type: 'text', placeholder: 'Пароль'}) 
+          +input({ type: 'text', placeholder: 'Пароль' }) 
         .register-card__checkbox
-          +checkbox-toggle({label: 'Получать спецпредложения', name: 'special-offer'}) 
+          +checkbox-toggle({ label: 'Получать спецпредложения', name: 'special-offer' }) 
         .register-card__button
-          +icon-button({text: 'зарегистрироваться', mode: ['size_big']})
+          +icon-button({ text: 'зарегистрироваться', mode: ['size_big'] })
       .register-card__question
         p.register-card__paragraph Уже есть аккаунт на Toxin
-        +button({link: true, text: 'войти', mode: ['padding_big']})
+        +button({ link: true, text: 'войти', mode: ['padding_big'] })

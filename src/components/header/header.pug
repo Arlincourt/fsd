@@ -3,7 +3,7 @@ include ../../components/button/button.pug
 include ../../components/simple-button/simple-button.pug
 include ../../components/menu/menu.pug
 
-mixin header({user, menu = []})
+mixin header({ user, menu = [] })
   header.header.js-header
     .header__body 
       .header__logo
@@ -22,8 +22,8 @@ mixin header({user, menu = []})
               | #{user}
           else 
             .header__actions 
-              +button({text: 'войти', mode: ['offset_small']})
-              +simple-button({text: 'зарегистрироваться', mode: ['length_long']})
+              +button({ text: 'войти', mode: ['offset_small'] })
+              +simple-button({ text: 'зарегистрироваться', mode: ['length_long'] })
         a.header__icon(href="/fake-address")
           img.header__avatar(src="./user.svg")
               

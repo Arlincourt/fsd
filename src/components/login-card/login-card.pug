@@ -12,11 +12,11 @@ mixin login-card()
         +title-1('Войти')
       form.login-card__form(action="/fake-address")
         .login-card__input
-          +input({type: 'email', placeholder: 'Email'}) 
+          +input({ type: 'email', placeholder: 'Email' }) 
         .login-card__input
-          +input({type: 'text', placeholder: 'Пароль'}) 
+          +input({ type: 'text', placeholder: 'Пароль' }) 
         .login-card__button
-          +icon-button({text: 'войти', mode: ['size_big']})
+          +icon-button({ text: 'войти', mode: ['size_big'] })
       .login-card__question
         p.login-card__paragraph Нет аккаунта на Toxin?
-        +button({link: true, text: 'создать', mode: ['padding_big']})
+        +button({ link: true, text: 'создать', mode: ['padding_big'] })

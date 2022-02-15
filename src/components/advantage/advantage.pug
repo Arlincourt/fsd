@@ -1,12 +1,12 @@
-mixin advantage({text = "text", name = "Max", className = "", border = undefined})
+mixin advantage({ text = "text", name = "Max", className = "", border = undefined })
   -
-    const bodyClasses = ["advantage__body"]
+    let lineClass = ""
     if(border !== undefined) {
-      bodyClasses.push("advantage__body_line_bottom")  
+      lineClass = "advantage__body_line_bottom"  
     }
     
   .advantage
-    div(class=bodyClasses)
+    .advantage__body(class= lineClass)
       i(class="advantage__icon " + className)
       .advantage__info 
         p.advantage__name= name 

@@ -55,27 +55,27 @@ block header
       {
         title: 'Навигация',
         links: [
-          {url: '/fake-address', text: 'О нас'},
-          {url: '/fake-address', text: 'Новости'},
-          {url: '/fake-address', text: 'Служба поддержки'},
-          {url: '/fake-address', text: 'Услуги'},
+          { url: '/fake-address', text: 'О нас' },
+          { url: '/fake-address', text: 'Новости' },
+          { url: '/fake-address', text: 'Служба поддержки' },
+          { url: '/fake-address', text: 'Услуги' },
         ]
       },
       {
         title: 'О нас',
         links: [
-          {url: '/fake-address', text: 'О сервисе'},
-          {url: '/fake-address', text: 'Наша команда'},
-          {url: '/fake-address', text: 'Вакансии'},
-          {url: '/fake-address', text: 'Инвесторы'},
+          { url: '/fake-address', text: 'О сервисе' },
+          { url: '/fake-address', text: 'Наша команда' },
+          { url: '/fake-address', text: 'Вакансии' },
+          { url: '/fake-address', text: 'Инвесторы' },
         ]
       },
       {
         title: 'Служба поддержки',
         links: [
-          {url: '/fake-address', text: 'Соглашения'},
-          {url: '/fake-address', text: 'Сообщества'},
-          {url: '/fake-address', text: 'Связь с нами'},
+          { url: '/fake-address', text: 'Соглашения' },
+          { url: '/fake-address', text: 'Сообщества' },
+          { url: '/fake-address', text: 'Связь с нами' },
         ]
       },
     ]
@@ -87,7 +87,7 @@ block header
       placeholder: "Email"
     }
 
-  +header({user: false, menu: menu})
+  +header({ user: false, menu: menu })
 
 block content
   .login 
@@ -97,7 +97,7 @@ block content
 
 block footer
   .landing-page__footer.landing-page__footer_size_big
-    +footer({text, navigation, copy, subscribtion})
+    +footer({ text, navigation, copy, subscribtion })
   .landing-page__footer.landing-page__footer_size_small
     +footer-small(copy)
 

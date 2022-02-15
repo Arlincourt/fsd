@@ -1,6 +1,6 @@
 include ../../components/like/like.pug
 
-mixin comment({src = './avatar-1.jpg', alt = 'user avatar', name = 'Мурад Сарафанов', time = '5 дней назад', active = false, number = 12, message = ''})
+mixin comment({ src = './avatar-1.jpg', alt = 'user avatar', name = 'Мурад Сарафанов', time = '5 дней назад', active = false, number = 12, message = '' })
   .comment 
     .comment__author 
       img(src=src alt=alt class="comment__avatar")
@@ -9,5 +9,5 @@ mixin comment({src = './avatar-1.jpg', alt = 'user avatar', name = 'Мурад �
         p.comment__time= time
     .comment__content 
       .comment__like 
-        +like({number: number, active: active})
+        +like({ number: number, active: active })
       .comment__message= message
