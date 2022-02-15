@@ -4,7 +4,7 @@ class RangeSlider {
   constructor(el, options) {
     this.init(el, options);
   }
-  
+
   init(el, options) {
     this.$el = el;
     this.options = options;

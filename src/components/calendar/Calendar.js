@@ -20,9 +20,8 @@ class Calendar {
         that.onSelect(formattedDate, date);
       },
     };
-
   }
-  
+
   init(element) {
     this.element = element;
     this.$element = $(element).parent();
@@ -86,9 +85,9 @@ class Calendar {
   }
 
   handleApplyButtonClick() {
-    const isTwoDateSelected = this.dates.length === 2
-    const isTwoFields = this.$inputs.length === 2
-    const inOneField = this.$inputs.length === 1
+    const isTwoDateSelected = this.dates.length === 2;
+    const isTwoFields = this.$inputs.length === 2;
+    const inOneField = this.$inputs.length === 1;
     if (isTwoDateSelected && isTwoFields) {
       this.$inputs.each((idx, input) => {
         $(input).val(this.dates[idx]);

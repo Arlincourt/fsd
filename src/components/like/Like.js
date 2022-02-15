@@ -2,7 +2,7 @@ class Like {
   constructor(element) {
     this.init(element);
   }
-  
+
   init(element) {
     this.$element = $(element);
     this.$icon = this.$element.find('.js-like__icon');

@@ -4,7 +4,7 @@ class RoomCard {
   constructor(element) {
     this.init(element);
   }
-  
+
   init(element) {
     this.$gallery = $(element);
     this.$line = this.$gallery.find('.room-card__gallery-line');

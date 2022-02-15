@@ -17,7 +17,7 @@ class QuantityDropdown {
     this.$clean = '';
     this.init();
   }
-  
+
   init() {
     document.addEventListener('click', this.hideCalendar.bind(this));
     this.initOptions();
@@ -116,9 +116,9 @@ class QuantityDropdown {
 
   handleQuantityDropdownItemsClick(evt) {
     evt.stopPropagation();
-    const isButton = evt.target.tagName.toLocaleLowerCase() === 'button'
-    const isMinus = evt.target.textContent === '-'
-    const isPlus = evt.target.textContent === '+'
+    const isButton = evt.target.tagName.toLocaleLowerCase() === 'button';
+    const isMinus = evt.target.textContent === '-';
+    const isPlus = evt.target.textContent === '+';
     if (isButton && isMinus) {
       const parent = evt.target.parentElement;
       const idx = +parent.dataset.id;
@@ -211,9 +211,9 @@ class QuantityDropdown {
   }
 
   isSecondDeclination(num) {
-    const isMoreThanOne = num > 1
-    const isLessThanFive = num < 5
-    return isMoreThanOne && isLessThanFive
+    const isMoreThanOne = num > 1;
+    const isLessThanFive = num < 5;
+    return isMoreThanOne && isLessThanFive;
   }
 
   getOptionsValues() {
