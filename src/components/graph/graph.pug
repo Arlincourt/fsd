@@ -1,0 +1,21 @@
+mixin graph({ numbers = '260', items = [] })
+  -
+    const colors = []
+    const voices = []
+    items.forEach((item) => {
+      if(item.gradient && item.voices) {
+        colors.push(item.gradient)
+        voices.push(item.voices)
+      }
+    })
+    items.reverse()
+
+  .graph.js-graph(data-voices=voices data-colors=colors)
+    .graph__canvas-wrapper
+      canvas(class="graph__canvas js-graph__canvas")
+      .graph__info.js-graph__info
+        span.graph__numbers.js-graph__numbers= numbers 
+        p.graph__text голосов
+    ul.graph__list 
+      each item in items 
+        li(class="graph__item graph__item_color_"+item.color)= item.text 

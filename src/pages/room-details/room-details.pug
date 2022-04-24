@@ -6,7 +6,7 @@ include ../../components/footer-small/footer-small.pug
 include ../../components/room-info/room-info.pug
 include ../../components/advantage/advantage.pug
 include ../../components/title-3/title-3.pug
-include ../../components/chart/chart.pug
+include ../../components/graph/graph.pug
 include ../../components/comment/comment.pug
 include ../../components/bulled-list/bulled-list.pug
 include ../../components/paragraph/paragraph.pug
@@ -110,7 +110,7 @@ block content
           +advantage({ text: 'Номер оснащён камином', name: 'Уют', className: 'icon-comfort' })
         .room-details__item.room-details__item_offset_large
           h3.room-details__subtitle.room-details__subtitle_offset_small Впечатления от номера
-          +chart({ numbers: '260', items: [
+          +graph({ numbers: '260', items: [
             { text: 'Разочарован', color: 'black' },
             { text: 'Удовлетворительно', color: 'purple', gradient: ['#BC9CFF', '#8BA4F9'], voices: 260 },
             { text: 'Хорошо', color: 'green', gradient: ['#6FCF97', '#66D2EA'], voices: 260 },
