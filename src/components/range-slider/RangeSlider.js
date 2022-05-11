@@ -1,3 +1,4 @@
+import { boundMethod } from 'autobind-decorator';
 import noUiSlider from 'nouislider';
 
 class RangeSlider {
@@ -17,9 +18,10 @@ class RangeSlider {
   }
 
   _initEvents() {
-    this._$rangeSlider.on('update', this._handleSliderChange.bind(this));
+    this._$rangeSlider.on('update', this._handleSliderChange);
   }
 
+  @boundMethod
   _handleSliderChange(values) {
     const value = this._formatValue(values);
     this._$input.value = `${value[0]} ${value[1]}`;

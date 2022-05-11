@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class Accordion {
   constructor(element) {
     this._init(element);
@@ -11,9 +13,10 @@ class Accordion {
   }
 
   _addClickEvent() {
-    this._$expander.on('click', this._handleExpanderClick.bind(this));
+    this._$expander.on('click', this._handleExpanderClick);
   }
 
+  @boundMethod
   _handleExpanderClick() {
     this._$list.toggleClass('accordion__list_active');
     this._$icon.toggleClass('accordion__icon_active');

@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class Like {
   constructor(element) {
     this._init(element);
@@ -10,9 +12,10 @@ class Like {
   }
 
   _addClickEvent() {
-    this._$element.on('click', this._handleElementClick.bind(this));
+    this._$element.on('click', this._handleElementClick);
   }
 
+  @boundMethod
   _handleElementClick() {
     if (this._$element.hasClass('like_activated')) {
       this._decrementValue();

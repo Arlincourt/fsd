@@ -1,3 +1,4 @@
+import { boundMethod } from 'autobind-decorator';
 import * as $ from 'jquery';
 
 class RoomCard {
@@ -21,17 +22,19 @@ class RoomCard {
   }
 
   _initGalleryEvents() {
-    this._$gallery.on('mouseenter', this._handleGalleryEnter.bind(this));
+    this._$gallery.on('mouseenter', this._handleGalleryEnter);
 
-    this._$gallery.on('mouseleave', this._handleGalleryLeave.bind(this));
+    this._$gallery.on('mouseleave', this._handleGalleryLeave);
   }
 
+  @boundMethod
   _handleGalleryEnter() {
     if (this._isHidden()) {
       this._$actions.removeClass('room-card__actions_hidden');
     }
   }
-
+  
+  @boundMethod
   _handleGalleryLeave() {
     if (!this._isHidden()) {
       this._$actions.addClass('room-card__actions_hidden');
@@ -61,9 +64,10 @@ class RoomCard {
   }
 
   _initPointsEvents() {
-    this._$pointsContainer.on('click', this._handlePointsContainerClick.bind(this));
+    this._$pointsContainer.on('click', this._handlePointsContainerClick);
   }
 
+  @boundMethod
   _handlePointsContainerClick(evt) {
     if (evt.target.dataset.id) {
       this._step = +evt.target.dataset.id;
@@ -71,6 +75,7 @@ class RoomCard {
     }
   }
 
+  @boundMethod
   _handleButtonsContainerClick(evt) {
     if (evt.target.classList.contains('room-card__button_direction_reversed')) {
       this._next(evt);
@@ -81,7 +86,7 @@ class RoomCard {
 
   _initButtonsEvents() {
     if (this._$buttons) {
-      this._$buttons.on('click', this._handleButtonsContainerClick.bind(this));
+      this._$buttons.on('click', this._handleButtonsContainerClick);
     }
   }
 

@@ -1,3 +1,4 @@
+import { boundMethod } from 'autobind-decorator';
 import * as $ from 'jquery';
 
 class QuantityDropdown {
@@ -19,7 +20,7 @@ class QuantityDropdown {
   }
 
   _init() {
-    document.addEventListener('click', this._hideCalendar.bind(this));
+    document.addEventListener('click', this._hideCalendar);
     this._initOptions();
     this._initButtons();
     this._$list.append(this._$items);
@@ -47,9 +48,10 @@ class QuantityDropdown {
   }
 
   _initEvents() {
-    this._$element.on('click', this._handleElementClick.bind(this));
+    this._$element.on('click', this._handleElementClick);
   }
 
+  @boundMethod
   _handleElementClick(evt) {
     evt.preventDefault();
     evt.stopPropagation();
@@ -90,21 +92,24 @@ class QuantityDropdown {
 
   _initButtonsEvents() {
     if (this._$apply) {
-      this._$apply.on('click', this._handleApplyButtonClick.bind(this));
+      this._$apply.on('click', this._handleApplyButtonClick);
     }
     if (this._$clean) {
-      this._$clean.on('click', this._handleCleanButtonClick.bind(this));
+      this._$clean.on('click', this._handleCleanButtonClick);
     }
   }
 
+  @boundMethod
   _handleApplyButtonClick() {
     this._hideCalendar();
   }
-
+  
+  @boundMethod
   _handleCleanButtonClick() {
     this._resetState();
   }
 
+  @boundMethod
   _hideCalendar() {
     $('.js-quantity-dropdown__list').addClass('quantity-dropdown__list_hidden');
   }
@@ -114,6 +119,7 @@ class QuantityDropdown {
     this._$list.removeClass('quantity-dropdown__list_hidden');
   }
 
+  @boundMethod
   _handleQuantityDropdownItemsClick(evt) {
     evt.stopPropagation();
     const isButton = evt.target.tagName.toLocaleLowerCase() === 'button';
@@ -146,7 +152,7 @@ class QuantityDropdown {
   }
 
   _initOptionsEvents() {
-    this._$element.find('.quantity-dropdown__items').on('click', this._handleQuantityDropdownItemsClick.bind(this));
+    this._$element.find('.quantity-dropdown__items').on('click', this._handleQuantityDropdownItemsClick);
   }
 
   _isZero(minusBtn, optionValue) {

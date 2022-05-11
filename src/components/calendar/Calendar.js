@@ -1,4 +1,5 @@
 import 'air-datepicker';
+import { boundMethod } from 'autobind-decorator';
 
 class Calendar {
   constructor(element) {
@@ -64,8 +65,9 @@ class Calendar {
     this._initButtonsEvents();
   }
 
+  @boundMethod
   _initContentsEvents() {
-    this._$contents.on('click', this._handleContentsClick.bind(this));
+    this._$contents.on('click', this._handleContentsClick);
   }
 
   _handleContentsClick() {
@@ -73,10 +75,11 @@ class Calendar {
   }
 
   _initButtonsEvents() {
-    this._$applyBtn.on('click', this._handleApplyButtonClick.bind(this));
-    this._$clearBtn.on('click', this._handleClearButtonClick.bind(this));
+    this._$applyBtn.on('click', this._handleApplyButtonClick);
+    this._$clearBtn.on('click', this._handleClearButtonClick);
   }
 
+  @boundMethod
   _handleClearButtonClick() {
     this._$calendar.clear();
     this._$calendar.hide();
@@ -84,6 +87,7 @@ class Calendar {
     this._clearInputValues();
   }
 
+  @boundMethod
   _handleApplyButtonClick() {
     const isTwoDateSelected = this._dates.length === 2;
     const isTwoFields = this._$inputs.length === 2;

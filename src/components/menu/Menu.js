@@ -1,17 +1,20 @@
+import { boundMethod } from 'autobind-decorator';
 import * as $ from 'jquery';
 
 class Menu {
   constructor(menu) {
     this._menu = menu;
     const expanders = $(this._menu).find('.js-menu__expander');
-    expanders.each(this._addClickListenersToExpanders.bind(this));
+    expanders.each(this._addClickListenersToExpanders);
   }
 
+  @boundMethod
   _addClickListenersToExpanders(idx, element) {
-    document.addEventListener('click', this._handleDocumentClick.bind(this));
-    $(element).on('click', this._handleExpanderClick.bind(this));
+    document.addEventListener('click', this._handleDocumentClick);
+    $(element).on('click', this._handleExpanderClick);
   }
 
+  @boundMethod
   _handleExpanderClick(evt) {
     evt.preventDefault();
     evt.stopPropagation();
@@ -24,6 +27,7 @@ class Menu {
     submenu.addClass('menu__submenu_opened');
   }
 
+  @boundMethod
   _handleDocumentClick() {
     this._hideMenus();
   }

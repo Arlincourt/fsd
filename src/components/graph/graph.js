@@ -1,4 +1,5 @@
 import { Chart, registerables } from 'chart.js';
+import { boundMethod } from 'autobind-decorator';
 
 Chart.register(...registerables);
 
@@ -32,8 +33,8 @@ class Graph {
   }
 
   _setEvent() {
-    this._options.options.onHover = this._handleGraphHover.bind(this);
-    this._el.addEventListener('mousemove', this._handleParentMousemove.bind(this));
+    this._options.options.onHover = this._handleGraphHover;
+    this._el.addEventListener('mousemove', this._handleParentMousemove);
   }
 
   _setDatasets() {
@@ -43,13 +44,15 @@ class Graph {
     this._colors = $element.data('colors');
   }
 
+  @boundMethod
   _handleParentMousemove(evt) {
     if (evt.target.classList.contains('js-graph__canvas')) {
       return;
     }
     this._setText('none');
   }
-
+  
+  @boundMethod
   _handleGraphHover(evt, activeItem) {
     $('.js-graph__canvas').css('cursor', activeItem[0] ? 'pointer' : 'default');
     if (activeItem.length === 1) {
