@@ -2,15 +2,15 @@ import * as $ from 'jquery';
 
 class Header {
   constructor(header) {
-    this.header = header;
-    this.btn = $(this.header).find('.js-header__burger');
-    this.btn.on('click', this.handleButtonClick.bind(this));
-    this.headerMenu = $(this.header).find('.js-header__menu');
+    this._header = header;
+    this._btn = $(this._header).find('.js-header__burger');
+    this._btn.on('click', this._handleButtonClick.bind(this));
+    this._headerMenu = $(this._header).find('.js-header__menu');
   }
 
-  handleButtonClick() {
-    this.btn.toggleClass('header__burger_active');
-    this.headerMenu.toggleClass('header__menu_active');
+  _handleButtonClick() {
+    this._btn.toggleClass('header__burger_active');
+    this._headerMenu.toggleClass('header__menu_active');
   }
 }
 

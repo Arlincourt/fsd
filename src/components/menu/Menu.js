@@ -2,33 +2,33 @@ import * as $ from 'jquery';
 
 class Menu {
   constructor(menu) {
-    this.menu = menu;
-    const expanders = $(this.menu).find('.js-menu__expander');
-    expanders.each(this.addClickListenersToExpanders.bind(this));
+    this._menu = menu;
+    const expanders = $(this._menu).find('.js-menu__expander');
+    expanders.each(this._addClickListenersToExpanders.bind(this));
   }
 
-  addClickListenersToExpanders(idx, element) {
-    document.addEventListener('click', this.handleDocumentClick.bind(this));
-    $(element).on('click', this.handleExpanderClick.bind(this));
+  _addClickListenersToExpanders(idx, element) {
+    document.addEventListener('click', this._handleDocumentClick.bind(this));
+    $(element).on('click', this._handleExpanderClick.bind(this));
   }
 
-  handleExpanderClick(evt) {
+  _handleExpanderClick(evt) {
     evt.preventDefault();
     evt.stopPropagation();
     const submenu = $(evt.currentTarget).parent().find('.js-menu__submenu');
     if (submenu.hasClass('menu__submenu_opened')) {
-      this.hideMenus();
+      this._hideMenus();
       return;
     }
-    this.hideMenus();
+    this._hideMenus();
     submenu.addClass('menu__submenu_opened');
   }
 
-  handleDocumentClick() {
-    this.hideMenus();
+  _handleDocumentClick() {
+    this._hideMenus();
   }
 
-  hideMenus() {
+  _hideMenus() {
     $('.js-menu__submenu').removeClass('menu__submenu_opened');
   }
 }

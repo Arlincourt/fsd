@@ -2,68 +2,68 @@ import * as $ from 'jquery';
 
 class QuantityDropdown {
   constructor(element, options) {
-    this.$element = $(element);
-    this.$dropdown = this.$element.find('.js-dropdown');
-    this.$input = this.$element.find('.js-dropdown__input');
-    this.value = '';
-    this.buttons = options.buttons;
-    this.options = options.options;
-    this.endings = options.endings;
-    this.words = options.words;
-    this.visible = options.visible;
-    this.$list = $('<div class="quantity-dropdown__list js-quantity-dropdown__list"></div>');
-    this.$items = $('<div class="quantity-dropdown__items"></div>');
-    this.$apply = '';
-    this.$clean = '';
-    this.init();
+    this._$element = $(element);
+    this._$dropdown = this._$element.find('.js-dropdown');
+    this._$input = this._$element.find('.js-dropdown__input');
+    this._value = '';
+    this._buttons = options.buttons;
+    this._options = options.options;
+    this._endings = options.endings;
+    this._words = options.words;
+    this._visible = options.visible;
+    this._$list = $('<div class="quantity-dropdown__list js-quantity-dropdown__list"></div>');
+    this._$items = $('<div class="quantity-dropdown__items"></div>');
+    this._$apply = '';
+    this._$clean = '';
+    this._init();
   }
 
-  init() {
-    document.addEventListener('click', this.hideCalendar.bind(this));
-    this.initOptions();
-    this.initButtons();
-    this.$list.append(this.$items);
-    this.$element.append(this.$list);
-    this.initOptionsEvents();
-    this.initButtonsEvents();
-    this.initEvents();
-    this.setInputValue();
-    if (!this.visible) {
-      this.hideCalendar();
+  _init() {
+    document.addEventListener('click', this._hideCalendar.bind(this));
+    this._initOptions();
+    this._initButtons();
+    this._$list.append(this._$items);
+    this._$element.append(this._$list);
+    this._initOptionsEvents();
+    this._initButtonsEvents();
+    this._initEvents();
+    this._setInputValue();
+    if (!this._visible) {
+      this._hideCalendar();
     }
-    this.isZero();
+    this._isZero();
   }
 
-  initButtons() {
-    if (this.buttons) {
+  _initButtons() {
+    if (this._buttons) {
       const buttons = $('<div class="quantity-dropdown__buttons"></div>');
-      this.$apply = $('<button class="small-button" type="button">Применить</button>');
-      this.$clean = $('<button class="small-button" type="button">Очистить</button>');
+      this._$apply = $('<button class="small-button" type="button">Применить</button>');
+      this._$clean = $('<button class="small-button" type="button">Очистить</button>');
 
-      buttons.append(this.$clean);
-      buttons.append(this.$apply);
-      this.$items.append(buttons);
+      buttons.append(this._$clean);
+      buttons.append(this._$apply);
+      this._$items.append(buttons);
     }
   }
 
-  initEvents() {
-    this.$element.on('click', this.handleElementClick.bind(this));
+  _initEvents() {
+    this._$element.on('click', this._handleElementClick.bind(this));
   }
 
-  handleElementClick(evt) {
+  _handleElementClick(evt) {
     evt.preventDefault();
     evt.stopPropagation();
-    if (this.$list.hasClass('quantity-dropdown__list_hidden')) {
-      this.showCalendar();
+    if (this._$list.hasClass('quantity-dropdown__list_hidden')) {
+      this._showCalendar();
     } else {
-      this.hideCalendar();
+      this._hideCalendar();
     }
   }
 
-  initOptions() {
-    if (Array.isArray(this.options)) {
+  _initOptions() {
+    if (Array.isArray(this._options)) {
       let options = '';
-      this.options.forEach((option, idx) => {
+      this._options.forEach((option, idx) => {
         let minus = '<button class="quantity-dropdown__action" type="button">-</button>';
         const plus = '<button class="quantity-dropdown__action" type="button">+</button>';
         if (option.value === 0) {
@@ -84,37 +84,37 @@ class QuantityDropdown {
         `;
       });
 
-      this.$items.append(options);
+      this._$items.append(options);
     }
   }
 
-  initButtonsEvents() {
-    if (this.$apply) {
-      this.$apply.on('click', this.handleApplyButtonClick.bind(this));
+  _initButtonsEvents() {
+    if (this._$apply) {
+      this._$apply.on('click', this._handleApplyButtonClick.bind(this));
     }
-    if (this.$clean) {
-      this.$clean.on('click', this.handleCleanButtonClick.bind(this));
+    if (this._$clean) {
+      this._$clean.on('click', this._handleCleanButtonClick.bind(this));
     }
   }
 
-  handleApplyButtonClick() {
-    this.hideCalendar();
+  _handleApplyButtonClick() {
+    this._hideCalendar();
   }
 
-  handleCleanButtonClick() {
-    this.resetState();
+  _handleCleanButtonClick() {
+    this._resetState();
   }
 
-  hideCalendar() {
+  _hideCalendar() {
     $('.js-quantity-dropdown__list').addClass('quantity-dropdown__list_hidden');
   }
 
-  showCalendar() {
+  _showCalendar() {
     $('.js-quantity-dropdown__list').addClass('quantity-dropdown__list_hidden');
-    this.$list.removeClass('quantity-dropdown__list_hidden');
+    this._$list.removeClass('quantity-dropdown__list_hidden');
   }
 
-  handleQuantityDropdownItemsClick(evt) {
+  _handleQuantityDropdownItemsClick(evt) {
     evt.stopPropagation();
     const isButton = evt.target.tagName.toLocaleLowerCase() === 'button';
     const isMinus = evt.target.textContent === '-';
@@ -122,85 +122,85 @@ class QuantityDropdown {
     if (isButton && isMinus) {
       const parent = evt.target.parentElement;
       const idx = +parent.dataset.id;
-      if (this.options[idx].value !== 0) {
-        this.options[idx].value -= 1;
+      if (this._options[idx].value !== 0) {
+        this._options[idx].value -= 1;
         const counter = parent.querySelector('.title-3');
         counter.textContent = +counter.textContent - 1;
-        this.isZero(evt.target, this.options[idx].value);
+        this._isZero(evt.target, this._options[idx].value);
       }
     }
     if (isButton && isPlus) {
       const parent = evt.target.parentElement;
       const idx = +parent.dataset.id;
-      this.options[idx].value += 1;
+      this._options[idx].value += 1;
       const counter = parent.querySelector('.title-3');
       counter.textContent = +counter.textContent + 1;
-      if (this.options[idx].value === 1) {
+      if (this._options[idx].value === 1) {
         parent.querySelector('.quantity-dropdown__action').classList.remove('quantity-dropdown__action_disabled');
       }
-      if (this.$clean) {
-        this.$clean.removeClass('small-button_hidden');
+      if (this._$clean) {
+        this._$clean.removeClass('small-button_hidden');
       }
-      this.setInputValue();
+      this._setInputValue();
     }
   }
 
-  initOptionsEvents() {
-    this.$element.find('.quantity-dropdown__items').on('click', this.handleQuantityDropdownItemsClick.bind(this));
+  _initOptionsEvents() {
+    this._$element.find('.quantity-dropdown__items').on('click', this._handleQuantityDropdownItemsClick.bind(this));
   }
 
-  isZero(minusBtn, optionValue) {
+  _isZero(minusBtn, optionValue) {
     if (optionValue === 0) {
       minusBtn.classList.add('quantity-dropdown__action_disabled');
     }
 
     let isAllZero = true;
-    this.options.forEach((option) => {
+    this._options.forEach((option) => {
       if (option.value !== 0) {
         isAllZero = false;
       }
     });
     if (isAllZero) {
-      if (this.$clean) {
-        this.$clean.addClass('small-button_hidden');
+      if (this._$clean) {
+        this._$clean.addClass('small-button_hidden');
       }
-      this.$input.val('');
+      this._$input.val('');
     } else {
-      this.setInputValue();
+      this._setInputValue();
     }
   }
 
-  setInputValue() {
-    if (this.endings) {
-      const total = this.getOptionsValues();
+  _setInputValue() {
+    if (this._endings) {
+      const total = this._getOptionsValues();
       if (total === 1) {
-        this.$input.val(`${total} ${this.endings[0]}`);
-      } else if (this.isSecondDeclination(total)) {
-        this.$input.val(`${total} ${this.endings[1]}`);
+        this._$input.val(`${total} ${this._endings[0]}`);
+      } else if (this._isSecondDeclination(total)) {
+        this._$input.val(`${total} ${this._endings[1]}`);
       } else if (total > 4) {
-        this.$input.val(`${total} ${this.endings[2]}`);
+        this._$input.val(`${total} ${this._endings[2]}`);
       }
-    } else if (this.words) {
-      const str = this.getEndings();
-      this.$input.val(str);
+    } else if (this._words) {
+      const str = this._getEndings();
+      this._$input.val(str);
     } else {
-      let str = this.getEndings();
+      let str = this._getEndings();
       if (str.replace(/\s+/g, '').length > 16) {
         str = str.substr(0, 21);
         str = `${str}...`;
       }
-      this.$input.val(str);
+      this._$input.val(str);
     }
   }
 
-  getEndings() {
-    const result = this.getOptionsValues();
+  _getEndings() {
+    const result = this._getOptionsValues();
     let str = '';
     Object.keys(result).forEach((key) => {
       const { value } = result[key];
       if (value === 1) {
         str += `${value} ${result[key].endings[0]},`;
-      } else if (this.isSecondDeclination(value)) {
+      } else if (this._isSecondDeclination(value)) {
         str += ` ${value} ${result[key].endings[1]},`;
       } else if (value > 4) {
         str += ` ${value} ${result[key].endings[2]},`;
@@ -210,45 +210,45 @@ class QuantityDropdown {
     return str;
   }
 
-  isSecondDeclination(num) {
+  _isSecondDeclination(num) {
     const isMoreThanOne = num > 1;
     const isLessThanFive = num < 5;
     return isMoreThanOne && isLessThanFive;
   }
 
-  getOptionsValues() {
-    if (this.endings) {
+  _getOptionsValues() {
+    if (this._endings) {
       let total = 0;
-      this.options.forEach((option) => {
+      this._options.forEach((option) => {
         total += option.value;
       });
       return total;
-    } if (this.words) {
+    } if (this._words) {
       const result = { };
-      result['0'] = { value: this.options[0].value + this.options[1].value, endings: this.words[0] };
-      result['1'] = { value: this.options[2].value, endings: this.words[1] };
+      result['0'] = { value: this._options[0].value + this._options[1].value, endings: this._words[0] };
+      result['1'] = { value: this._options[2].value, endings: this._words[1] };
       return result;
     }
     const result = { };
-    this.options.forEach((option) => {
+    this._options.forEach((option) => {
       result[option.name] = { value: option.value, endings: option.endings };
     });
     return result;
   }
 
-  resetState() {
-    this.value = '';
-    this.options.forEach((option, idx) => {
-      this.options[idx].value = 0;
+  _resetState() {
+    this._value = '';
+    this._options.forEach((option, idx) => {
+      this._options[idx].value = 0;
     });
-    this.$input.val('');
-    this.$element.find('.quantity-dropdown__action').each((idx, btn) => {
+    this._$input.val('');
+    this._$element.find('.quantity-dropdown__action').each((idx, btn) => {
       if (btn.textContent === '-') {
         btn.classList.add('quantity-dropdown__action_disabled');
       }
     });
-    this.$element.find('.quantity-dropdown__value .title-3').text('0');
-    this.$clean.addClass('small-button_hidden');
+    this._$element.find('.quantity-dropdown__value .title-3').text('0');
+    this._$clean.addClass('small-button_hidden');
   }
 }
 

@@ -1,22 +1,22 @@
 class Accordion {
   constructor(element) {
-    this.init(element);
+    this._init(element);
   }
 
-  init(element) {
-    this.$expander = $(element);
-    this.$list = this.$expander.siblings('.js-accordion__list');
-    this.$icon = this.$expander.find('.js-accordion__icon');
-    this.addClickEvent();
+  _init(element) {
+    this._$expander = $(element);
+    this._$list = this._$expander.siblings('.js-accordion__list');
+    this._$icon = this._$expander.find('.js-accordion__icon');
+    this._addClickEvent();
   }
 
-  addClickEvent() {
-    this.$expander.on('click', this.handleExpanderClick.bind(this));
+  _addClickEvent() {
+    this._$expander.on('click', this._handleExpanderClick.bind(this));
   }
 
-  handleExpanderClick() {
-    this.$list.toggleClass('accordion__list_active');
-    this.$icon.toggleClass('accordion__icon_active');
+  _handleExpanderClick() {
+    this._$list.toggleClass('accordion__list_active');
+    this._$icon.toggleClass('accordion__icon_active');
   }
 }
 
