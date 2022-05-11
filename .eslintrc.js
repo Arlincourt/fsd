@@ -6,6 +6,7 @@ module.exports = {
     node: true,
     jest: true,
   },
+  parser: '@babel/eslint-parser',
   extends: [
     'eslint:recommended',
     'airbnb-base',
@@ -17,6 +18,7 @@ module.exports = {
     "no-shadow": "off",
     "no-new": "off",
     "class-methods-use-this": "off",
+    "no-underscore-dangle": 'off'
   },
   settings: {
     'import/resolver': {

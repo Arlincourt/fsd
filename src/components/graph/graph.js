@@ -51,7 +51,7 @@ class Graph {
     }
     this._setText('none');
   }
-  
+
   @boundMethod
   _handleGraphHover(evt, activeItem) {
     $('.js-graph__canvas').css('cursor', activeItem[0] ? 'pointer' : 'default');

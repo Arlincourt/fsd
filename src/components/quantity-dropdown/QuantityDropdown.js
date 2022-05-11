@@ -103,7 +103,7 @@ class QuantityDropdown {
   _handleApplyButtonClick() {
     this._hideCalendar();
   }
-  
+
   @boundMethod
   _handleCleanButtonClick() {
     this._resetState();

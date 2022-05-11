@@ -33,7 +33,7 @@ class RoomCard {
       this._$actions.removeClass('room-card__actions_hidden');
     }
   }
-  
+
   @boundMethod
   _handleGalleryLeave() {
     if (!this._isHidden()) {
