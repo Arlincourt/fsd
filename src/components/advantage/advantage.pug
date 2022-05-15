@@ -7,7 +7,7 @@ mixin advantage({ text = "text", name = "Max", className = "", border = null })
     
   .advantage
     .advantage__body(class= lineClass)
-      i(class="advantage__icon " + className)
+      i(class=`advantage__icon ${className}`)
       .advantage__info 
         p.advantage__name= name 
         p.advantage__text= text

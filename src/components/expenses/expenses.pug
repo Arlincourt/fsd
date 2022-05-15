@@ -1,0 +1,14 @@
+mixin expenses({ items = [], total = 'total' })
+  .expenses 
+    each item in items 
+      .expenses__item 
+        .expenses__name 
+          span.expenses__text #{item.name}
+        p.expenses__price
+          | #{item.price}
+          if item.icon 
+            span.expenses__icon 
+    .expenses__footer
+      h2.expenses__title Итого 
+      .expenses__line 
+      h2.expenses__title= total

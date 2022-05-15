@@ -1,7 +1,7 @@
 include ../../components/rent-info/rent-info.pug
 include ../../components/datepicker/datepicker.pug
 include ../../components/quantity-dropdown/quantity-dropdown.pug
-include ../../components/expences/expences.pug
+include ../../components/expenses/expenses.pug
 include ../../components/icon-button/icon-button.pug
 
 mixin room-info({ items = null, total = '38 081₽', luxury = true, price = '9 990', number = '888', label1 = 'ДД.ММ.ГГГГ', label2 = 'ДД.ММ.ГГГГ' })
@@ -22,7 +22,7 @@ mixin room-info({ items = null, total = '38 081₽', luxury = true, price = '9 9
         .room-info__guests 
           +quantity-dropdown({ label: 'Сколько гостей', title: 'гости' })
         .room-info__expences
-          +expences( {
+          +expenses( {
             items: items,
             total: total
           } )
