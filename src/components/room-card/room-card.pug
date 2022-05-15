@@ -3,9 +3,10 @@ include ../../components/rating/rating.pug
 
 mixin room-card({ images = [], buttons = null, comments = 0, rating = 0, luxury = false, price = '9 990', number = '888', small = true })
   -
-    const classes = ['']
+    const classes = [''];
+    
     if(buttons) {
-      classes.push('room-card__actions_hidden')
+      classes.push('room-card__actions_hidden');
     }
     
   .room-card 

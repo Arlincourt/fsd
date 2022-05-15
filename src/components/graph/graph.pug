@@ -1,14 +1,16 @@
 mixin graph({ numbers = '260', items = [] })
   -
-    const colors = []
-    const voices = []
+    const colors = [];
+    const voices = [];
+
     items.forEach((item) => {
       if(item.gradient && item.voices) {
-        colors.push(item.gradient)
-        voices.push(item.voices)
+        colors.push(item.gradient);
+        voices.push(item.voices);
       }
     })
-    items.reverse()
+    
+    items.reverse();
 
   .graph.js-graph(data-voices=voices data-colors=colors)
     .graph__canvas-wrapper

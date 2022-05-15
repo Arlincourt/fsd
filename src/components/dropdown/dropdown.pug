@@ -2,9 +2,10 @@ include ../../components/title-3/title-3.pug
 
 mixin dropdown({ label = 'Выберите', title = null, small = null })
   -
-    const classes = ['']
+    const classes = [''];
+    
     if(small) {
-      classes.push('dropdown_size_small')
+      classes.push('dropdown_size_small');
     }
     
   .dropdown.js-dropdown(class=classes)

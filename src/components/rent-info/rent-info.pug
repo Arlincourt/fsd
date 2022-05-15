@@ -2,9 +2,10 @@ include ../../components/title-3/title-3.pug
 
 mixin rent-info({ luxury = null, number = '2', price = '1000', small = null })
   -
-    const classes = ["rent-info__title"]
+    const classes = ["rent-info__title"];
+
     if(small) {
-      classes.push("rent-info__title_size_small")
+      classes.push("rent-info__title_size_small");
     }
 
   .rent-info 

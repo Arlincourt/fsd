@@ -3,9 +3,10 @@ include ../../components/title-3/title-3.pug
 
 mixin quantity-dropdown({ label = 'label', title = '', small = null })
   -
-    const classes = ['']
+    const classes = [''];
+
     if(small) {
-      classes.push('quantity-dropdown_size_small')
+      classes.push('quantity-dropdown_size_small');
     }
     
   .quantity-dropdown(class=classes)

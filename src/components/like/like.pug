@@ -1,14 +1,16 @@
 mixin like({ active = false, number = '2' })
   -
-    const classes = ['like']
-    let iconClasses = ['like__icon', 'js-like__icon']
+    const classes = ['like'];
+    let iconClasses = ['like__icon', 'js-like__icon'];
+
     if(active) {
-      iconClasses.push('icon-favorite')
-      iconClasses.push('like__icon_activated')
-      classes.push('like_activated')
+      iconClasses.push('icon-favorite');
+      iconClasses.push('like__icon_activated');
+      classes.push('like_activated');
     } else {
-      iconClasses.push('icon-favorite_border')
+      iconClasses.push('icon-favorite_border');
     }
+    
   button(class=classes)
     i(class=iconClasses)
     | #{number}

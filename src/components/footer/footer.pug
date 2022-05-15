@@ -22,7 +22,7 @@ mixin footer({ text = 'text', navigation = [], copy = 'copy', subscribtion = {} 
         .footer__subscribtion
           +title-3(subscribtion.title)
           p.footer__paragraph.footer__paragraph_offset_medium= subscribtion.text
-          form.footer__subscription-form
+          form.footer__subscribtion-form
             +input({ type: 'text', placeholder: subscribtion.placeholder, button: true })
 
     section.footer__bottom

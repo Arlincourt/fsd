@@ -1,11 +1,12 @@
 mixin button({ link = null, text = 'click me', mode = null })
   - 
-    const defaultclass = 'button'
+    const defaultclass = 'button';
+    
     if(mode) {
-      mode = mode.map((item)=> `${defaultclass}_${item}`)
-      classes = mode.join(' ')
+      mode = mode.map((item)=> `${defaultclass}_${item}`);
+      classes = mode.join(' ');
     }  else {
-      classes = ""
+      classes = "";
     }
     
   if(link)

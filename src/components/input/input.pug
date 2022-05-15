@@ -1,18 +1,20 @@
 mixin input({ mode = null, masked = null, button = null, small = null, type = 'text', placeholder = 'text' })
   -
-    let defaultClass = 'form-control__input'
-    const formClasses = ['']
-    let classes = []
+    let defaultClass = 'form-control__input';
+    const formClasses = [''];
+    let classes = [];
+    
     if(masked) 
-      classes.push('js-input__masked')
+      classes.push('js-input__masked');
     if(mode) {
-      mode = mode.map((item)=> `${defaultClass}_${item}`)
-      classes = mode
+      mode = mode.map((item)=> `${defaultClass}_${item}`);
+      classes = mode;
     }
     if(small) {
-      formClasses.push('form-control_size_small')
+      formClasses.push('form-control_size_small');
     }
-    classes.unshift('form-control__input')
+
+    classes.unshift('form-control__input');
 
   if(button) 
     .form-control(class=formClasses)
