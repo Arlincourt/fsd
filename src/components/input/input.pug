@@ -13,6 +13,9 @@ mixin input({ mode = null, masked = null, button = null, small = null, type = 't
     if(small) {
       formClasses.push('form-control_size_small');
     }
+    if(button) {
+      classes.push('form-control__input_padding_right');
+    }
 
     classes.unshift('form-control__input');
 

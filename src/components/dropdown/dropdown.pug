@@ -1,11 +1,15 @@
 include ../../components/title-3/title-3.pug
 
-mixin dropdown({ label = 'Выберите', title = null, small = null })
+mixin dropdown({ label = 'Выберите', title = null, small = null, mask = null })
   -
     const classes = [''];
+    const inputClasses = ['dropdown__input js-dropdown__input'];
     
     if(small) {
       classes.push('dropdown_size_small');
+    }
+    if(mask) {
+      inputClasses.push('js-dropdown__input_masked')
     }
     
   .dropdown.js-dropdown(class=classes)
@@ -14,5 +18,5 @@ mixin dropdown({ label = 'Выберите', title = null, small = null })
         +title-3(title)
     .dropdown__content.js-dropdown__content
       label.dropdown__label
-        input(placeholder=label class="dropdown__input js-dropdown__input")
+        input(placeholder=label class=inputClasses)
             

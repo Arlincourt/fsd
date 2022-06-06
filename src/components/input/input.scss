@@ -20,6 +20,10 @@
     outline: none;
     font-family: "Montserrat", sans-serif;
 
+    &_padding_right {
+      padding-right: 40px;
+    }
+
     &::placeholder {
       color: $dark25;
     }

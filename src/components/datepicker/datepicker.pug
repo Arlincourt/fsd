@@ -9,7 +9,7 @@ mixin datepicker({ title1 = 'прибытие', label1 = 'ДД.ММ.ГГГГ', t
           +dropdown({ label: label1, title: title1, small: true })
         else
           .datepicker-component__dropdown.datepicker-component__dropdown_offset_medium
-            +dropdown({ label: label1, title: title1 })
+            +dropdown({ label: label1, title: title1, mask: true })
           .datepicker-component__dropdown
-            +dropdown({ label: label2, title: title2 })
+            +dropdown({ label: label2, title: title2, mask: true })
         

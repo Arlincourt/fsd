@@ -7,6 +7,7 @@ class Calendar {
     this._init(element);
   }
 
+  @boundMethod
   _initOptions() {
     const that = this;
     this._options = {
@@ -18,7 +19,7 @@ class Calendar {
         days: 'MM yyyy',
       },
       onSelect(formattedDate, date) {
-        that.onSelect(formattedDate, date);
+        that._onSelect(formattedDate, date);
       },
     };
   }
@@ -70,6 +71,7 @@ class Calendar {
     this._$contents.on('click', this._handleContentsClick);
   }
 
+  @boundMethod
   _handleContentsClick() {
     this._$calendar.show();
   }
