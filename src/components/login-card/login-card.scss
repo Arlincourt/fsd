@@ -1,4 +1,10 @@
 @import "@/theme/variables";
+@import "@/components/title-1/title-1";
+@import "@/components/title-3/title-3";
+@import "@/components/input/input";
+@import "@/components/radio/radio";
+@import "@/components/button/button";
+@import "@/components/icon-button/icon-button";
 
 .login-card {
   &__body {

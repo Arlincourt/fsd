@@ -1,4 +1,7 @@
 @import "@/theme/variables";
+@import "@components/header/header";
+@import "@components/footer-small/footer-small";
+@import "@components/footer/footer";
 
 .headers {
   background-color: $gray;

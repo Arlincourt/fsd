@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Montserrat";
   src:
-    url("./fonts/montserrat-medium.ttf") format("truetype"),
-    url("./fonts/montserrat-medium.woff") format("woff"),
-    url("./fonts/montserrat-medium.svg") format("svg");
+    url("@theme/fonts/montserrat-medium.ttf") format("truetype"),
+    url("@theme/fonts/montserrat-medium.woff") format("woff"),
+    url("@theme/fonts/montserrat-medium.svg") format("svg");
   font-weight: 500;
   font-style: normal;
 }
@@ -11,9 +11,9 @@
 @font-face {
   font-family: "Montserrat";
   src:
-    url("./fonts/montserrat-regular.ttf") format("truetype"),
-    url("./fonts/montserrat-regular.woff") format("woff"),
-    url("./fonts/montserrat-regular.svg") format("svg");
+    url("@theme/fonts/montserrat-regular.ttf") format("truetype"),
+    url("@theme/fonts/montserrat-regular.woff") format("woff"),
+    url("@theme/fonts/montserrat-regular.svg") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -21,9 +21,9 @@
 @font-face {
   font-family: "Montserrat";
   src:
-    url("./fonts/montserrat-bold.ttf") format("truetype"),
-    url("./fonts/montserrat-bold.woff") format("woff"),
-    url("./fonts/montserrat-regular.svg") format("svg");
+    url("@theme/fonts/montserrat-bold.ttf") format("truetype"),
+    url("@theme/fonts/montserrat-bold.woff") format("woff"),
+    url("@theme/fonts/montserrat-regular.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -31,9 +31,9 @@
 @font-face {
   font-family: "icons";
   src:
-    url("./fonts/icons.ttf") format("truetype"),
-    url("./fonts/icons.woff") format("woff"),
-    url("./fonts/icons.svg") format("svg");
+    url("@theme/fonts/icons.ttf") format("truetype"),
+    url("@theme/fonts/icons.woff") format("woff"),
+    url("@theme/fonts/icons.svg") format("svg");
   font-style: normal;
   font-weight: 400;
 }

@@ -1,4 +1,8 @@
 @import "@/theme/variables";
+@import "@/components/rent-info/rent-info";
+@import "@/components/quantity-dropdown/quantity-dropdown";
+@import "@/components/expenses/expenses";
+@import "@/components/icon-button/icon-button";
 
 .room-info {
   &__body {

@@ -1,7 +1,12 @@
 @import "@/theme/variables";
+@import "@components/room-wishes/room-wishes";
+@import "@components/header/header";
+@import "@components/footer/footer";
+@import "@components/footer-small/footer-small";
+@import "@components/register-card/register-card";
 
 .register {
-  background-image: url("images/register-background.png");
+  background-image: url("@pages/register/images/register-background.png");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

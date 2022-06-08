@@ -1,7 +1,12 @@
 @import "@/theme/variables";
+@import "@components/room-wishes/room-wishes";
+@import "@components/header/header";
+@import "@components/footer/footer";
+@import "@components/footer-small/footer-small";
+@import "@components/login-card/login-card";
 
 .login {
-  background-image: url("images/login-background.png");
+  background-image: url("@pages/login/images/login-background.png");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

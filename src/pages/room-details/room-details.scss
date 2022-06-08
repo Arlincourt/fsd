@@ -1,4 +1,15 @@
 @import "@/theme/variables";
+@import "@components/room-wishes/room-wishes";
+@import "@components/header/header";
+@import "@components/footer/footer";
+@import "@components/footer-small/footer-small";
+@import "@components/room-info/room-info";
+@import "@components/advantage/advantage";
+@import "@components/title-3/title-3";
+@import "@components/graph/graph";
+@import "@components/comment/comment";
+@import "@components/bulled-list/bulled-list";
+@import "@components/paragraph/paragraph";
 
 .room-details {
   &__gallery {

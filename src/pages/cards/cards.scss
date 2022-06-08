@@ -1,4 +1,9 @@
 @import "@/theme/variables";
+@import "@components/room-wishes/room-wishes";
+@import "@components/register-card/register-card";
+@import "@components/room-info/room-info";
+@import "@components/login-card/login-card";
+@import "@components/room-card/room-card";
 
 .cards {
   background-color: $gray;
